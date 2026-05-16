@@ -1,0 +1,160 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Content & Video Workflow Dashboard" [level=2] [ref=e4]:
+        - text: Content & Video
+        - text: Workflow Dashboard
+      - paragraph [ref=e5]: 10-Stage Production Pipeline
+    - generic [ref=e6]:
+      - button "STAGE 1 — 🔨 Build the App ▶" [ref=e7] [cursor=pointer]:
+        - generic [ref=e9]: STAGE 1 — 🔨 Build the App
+        - generic [ref=e10]: ▶
+      - generic [ref=e12] [cursor=pointer]:
+        - generic [ref=e13]: S1
+        - text: App Overview & Settings
+    - button "🤖 AI Affiliate Research Engine ▶" [ref=e15] [cursor=pointer]:
+      - generic [ref=e17]: 🤖 AI Affiliate Research Engine
+      - generic [ref=e18]: ▶
+    - generic [ref=e19]:
+      - button "STAGE 2 — 🔍 Research & Discovery ▶" [ref=e20] [cursor=pointer]:
+        - generic [ref=e22]: STAGE 2 — 🔍 Research & Discovery
+        - generic [ref=e23]: ▶
+      - generic [ref=e24]:
+        - generic [ref=e25] [cursor=pointer]:
+          - generic [ref=e26]: "1"
+          - text: "Competitor: Upload CSV"
+        - generic [ref=e27] [cursor=pointer]:
+          - generic [ref=e28]: "2"
+          - text: "Competitor: Shared Keywords"
+        - generic [ref=e29] [cursor=pointer]:
+          - generic [ref=e30]: "3"
+          - text: "Competitor: Topic Validation"
+        - generic [ref=e31] [cursor=pointer]:
+          - generic [ref=e32]: "4"
+          - text: "Competitor: YT Content Gap"
+        - generic [ref=e34] [cursor=pointer]:
+          - generic [ref=e35]: "5"
+          - text: "Competitor: Niche Importer"
+        - generic [ref=e36] [cursor=pointer]:
+          - generic [ref=e37]: "6"
+          - text: "Competitor: Deep Dive"
+        - generic [ref=e38] [cursor=pointer]:
+          - generic [ref=e39]: "7"
+          - text: "Competitor: Affiliate Pages"
+        - generic [ref=e40] [cursor=pointer]:
+          - generic [ref=e41]: "8"
+          - text: "Competitor: Content Gap"
+        - generic [ref=e42] [cursor=pointer]:
+          - generic [ref=e43]: "9"
+          - text: "Competitor: Extract Products"
+        - generic [ref=e44] [cursor=pointer]:
+          - generic [ref=e45]: "10"
+          - text: "Competitor: Chapters & FAQ"
+        - generic [ref=e46] [cursor=pointer]:
+          - generic [ref=e47]: "11"
+          - text: "Competitor: Video Strategy"
+        - generic [ref=e49] [cursor=pointer]:
+          - generic [ref=e50]: 🚀
+          - text: Generate Script Brief (Competitor)
+    - button "STAGE 3 — ✍️ Write the Script ▶" [ref=e52] [cursor=pointer]:
+      - generic [ref=e54]: STAGE 3 — ✍️ Write the Script
+      - generic [ref=e55]: ▶
+    - button "STAGE 4 — 🎙️ Record It ▶" [ref=e57] [cursor=pointer]:
+      - generic [ref=e59]: STAGE 4 — 🎙️ Record It
+      - generic [ref=e60]: ▶
+    - button "STAGE 5 — ✂️ Edit the Video ▶" [ref=e62] [cursor=pointer]:
+      - generic [ref=e64]: STAGE 5 — ✂️ Edit the Video
+      - generic [ref=e65]: ▶
+    - button "STAGE 6 — 📤 Post It ▶" [ref=e67] [cursor=pointer]:
+      - generic [ref=e69]: STAGE 6 — 📤 Post It
+      - generic [ref=e70]: ▶
+    - button "STAGE 7 — 💰 Make Money ▶" [ref=e72] [cursor=pointer]:
+      - generic [ref=e74]: STAGE 7 — 💰 Make Money
+      - generic [ref=e75]: ▶
+    - button "STAGE 8 — 🤖 Automate It ▶" [ref=e77] [cursor=pointer]:
+      - generic [ref=e79]: STAGE 8 — 🤖 Automate It
+      - generic [ref=e80]: ▶
+    - button "STAGE 9 — 📈 Check Results ▶" [ref=e82] [cursor=pointer]:
+      - generic [ref=e84]: STAGE 9 — 📈 Check Results
+      - generic [ref=e85]: ▶
+    - button "STAGE 10 — 🚀 Grow Bigger ▶" [ref=e87] [cursor=pointer]:
+      - generic [ref=e89]: STAGE 10 — 🚀 Grow Bigger
+      - generic [ref=e90]: ▶
+  - main [ref=e91]:
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]: Stage 2B
+        - generic [ref=e95]: 🌐 Competitor Site Flow
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - generic "Upload competitor CSVs from Ahrefs & Semrush" [ref=e98] [cursor=pointer]:
+            - generic [ref=e99]: "1"
+            - text: Competitor Analysis
+          - generic "Find keywords shared across competitors" [ref=e100] [cursor=pointer]:
+            - generic [ref=e101]: "2"
+            - text: Shared KWs
+          - generic "Validate topic relevance & search demand" [ref=e102] [cursor=pointer]:
+            - generic [ref=e103]: "3"
+            - text: Topic Val.
+          - generic "Check YouTube competition & find video gaps" [ref=e104] [cursor=pointer]:
+            - generic [ref=e105]: "4"
+            - text: YT Gap
+          - generic "Import competitor niche categories" [ref=e106] [cursor=pointer]:
+            - generic [ref=e107]: "5"
+            - text: Niche Import
+          - generic "Analyze individual niche posts in detail" [ref=e108] [cursor=pointer]:
+            - generic [ref=e109]: "6"
+            - text: Deep Dive
+          - generic "Find mid-tier affiliate pages to target" [ref=e110] [cursor=pointer]:
+            - generic [ref=e111]: "7"
+            - text: Affiliate Pages
+          - generic "Extract headings, products & freshness data" [ref=e112] [cursor=pointer]:
+            - generic [ref=e113]: "8"
+            - text: Gap Extract
+          - generic "Compile affiliate products & networks" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: "9"
+            - text: Extract Products
+          - generic "Plan video chapters & FAQ schema" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]: "10"
+            - text: Chapters
+          - generic "Define video strategy & winning angle" [ref=e118] [cursor=pointer]:
+            - generic [ref=e119]: "11"
+            - text: Strategy
+          - generic "Generate your final script brief" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]: 🚀
+            - text: Script
+        - generic [ref=e123]:
+          - heading "Competitor List" [level=1] [ref=e124]
+          - paragraph [ref=e125]:
+            - strong [ref=e126]: "Why:"
+            - text: This is where we start — raw competitor data in, actionable insights out.
+        - table [ref=e128]:
+          - rowgroup [ref=e129]:
+            - row "Competing Domain Organic Traffic" [ref=e130]:
+              - columnheader "Competing Domain" [ref=e131]
+              - columnheader "Organic Traffic" [ref=e132]
+          - rowgroup [ref=e133]:
+            - row "semrush.com 2,450,100" [ref=e134]:
+              - cell "semrush.com" [ref=e135]
+              - cell "2,450,100" [ref=e136]
+            - row "moz.com 1,120,400" [ref=e137]:
+              - cell "moz.com" [ref=e138]
+              - cell "1,120,400" [ref=e139]
+            - row "searchenginejournal.com 1,890,550" [ref=e140]:
+              - cell "searchenginejournal.com" [ref=e141]
+              - cell "1,890,550" [ref=e142]
+            - row "backlinko.com 450,800" [ref=e143]:
+              - cell "backlinko.com" [ref=e144]
+              - cell "450,800" [ref=e145]
+            - row "yoast.com 890,300" [ref=e146]:
+              - cell "yoast.com" [ref=e147]
+              - cell "890,300" [ref=e148]
+        - generic [ref=e150]:
+          - heading "Keyword Gap" [level=1] [ref=e151]
+          - paragraph [ref=e152]:
+            - strong [ref=e153]: "Why:"
+            - text: Finds keywords both you and competitors rank for using Keyword Gap. Reveals cross-sell opportunities — terms with proven buyer intent where the competitor is already making money.
+        - generic [ref=e154]:
+          - button "← Back" [ref=e155] [cursor=pointer]
+          - 'button "Next: Shared Buyer Keywords →" [ref=e156] [cursor=pointer]'
+    - text: 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥

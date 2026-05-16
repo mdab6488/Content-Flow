@@ -1,0 +1,299 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Content & Video Workflow Dashboard" [level=2] [ref=e4]:
+        - text: Content & Video
+        - text: Workflow Dashboard
+      - paragraph [ref=e5]: 10-Stage Production Pipeline
+    - generic [ref=e6]:
+      - button "STAGE 1 — 🔨 Build the App ▶" [ref=e7] [cursor=pointer]:
+        - generic [ref=e9]: STAGE 1 — 🔨 Build the App
+        - generic [ref=e10]: ▶
+      - generic [ref=e12] [cursor=pointer]:
+        - generic [ref=e13]: S1
+        - text: App Overview & Settings
+    - generic [ref=e14]:
+      - button "STAGE 2 — 🔍 Research & Discovery ▶" [ref=e15] [cursor=pointer]:
+        - generic [ref=e17]: STAGE 2 — 🔍 Research & Discovery
+        - generic [ref=e18]: ▶
+      - generic [ref=e19]:
+        - generic [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: "1"
+          - text: "Competitor: Upload CSV"
+        - generic [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]: "2"
+          - text: "Competitor: Shared Keywords"
+        - generic [ref=e24] [cursor=pointer]:
+          - generic [ref=e25]: "3"
+          - text: "Competitor: Topic Validation"
+        - generic [ref=e26] [cursor=pointer]:
+          - generic [ref=e27]: "4"
+          - text: "Competitor: YT Content Gap"
+        - generic [ref=e29] [cursor=pointer]:
+          - generic [ref=e30]: "5"
+          - text: "Competitor: Niche Importer"
+        - generic [ref=e31] [cursor=pointer]:
+          - generic [ref=e32]: "6"
+          - text: "Competitor: Deep Dive"
+        - generic [ref=e33] [cursor=pointer]:
+          - generic [ref=e34]: "7"
+          - text: "Competitor: Affiliate Pages"
+        - generic [ref=e35] [cursor=pointer]:
+          - generic [ref=e36]: "8"
+          - text: "Competitor: Content Gap"
+        - generic [ref=e37] [cursor=pointer]:
+          - generic [ref=e38]: "9"
+          - text: "Competitor: Extract Products"
+        - generic [ref=e39] [cursor=pointer]:
+          - generic [ref=e40]: "10"
+          - text: "Competitor: Chapters & FAQ"
+        - generic [ref=e41] [cursor=pointer]:
+          - generic [ref=e42]: "11"
+          - text: "Competitor: Video Strategy"
+        - generic [ref=e44] [cursor=pointer]:
+          - generic [ref=e45]: 🚀
+          - text: Generate Script Brief (Competitor)
+    - button "STAGE 3 — ✍️ Write the Script ▶" [ref=e47] [cursor=pointer]:
+      - generic [ref=e49]: STAGE 3 — ✍️ Write the Script
+      - generic [ref=e50]: ▶
+    - button "STAGE 4 — 🎙️ Record It ▶" [ref=e52] [cursor=pointer]:
+      - generic [ref=e54]: STAGE 4 — 🎙️ Record It
+      - generic [ref=e55]: ▶
+    - button "STAGE 5 — ✂️ Edit the Video ▶" [ref=e57] [cursor=pointer]:
+      - generic [ref=e59]: STAGE 5 — ✂️ Edit the Video
+      - generic [ref=e60]: ▶
+    - button "STAGE 6 — 📤 Post It ▶" [ref=e62] [cursor=pointer]:
+      - generic [ref=e64]: STAGE 6 — 📤 Post It
+      - generic [ref=e65]: ▶
+    - button "STAGE 7 — 💰 Make Money ▶" [ref=e67] [cursor=pointer]:
+      - generic [ref=e69]: STAGE 7 — 💰 Make Money
+      - generic [ref=e70]: ▶
+    - button "STAGE 8 — 🤖 Automate It ▶" [ref=e72] [cursor=pointer]:
+      - generic [ref=e74]: STAGE 8 — 🤖 Automate It
+      - generic [ref=e75]: ▶
+    - button "STAGE 9 — 📈 Check Results ▶" [ref=e77] [cursor=pointer]:
+      - generic [ref=e79]: STAGE 9 — 📈 Check Results
+      - generic [ref=e80]: ▶
+    - button "STAGE 10 — 🚀 Grow Bigger ▶" [ref=e82] [cursor=pointer]:
+      - generic [ref=e84]: STAGE 10 — 🚀 Grow Bigger
+      - generic [ref=e85]: ▶
+  - main [ref=e86]:
+    - generic [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]: Stage 2B
+        - generic [ref=e90]: 🌐 Competitor Site Flow
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic "Upload competitor CSVs from Ahrefs & Semrush" [ref=e93] [cursor=pointer]:
+            - generic [ref=e94]: "1"
+            - text: CSV
+          - generic "Find keywords shared across competitors" [ref=e95] [cursor=pointer]:
+            - generic [ref=e96]: "2"
+            - text: Shared KWs
+          - generic "Validate topic relevance & search demand" [ref=e97] [cursor=pointer]:
+            - generic [ref=e98]: "3"
+            - text: Topic Val.
+          - generic "Check YouTube competition & find video gaps" [ref=e99] [cursor=pointer]:
+            - generic [ref=e100]: "4"
+            - text: YT Gap
+          - generic "Import competitor niche categories" [ref=e101] [cursor=pointer]:
+            - generic [ref=e102]: "5"
+            - text: Niche Import
+          - generic "Analyze individual niche posts in detail" [ref=e103] [cursor=pointer]:
+            - generic [ref=e104]: "6"
+            - text: Deep Dive
+          - generic "Find mid-tier affiliate pages to target" [ref=e105] [cursor=pointer]:
+            - generic [ref=e106]: "7"
+            - text: Affiliate Pages
+          - generic "Extract headings, products & freshness data" [ref=e107] [cursor=pointer]:
+            - generic [ref=e108]: "8"
+            - text: Gap Extract
+          - generic "Compile affiliate products & networks" [ref=e109] [cursor=pointer]:
+            - generic [ref=e110]: "9"
+            - text: Extract Products
+          - generic "Plan video chapters & FAQ schema" [ref=e111] [cursor=pointer]:
+            - generic [ref=e112]: "10"
+            - text: Chapters
+          - generic "Define video strategy & winning angle" [ref=e113] [cursor=pointer]:
+            - generic [ref=e114]: "11"
+            - text: Strategy
+          - generic "Generate your final script brief" [ref=e115] [cursor=pointer]:
+            - generic [ref=e116]: 🚀
+            - text: Script
+        - generic [ref=e117]:
+          - generic [ref=e118]: "1"
+          - generic [ref=e119]:
+            - heading "Upload Competitor CSV" [level=1] [ref=e120]
+            - paragraph [ref=e121]: Export competitor data from Ahrefs and Semrush, then upload the CSVs below. Duplicate domains are automatically merged into one combined table.
+            - paragraph [ref=e122]:
+              - text: →
+              - strong [ref=e123]: "Why:"
+              - text: This is where we start — raw competitor data in, actionable insights out.
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - generic [ref=e126]:
+              - generic [ref=e127]: Ahrefs
+              - generic [ref=e128]: 📍 Ahrefs Site Explorer → Competing Domains
+            - generic [ref=e129]: "Paste competitor domain → Search → Left menu: \"Competing Domains\""
+            - generic [ref=e130]:
+              - generic [ref=e131]: "Sort by: Common Keywords (High → Low)"
+              - generic [ref=e132]: "Export: CSV — up to 1,000 rows"
+              - generic [ref=e133]: Use "Organic Traffic" filter to remove low-value sites
+            - generic [ref=e134] [cursor=pointer]:
+              - generic [ref=e135]: 📄
+              - generic [ref=e136]: Drop Ahrefs competing domains CSV here or click to browse
+              - generic [ref=e137]: "Expects: Domain, Common Keywords, Traffic, DR, Overlap %"
+            - generic [ref=e138]: ✅ 4 competitors loaded from Ahrefs
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - generic [ref=e141]: Semrush
+              - generic [ref=e142]: 📍 Semrush Domain Overview → Competitors
+            - generic [ref=e143]: Paste domain → Search → Click "Competitors" tab
+            - generic [ref=e144]:
+              - generic [ref=e145]: "Filter: Competition Level ≥ 0.4"
+              - generic [ref=e146]: "Sort: Common Keywords descending"
+              - generic [ref=e147]: "Export: \"Export to CSV\""
+            - generic [ref=e148] [cursor=pointer]:
+              - generic [ref=e149]: 📄
+              - generic [ref=e150]: Drop Semrush competitors CSV here or click to browse
+              - generic [ref=e151]: "Expects: Domain, Common Keywords, Traffic, Competition, Overlap"
+            - generic [ref=e152]: ✅ 4 competitors loaded from Semrush
+        - generic [ref=e153]:
+          - button "↓ Sample Ahrefs CSV" [ref=e154] [cursor=pointer]
+          - button "↓ Sample Semrush CSV" [ref=e155] [cursor=pointer]
+          - generic [ref=e156]: 📥 4 Ahrefs · 4 Semrush · 3 overlapping
+        - generic [ref=e157]:
+          - heading "📋 Combined Competitor Result" [level=2] [ref=e158]
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - text: Total
+              - strong [ref=e161]: "8"
+            - generic [ref=e162]:
+              - text: Unique Domains
+              - strong [ref=e163]: "5"
+            - generic [ref=e164]:
+              - generic [ref=e165]: Ahrefs
+              - strong [ref=e166]: "4"
+            - generic [ref=e167]:
+              - generic [ref=e168]: Semrush
+              - strong [ref=e169]: "4"
+            - generic [ref=e170]:
+              - generic [ref=e171]: Both
+              - strong [ref=e172]: "3"
+          - generic [ref=e173]:
+            - generic [ref=e174]: "Quick Filter:"
+            - textbox "Filter by domain name…" [ref=e175]
+            - combobox [ref=e176]:
+              - option "All Traffic Levels" [selected]
+              - option "High (100K+)"
+              - option "Medium (10K–100K)"
+              - option "Low (<10K)"
+            - generic [ref=e177]: 5 competitors
+          - table [ref=e179]:
+            - rowgroup [ref=e180]:
+              - row "# Competitor Domain Source Keywords Ahrefs Intersect % Traffic Semrush Comp. Level Semrush SE Keywords Semrush Org. Cost Action" [ref=e181]:
+                - columnheader "#" [ref=e182]
+                - columnheader "Competitor Domain" [ref=e183]
+                - columnheader "Source" [ref=e184]
+                - columnheader "Keywords" [ref=e185]
+                - columnheader "Ahrefs Intersect %" [ref=e186]
+                - columnheader "Traffic" [ref=e187]
+                - columnheader "Semrush Comp. Level" [ref=e188]
+                - columnheader "Semrush SE Keywords" [ref=e189]
+                - columnheader "Semrush Org. Cost" [ref=e190]
+                - columnheader "Action" [ref=e191]
+              - row "Common Keywords (Max) Ahrefs Total Keywords Ahrefs Org. Traffic Semrush Org. Traffic" [ref=e192]:
+                - columnheader "Common Keywords (Max)" [ref=e193]
+                - columnheader "Ahrefs Total Keywords" [ref=e194]
+                - columnheader "Ahrefs Org. Traffic" [ref=e195]
+                - columnheader "Semrush Org. Traffic" [ref=e196]
+            - rowgroup [ref=e197]:
+              - row "1 competitor-a.com Both 8,432 45.2% 22,100 145,000 0.85 24,500 150,200 $45,300 🔍 Niche Deep Dive" [ref=e198]:
+                - cell "1" [ref=e199]:
+                  - generic [ref=e200]: "1"
+                - cell "competitor-a.com" [ref=e201]:
+                  - strong [ref=e202]: competitor-a.com
+                - cell "Both" [ref=e203]:
+                  - generic [ref=e204]: Both
+                - cell "8,432" [ref=e205]
+                - cell "45.2%" [ref=e206]
+                - cell "22,100" [ref=e207]
+                - cell "145,000" [ref=e208]
+                - cell "0.85" [ref=e209]
+                - cell "24,500" [ref=e210]
+                - cell "150,200" [ref=e211]
+                - cell "$45,300" [ref=e212]
+                - cell "🔍 Niche Deep Dive" [ref=e213]:
+                  - button "🔍 Niche Deep Dive" [ref=e214] [cursor=pointer]
+              - row "2 competitor-b.com Both 5,120 32.8% 15,600 89,500 0.62 16,100 92,000 $21,100 🔍 Niche Deep Dive" [ref=e215]:
+                - cell "2" [ref=e216]:
+                  - generic [ref=e217]: "2"
+                - cell "competitor-b.com" [ref=e218]:
+                  - strong [ref=e219]: competitor-b.com
+                - cell "Both" [ref=e220]:
+                  - generic [ref=e221]: Both
+                - cell "5,120" [ref=e222]
+                - cell "32.8%" [ref=e223]
+                - cell "15,600" [ref=e224]
+                - cell "89,500" [ref=e225]
+                - cell "0.62" [ref=e226]
+                - cell "16,100" [ref=e227]
+                - cell "92,000" [ref=e228]
+                - cell "$21,100" [ref=e229]
+                - cell "🔍 Niche Deep Dive" [ref=e230]:
+                  - button "🔍 Niche Deep Dive" [ref=e231] [cursor=pointer]
+              - row "3 competitor-c.com Both 3,900 21.0% 54,000 320,000 0.45 58,000 315,000 $125,000 🔍 Niche Deep Dive" [ref=e232]:
+                - cell "3" [ref=e233]:
+                  - generic [ref=e234]: "3"
+                - cell "competitor-c.com" [ref=e235]:
+                  - strong [ref=e236]: competitor-c.com
+                - cell "Both" [ref=e237]:
+                  - generic [ref=e238]: Both
+                - cell "3,900" [ref=e239]
+                - cell "21.0%" [ref=e240]
+                - cell "54,000" [ref=e241]
+                - cell "320,000" [ref=e242]
+                - cell "0.45" [ref=e243]
+                - cell "58,000" [ref=e244]
+                - cell "315,000" [ref=e245]
+                - cell "$125,000" [ref=e246]
+                - cell "🔍 Niche Deep Dive" [ref=e247]:
+                  - button "🔍 Niche Deep Dive" [ref=e248] [cursor=pointer]
+              - row "4 competitor-d.com Ahrefs 2,150 14.5% 8,900 42,000 — — — — 🔍 Niche Deep Dive" [ref=e249]:
+                - cell "4" [ref=e250]:
+                  - generic [ref=e251]: "4"
+                - cell "competitor-d.com" [ref=e252]:
+                  - strong [ref=e253]: competitor-d.com
+                - cell "Ahrefs" [ref=e254]:
+                  - generic [ref=e255]: Ahrefs
+                - cell "2,150" [ref=e256]
+                - cell "14.5%" [ref=e257]
+                - cell "8,900" [ref=e258]
+                - cell "42,000" [ref=e259]
+                - cell "—" [ref=e260]
+                - cell "—" [ref=e261]
+                - cell "—" [ref=e262]
+                - cell "—" [ref=e263]
+                - cell "🔍 Niche Deep Dive" [ref=e264]:
+                  - button "🔍 Niche Deep Dive" [ref=e265] [cursor=pointer]
+              - row "5 competitor-e.com Semrush 1,800 — — — 0.25 7,500 38,000 $5,200 🔍 Niche Deep Dive" [ref=e266]:
+                - cell "5" [ref=e267]:
+                  - generic [ref=e268]: "5"
+                - cell "competitor-e.com" [ref=e269]:
+                  - strong [ref=e270]: competitor-e.com
+                - cell "Semrush" [ref=e271]:
+                  - generic [ref=e272]: Semrush
+                - cell "1,800" [ref=e273]
+                - cell "—" [ref=e274]
+                - cell "—" [ref=e275]
+                - cell "—" [ref=e276]
+                - cell "0.25" [ref=e277]
+                - cell "7,500" [ref=e278]
+                - cell "38,000" [ref=e279]
+                - cell "$5,200" [ref=e280]
+                - cell "🔍 Niche Deep Dive" [ref=e281]:
+                  - button "🔍 Niche Deep Dive" [ref=e282] [cursor=pointer]
+        - generic [ref=e283]:
+          - button "← Back" [ref=e284] [cursor=pointer]
+          - 'button "Next: Shared Buyer Keywords →" [ref=e285] [cursor=pointer]'
+    - text: 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥 🎥

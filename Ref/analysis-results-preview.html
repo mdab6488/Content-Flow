@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Analysis Results — Home Fitness Equipment</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0b1120;
+  --surface:#111827;
+  --surface2:#1a2540;
+  --surface3:#1e293b;
+  --border:#1e3a5f;
+  --cyan:#0891b2;--cyan-dim:#0e7490;--cyan-bg:#0891b218;--cyan-light:#67e8f9;
+  --green:#10b981;--green-bg:#10b98118;--green-light:#6ee7b7;
+  --amber:#f59e0b;--amber-bg:#f59e0b18;--amber-light:#fcd34d;
+  --red:#ef4444;--red-bg:#ef444418;
+  --purple:#8b5cf6;--purple-bg:#8b5cf618;
+  --text:#f1f5f9;--text2:#94a3b8;--text3:#475569;
+  --font:'Atkinson Hyperlegible',sans-serif;
+  --mono:'Space Mono',monospace;
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;padding:0;}
+
+/* ─── TOP HEADER BAR ─── */
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.topbar-left{display:flex;align-items:center;gap:14px;}
+.topbar-logo{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--cyan);}
+.topbar-divider{width:1px;height:20px;background:var(--border);}
+.topbar-title{font-size:13px;color:var(--text2);}
+.topbar-right{display:flex;align-items:center;gap:10px;}
+.badge-niche{background:var(--cyan-bg);border:1px solid var(--cyan);color:var(--cyan);font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:.5px;}
+.badge-tools{background:var(--surface2);border:1px solid var(--border);color:var(--text2);font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;}
+.btn-export{background:var(--green);color:#fff;border:none;border-radius:6px;padding:8px 16px;font-size:12px;font-weight:700;cursor:pointer;font-family:var(--font);}
+
+/* ─── MAIN LAYOUT ─── */
+.main{max-width:1100px;margin:0 auto;padding:28px 24px 60px;}
+
+/* ─── HERO SUMMARY ─── */
+.hero{background:linear-gradient(135deg,#0f1e3a 0%,#0b1120 60%,#091428 100%);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:24px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;background:radial-gradient(circle,#0891b215 0%,transparent 70%);pointer-events:none;}
+.hero-row{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.hero-left h1{font-size:22px;font-weight:700;margin-bottom:6px;line-height:1.3;}
+.hero-left p{font-size:14px;color:var(--text2);line-height:1.6;max-width:540px;}
+.hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.meta-tag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:4px;border:1px solid;}
+.meta-cyan{background:var(--cyan-bg);border-color:var(--cyan);color:var(--cyan);}
+.meta-green{background:var(--green-bg);border-color:var(--green);color:var(--green);}
+.meta-amber{background:var(--amber-bg);border-color:var(--amber);color:var(--amber);}
+
+/* ─── STAT CARDS ROW ─── */
+.stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 14px;}
+.stat-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text3);margin-bottom:8px;}
+.stat-val{font-size:22px;font-weight:700;font-family:var(--mono);line-height:1;}
+.stat-sub{font-size:11px;color:var(--text3);margin-top:5px;}
+.sv-green{color:var(--green);}
+.sv-cyan{color:var(--cyan);}
+.sv-amber{color:var(--amber);}
+.sv-purple{color:var(--purple);}
+.sv-text{color:var(--text);}
+
+/* ─── SOURCE SIGNALS BAR ─── */
+.signals-bar{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:24px;}
+.signals-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text3);margin-bottom:12px;}
+.signals-row{display:flex;flex-wrap:wrap;gap:8px;}
+.signal-chip{display:flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:6px 12px;font-size:12px;font-weight:700;}
+.signal-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.sd-green{background:var(--green);}
+.sd-cyan{background:var(--cyan);}
+.sd-amber{background:var(--amber);}
+.sd-purple{background:var(--purple);}
+.signal-count{font-size:10px;color:var(--text3);font-weight:400;}
+
+/* ─── SECTION HEADER ─── */
+.section-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.section-hdr h2{font-size:16px;font-weight:700;}
+.section-hdr span{font-size:12px;color:var(--text3);}
+.filter-row{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.filter-btn{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;color:var(--text2);font-family:var(--font);transition:all .15s;}
+.filter-btn.active{background:var(--cyan-bg);border-color:var(--cyan);color:var(--cyan);}
+
+/* ─── OPPORTUNITY CARDS ─── */
+.opp-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:20px;overflow:hidden;transition:border-color .2s;}
+.opp-card:hover{border-color:var(--cyan);}
+.opp-card.rank-1{border-top:3px solid var(--amber);}
+.opp-card.rank-2{border-top:3px solid var(--cyan);}
+.opp-card.rank-3{border-top:3px solid var(--green);}
+.opp-card.rank-4,.opp-card.rank-5{border-top:3px solid var(--border);}
+
+/* card top section */
+.card-top{padding:20px 22px 16px;border-bottom:1px solid var(--border);}
+.card-top-row{display:flex;align-items:flex-start;gap:16px;}
+.rank-badge{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;font-family:var(--mono);flex-shrink:0;}
+.rb-1{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber);}
+.rb-2{background:var(--cyan-bg);color:var(--cyan);border:1px solid var(--cyan);}
+.rb-3{background:var(--green-bg);color:var(--green);border:1px solid var(--green);}
+.rb-4,.rb-5{background:var(--surface2);color:var(--text2);border:1px solid var(--border);}
+.card-kw{font-size:18px;font-weight:700;margin-bottom:8px;line-height:1.3;flex:1;}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
+.tag{font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;border:1px solid;white-space:nowrap;}
+.tg{background:var(--green-bg);border-color:var(--green);color:var(--green);}
+.tc{background:var(--cyan-bg);border-color:var(--cyan);color:var(--cyan);}
+.ta{background:var(--amber-bg);border-color:var(--amber);color:var(--amber);}
+.tr{background:var(--red-bg);border-color:var(--red);color:var(--red);}
+.tn{background:var(--surface2);border-color:var(--border);color:var(--text2);}
+.tp{background:var(--purple-bg);border-color:var(--purple);color:var(--purple);}
+.card-rev-block{text-align:right;flex-shrink:0;}
+.rev-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:4px;}
+.rev-val{font-size:20px;font-weight:700;font-family:var(--mono);color:var(--green);}
+.rev-period{font-size:10px;color:var(--text3);}
+
+/* score meters */
+.score-bar-row{display:flex;gap:6px;margin-top:14px;}
+.score-meter{flex:1;background:var(--surface2);border-radius:6px;padding:10px;text-align:center;}
+.sm-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:6px;}
+.sm-ring{position:relative;width:48px;height:48px;margin:0 auto 6px;}
+.sm-ring svg{position:absolute;top:0;left:0;}
+.sm-ring-val{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:13px;font-weight:700;font-family:var(--mono);}
+.sm-sources{font-size:9px;color:var(--text3);}
+
+/* card body tabs */
+.card-body{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border);}
+.card-col{padding:18px 22px;}
+.card-col:first-child{border-right:1px solid var(--border);}
+.col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text3);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.col-icon{font-size:14px;}
+
+/* products table */
+.prod-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);}
+.prod-row:last-child{border-bottom:none;}
+.prod-left{flex:1;}
+.prod-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
+.prod-prog{font-size:11px;color:var(--text3);}
+.prod-right{text-align:right;flex-shrink:0;}
+.prod-comm{font-size:13px;font-weight:700;color:var(--green);}
+.prod-price{font-size:11px;color:var(--text3);}
+.intent-bar{height:4px;border-radius:2px;background:var(--surface3);margin-top:4px;overflow:hidden;}
+.intent-fill{height:100%;border-radius:2px;background:var(--green);}
+
+/* data signals grid */
+.signals-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.sig-item{background:var(--surface2);border-radius:6px;padding:8px 10px;}
+.sig-tool{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:4px;}
+.sig-data{font-size:12px;font-weight:700;color:var(--text);}
+.sig-detail{font-size:10px;color:var(--text3);}
+
+/* video brief */
+.card-brief{padding:18px 22px;}
+.brief-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.brief-title-text{font-size:14px;font-weight:700;color:var(--text);line-height:1.4;}
+.yt-pill{background:#ff0000;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.5px;}
+.brief-hook{background:var(--surface2);border-left:3px solid var(--cyan);border-radius:0 6px 6px 0;padding:10px 14px;font-size:13px;color:var(--text2);font-style:italic;line-height:1.6;margin-bottom:14px;}
+.brief-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px;}
+.brief-box{background:var(--surface2);border-radius:8px;padding:10px 12px;}
+.brief-box-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:6px;}
+.brief-box-val{font-size:12px;color:var(--text);line-height:1.5;}
+.outline-steps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.outline-step{display:flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:4px 10px;font-size:11px;color:var(--text2);}
+.step-num{width:16px;height:16px;border-radius:3px;background:var(--cyan-bg);border:1px solid var(--cyan);color:var(--cyan);font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--mono);}
+.why-box{background:var(--green-bg);border:1px solid var(--green);border-radius:8px;padding:12px 14px;font-size:12px;color:var(--text2);line-height:1.7;}
+.why-box strong{color:var(--green);}
+
+/* keyword data box */
+.kw-data-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+.kw-data-box{background:var(--surface2);border-radius:6px;padding:10px;text-align:center;}
+.kdb-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:5px;}
+.kdb-val{font-size:16px;font-weight:700;font-family:var(--mono);}
+
+/* market insight banner */
+.market-banner{background:var(--surface);border:1px solid var(--amber);border-radius:10px;padding:18px 20px;margin-bottom:24px;}
+.mb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--amber);margin-bottom:8px;}
+.mb-text{font-size:14px;color:var(--text2);line-height:1.7;}
+
+/* quick actions */
+.quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;}
+.qa-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;transition:border-color .2s;}
+.qa-card:hover{border-color:var(--cyan);}
+.qa-icon{font-size:22px;margin-bottom:8px;}
+.qa-title{font-size:13px;font-weight:700;margin-bottom:4px;}
+.qa-desc{font-size:12px;color:var(--text3);line-height:1.5;}
+
+/* trend spark */
+.trend-spark{display:flex;align-items:flex-end;gap:2px;height:28px;}
+.spark-bar{width:6px;border-radius:2px;background:var(--cyan-bg);}
+
+/* RESPONSIVE */
+@media(max-width:760px){
+  .stats-row{grid-template-columns:repeat(3,1fr);}
+  .card-body{grid-template-columns:1fr;}
+  .card-col:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .brief-grid{grid-template-columns:1fr 1fr;}
+  .kw-data-row{grid-template-columns:repeat(2,1fr);}
+  .quick-actions{grid-template-columns:1fr;}
+}
+@media(max-width:500px){
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+  .brief-grid{grid-template-columns:1fr;}
+}
+
+/* Tooltip */
+.tooltip-wrap{position:relative;display:inline-block;}
+.tooltip-icon{width:14px;height:14px;border-radius:50%;background:var(--surface3);border:1px solid var(--border);color:var(--text3);font-size:9px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;cursor:help;vertical-align:middle;}
+</style>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-logo">AI RESEARCH ENGINE</div>
+    <div class="topbar-divider"></div>
+    <div class="topbar-title">Analysis Results — May 2025</div>
+  </div>
+  <div class="topbar-right">
+    <span class="badge-niche">Home Fitness Equipment</span>
+    <span class="badge-tools">10 Tools · 200+ Keywords</span>
+    <button class="btn-export">↓ Export Briefs</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ── HERO SUMMARY ── -->
+<div class="hero">
+  <div class="hero-row">
+    <div class="hero-left">
+      <h1>5 High-Converting Opportunities Found</h1>
+      <p>Claude cross-referenced 200+ keywords across 10 SEO tools and identified these affiliate video opportunities — ranked by commission potential, YouTube competition gap, and buyer intent signals.</p>
+      <div class="hero-meta">
+        <span class="meta-tag meta-green">✓ Affiliate-validated</span>
+        <span class="meta-tag meta-cyan">✓ YouTube gap confirmed</span>
+        <span class="meta-tag meta-amber">⚡ 3 Exploding Topics detected</span>
+        <span class="meta-tag meta-cyan">Goal: Maximize Commissions</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── STATS ROW ── -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-label">Combined Monthly Revenue</div>
+    <div class="stat-val sv-green">$4,200</div>
+    <div class="stat-sub">est. after 90 days</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Videos to Produce</div>
+    <div class="stat-val sv-cyan">5</div>
+    <div class="stat-sub">full briefs ready</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Avg Affiliate Score</div>
+    <div class="stat-val sv-amber">8.4</div>
+    <div class="stat-sub">out of 10</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Avg YouTube Score</div>
+    <div class="stat-val sv-purple">7.9</div>
+    <div class="stat-sub">out of 10</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Start This Week</div>
+    <div class="stat-val sv-text" style="font-size:13px;font-family:var(--font);line-height:1.4;">Under-Desk Treadmill</div>
+    <div class="stat-sub">highest urgency</div>
+  </div>
+</div>
+
+<!-- ── SOURCES BAR ── -->
+<div class="signals-bar">
+  <div class="signals-title">Data Sources Used in This Analysis</div>
+  <div class="signals-row">
+    <div class="signal-chip"><span class="signal-dot sd-cyan"></span>Ahrefs <span class="signal-count">20 kws</span></div>
+    <div class="signal-chip"><span class="signal-dot sd-cyan"></span>SEMrush <span class="signal-count">20 kws</span></div>
+    <div class="signal-chip"><span class="signal-dot sd-green"></span>Ubersuggest <span class="signal-count">25 kws</span></div>
+    <div class="signal-chip"><span class="signal-dot sd-amber"></span>VidIQ <span class="signal-count">25 videos</span></div>
+    <div class="signal-chip"><span class="signal-dot sd-cyan"></span>SimilarWeb <span class="signal-count">20 pages</span></div>
+    <div class="signal-chip"><span class="signal-dot sd-green"></span>AnswerThePublic <span class="signal-count">40 questions</span></div>
+    <div class="signal-chip"><span class="signal-dot sd-amber"></span>ExplodingTopics <span class="signal-count">20 trends</span></div>
+    <div class="signal-chip"><span class="signal-dot sd-purple"></span>AnswerSocrates <span class="signal-count">30 PAA</span></div>
+    <div class="signal-chip"><span class="signal-dot sd-green"></span>Seositecheckup <span class="signal-count">25 checks</span></div>
+    <div class="signal-chip"><span class="signal-dot sd-amber"></span>SEOptimer <span class="signal-count">28 metrics</span></div>
+  </div>
+</div>
+
+<!-- ── MARKET INSIGHT ── -->
+<div class="market-banner">
+  <div class="mb-label">⚡ Market Insight from AI Analysis</div>
+  <div class="mb-text">The home fitness equipment niche is entering a second wave of demand in 2025 — driven by under-desk treadmills and cable machines for home, both flagged as <strong style="color:var(--amber)">Exploding</strong> by ExplodingTopics with 284% and 156% growth respectively. YouTube competition in this space is 18–24 months behind Google SEO — most top-ranking YouTube videos are 2022–2023 vintages with outdated product recommendations. This creates a large freshness gap: new "2025 updated" reviews will outrank existing content rapidly. Amazon affiliate commissions in this category average $18–$65 per sale, and average order values are high ($200–$600), meaning even moderate view counts convert to meaningful revenue.</div>
+</div>
+
+<!-- ── FILTER ROW ── -->
+<div class="section-hdr">
+  <h2>Top 5 Ranked Opportunities</h2>
+  <span>Sorted by Overall Score</span>
+</div>
+<div class="filter-row">
+  <button class="filter-btn active">All Opportunities</button>
+  <button class="filter-btn">Score 9+ Only</button>
+  <button class="filter-btn">Low Competition</button>
+  <button class="filter-btn">Exploding Trend</button>
+  <button class="filter-btn">Quick Win (&lt;30 KD)</button>
+</div>
+
+<!-- ════════════════════════════════════════
+     OPPORTUNITY #1 — Under Desk Treadmill
+════════════════════════════════════════ -->
+<div class="opp-card rank-1">
+  <div class="card-top">
+    <div class="card-top-row">
+      <div class="rank-badge rb-1">#1</div>
+      <div style="flex:1;">
+        <div class="card-kw">Best Under Desk Treadmill 2025</div>
+        <div class="card-tags">
+          <span class="tag tg">Low Competition</span>
+          <span class="tag tc">Transactional Intent</span>
+          <span class="tag ta">⚡ Exploding Topic</span>
+          <span class="tag tp">284% Growth</span>
+          <span class="tag tn">via Ahrefs + ExplodingTopics + VidIQ</span>
+        </div>
+      </div>
+      <div class="card-rev-block">
+        <div class="rev-label">Est. Revenue</div>
+        <div class="rev-val">$1,200</div>
+        <div class="rev-period">per month</div>
+      </div>
+    </div>
+    <!-- SCORE METERS -->
+    <div class="score-bar-row" style="margin-top:16px;">
+      <div class="score-meter">
+        <div class="sm-label">Affiliate Score</div>
+        <div class="sm-ring">
+          <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#f59e0b" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="12.6" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+          <div class="sm-ring-val" style="color:var(--amber);">9.2</div>
+        </div>
+        <div class="sm-sources">Ahrefs · SEMrush</div>
+      </div>
+      <div class="score-meter">
+        <div class="sm-label">YouTube Score</div>
+        <div class="sm-ring">
+          <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0891b2" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="15.1" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+          <div class="sm-ring-val" style="color:var(--cyan);">8.8</div>
+        </div>
+        <div class="sm-sources">VidIQ · SimilarWeb</div>
+      </div>
+      <div class="score-meter">
+        <div class="sm-label">Trend Score</div>
+        <div class="sm-ring">
+          <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#8b5cf6" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="10.0" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+          <div class="sm-ring-val" style="color:var(--purple);">9.5</div>
+        </div>
+        <div class="sm-sources">ExplodingTopics</div>
+      </div>
+      <div class="score-meter">
+        <div class="sm-label">Overall Score</div>
+        <div class="sm-ring">
+          <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#10b981" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="12.6" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+          <div class="sm-ring-val" style="color:var(--green);">9.2</div>
+        </div>
+        <div class="sm-sources">All 10 tools</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEYWORD DATA -->
+  <div style="padding:16px 22px;border-bottom:1px solid var(--border);">
+    <div class="kw-data-row">
+      <div class="kw-data-box"><div class="kdb-label">Monthly Searches</div><div class="kdb-val sv-cyan">22,000</div></div>
+      <div class="kw-data-box"><div class="kdb-label">Keyword Difficulty</div><div class="kdb-val sv-green">28 / 100</div></div>
+      <div class="kw-data-box"><div class="kdb-label">Avg CPC</div><div class="kdb-val sv-amber">$2.40</div></div>
+      <div class="kw-data-box"><div class="kdb-label">YT Competition</div><div class="kdb-val sv-green">38 / 100</div></div>
+    </div>
+  </div>
+
+  <!-- TWO COLUMN BODY -->
+  <div class="card-body">
+    <!-- LEFT: Affiliate Products -->
+    <div class="card-col">
+      <div class="col-title"><span class="col-icon">🛒</span> Affiliate Products to Feature</div>
+      <div class="prod-row">
+        <div class="prod-left"><div class="prod-name">LifeSpan TR1200-DT3</div><div class="prod-prog">Amazon Associates · Walking Pad</div></div>
+        <div class="prod-right"><div class="prod-comm">$42–$68/sale</div><div class="prod-price">Avg price $699</div></div>
+      </div>
+      <div class="prod-row">
+        <div class="prod-left"><div class="prod-name">Urevo Foldi Mini Treadmill</div><div class="prod-prog">Amazon Associates · Budget Pick</div></div>
+        <div class="prod-right"><div class="prod-comm">$18–$28/sale</div><div class="prod-price">Avg price $289</div></div>
+      </div>
+      <div class="prod-row">
+        <div class="prod-left"><div class="prod-name">Walkingpad A1 Pro</div><div class="prod-prog">Amazon Associates · Premium</div></div>
+        <div class="prod-right"><div class="prod-comm">$55–$80/sale</div><div class="prod-price">Avg price $899</div></div>
+      </div>
+      <div class="prod-row">
+        <div class="prod-left"><div class="prod-name">Flexispot Standing Desk Bundle</div><div class="prod-prog">Flexispot Affiliate Program</div></div>
+        <div class="prod-right"><div class="prod-comm">$40–$70/sale</div><div class="prod-price">Avg price $649</div></div>
+      </div>
+    </div>
+    <!-- RIGHT: Data Signals -->
+    <div class="card-col">
+      <div class="col-title"><span class="col-icon">📡</span> Cross-Tool Data Signals</div>
+      <div class="signals-grid">
+        <div class="sig-item"><div class="sig-tool">Ahrefs</div><div class="sig-data">KD 28 · CPC $2.40</div><div class="sig-detail">38K global volume</div></div>
+        <div class="sig-item"><div class="sig-tool">VidIQ</div><div class="sig-data">Score 72 / 100</div><div class="sig-detail">4.2M monthly views</div></div>
+        <div class="sig-item"><div class="sig-tool">ExplodingTopics</div><div class="sig-data">+284% growth</div><div class="sig-detail">Status: EXPLODING</div></div>
+        <div class="sig-item"><div class="sig-tool">AnswerThePublic</div><div class="sig-data">2,600 searches</div><div class="sig-detail">"Are they worth it?"</div></div>
+        <div class="sig-item"><div class="sig-tool">SimilarWeb</div><div class="sig-data">186K visits/mo</div><div class="sig-detail">4.8 min avg session</div></div>
+        <div class="sig-item"><div class="sig-tool">AnswerSocrates</div><div class="sig-data">Very High freq</div><div class="sig-detail">Top buyer question</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO BRIEF -->
+  <div class="card-brief">
+    <div class="col-title"><span class="col-icon">🎬</span> Video Brief <span class="yt-pill" style="margin-left:6px;">YOUTUBE</span></div>
+    <div class="brief-header">
+      <div class="brief-title-text">Best Under Desk Treadmills 2025 — I Tested 6 for 30 Days (Honest Review)</div>
+    </div>
+    <div class="brief-hook">"I walked 47 miles at my desk last month — here's the honest truth about every walking pad I tested, including the two I returned."</div>
+    <div class="brief-grid">
+      <div class="brief-box"><div class="brief-box-label">Target Length</div><div class="brief-box-val">14–18 minutes</div></div>
+      <div class="brief-box"><div class="brief-box-label">Thumbnail Concept</div><div class="brief-box-val">Split screen: treadmill vs desk. Red X on bad ones, gold star on winner.</div></div>
+      <div class="brief-box"><div class="brief-box-label">Best Upload Time</div><div class="brief-box-val">Tuesday 9–11AM EST (peak search window)</div></div>
+    </div>
+    <div class="col-title" style="margin-bottom:8px;">Video Outline</div>
+    <div class="outline-steps">
+      <div class="outline-step"><span class="step-num">1</span>Hook — "I returned two of these" (30s)</div>
+      <div class="outline-step"><span class="step-num">2</span>Why under-desk treadmills in 2025 (1min)</div>
+      <div class="outline-step"><span class="step-num">3</span>My 6 criteria for testing (1min)</div>
+      <div class="outline-step"><span class="step-num">4</span>Budget pick: Urevo (2min)</div>
+      <div class="outline-step"><span class="step-num">5</span>Mid-range winner: LifeSpan (3min)</div>
+      <div class="outline-step"><span class="step-num">6</span>Premium: WalkingPad A1 Pro (2min)</div>
+      <div class="outline-step"><span class="step-num">7</span>The two I returned + why (2min)</div>
+      <div class="outline-step"><span class="step-num">8</span>Final verdict + affiliate links CTA (1min)</div>
+    </div>
+    <div class="why-box"><strong>Why this wins:</strong> ExplodingTopics shows +284% growth in search demand — the YouTube content is 18–24 months old and none of them tested 2024/2025 models. A new "I tested 6" format beats every existing video on freshness alone. The affiliate stack (walking pads + desks) means dual commissions per viewer, pushing average revenue per 1,000 views above $18.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     OPPORTUNITY #2 — Adjustable Dumbbells
+════════════════════════════════════════ -->
+<div class="opp-card rank-2">
+  <div class="card-top">
+    <div class="card-top-row">
+      <div class="rank-badge rb-2">#2</div>
+      <div style="flex:1;">
+        <div class="card-kw">Best Adjustable Dumbbells 2025</div>
+        <div class="card-tags">
+          <span class="tag ta">Medium Competition</span>
+          <span class="tag tc">Commercial Intent</span>
+          <span class="tag tg">31K Monthly Searches</span>
+          <span class="tag tn">via Ahrefs · SEMrush · Ubersuggest</span>
+        </div>
+      </div>
+      <div class="card-rev-block">
+        <div class="rev-label">Est. Revenue</div>
+        <div class="rev-val">$980</div>
+        <div class="rev-period">per month</div>
+      </div>
+    </div>
+    <div class="score-bar-row" style="margin-top:16px;">
+      <div class="score-meter"><div class="sm-label">Affiliate Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#f59e0b" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="15.1" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--amber);">8.8</div></div><div class="sm-sources">Ahrefs · SEMrush</div></div>
+      <div class="score-meter"><div class="sm-label">YouTube Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0891b2" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="20.1" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--cyan);">8.4</div></div><div class="sm-sources">VidIQ</div></div>
+      <div class="score-meter"><div class="sm-label">Trend Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#8b5cf6" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="25.1" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--purple);">8.0</div></div><div class="sm-sources">ExplodingTopics</div></div>
+      <div class="score-meter"><div class="sm-label">Overall Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#10b981" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="17.6" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--green);">8.6</div></div><div class="sm-sources">All 10 tools</div></div>
+    </div>
+  </div>
+  <div style="padding:16px 22px;border-bottom:1px solid var(--border);">
+    <div class="kw-data-row">
+      <div class="kw-data-box"><div class="kdb-label">Monthly Searches</div><div class="kdb-val sv-cyan">31,000</div></div>
+      <div class="kw-data-box"><div class="kdb-label">Keyword Difficulty</div><div class="kdb-val sv-amber">41 / 100</div></div>
+      <div class="kw-data-box"><div class="kdb-label">Avg CPC</div><div class="kdb-val sv-amber">$1.80</div></div>
+      <div class="kw-data-box"><div class="kdb-label">YT Competition</div><div class="kdb-val sv-amber">52 / 100</div></div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card-col">
+      <div class="col-title"><span class="col-icon">🛒</span> Affiliate Products to Feature</div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">Bowflex SelectTech 552</div><div class="prod-prog">Amazon Associates · Top Pick</div></div><div class="prod-right"><div class="prod-comm">$32–$52/sale</div><div class="prod-price">Avg price $429</div></div></div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">PowerBlock Elite EXP</div><div class="prod-prog">Amazon Associates · Pro Pick</div></div><div class="prod-right"><div class="prod-comm">$38–$60/sale</div><div class="prod-price">Avg price $499</div></div></div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">NüBell Adjustable Dumbbell</div><div class="prod-prog">Lululemon Studio Affiliate</div></div><div class="prod-right"><div class="prod-comm">$45–$72/sale</div><div class="prod-price">Avg price $599</div></div></div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">ATIVAFIT Adjustable (Budget)</div><div class="prod-prog">Amazon Associates · Budget Pick</div></div><div class="prod-right"><div class="prod-comm">$12–$18/sale</div><div class="prod-price">Avg price $159</div></div></div>
+    </div>
+    <div class="card-col">
+      <div class="col-title"><span class="col-icon">📡</span> Cross-Tool Data Signals</div>
+      <div class="signals-grid">
+        <div class="sig-item"><div class="sig-tool">Ahrefs</div><div class="sig-data">KD 41 · Global 52K</div><div class="sig-detail">Shopping ads prominent</div></div>
+        <div class="sig-item"><div class="sig-tool">VidIQ</div><div class="sig-data">Score 61 / 100</div><div class="sig-detail">8.1M monthly views</div></div>
+        <div class="sig-item"><div class="sig-tool">SEMrush</div><div class="sig-data">Intent: Commercial</div><div class="sig-detail">KD 41 · CPC $1.80</div></div>
+        <div class="sig-item"><div class="sig-tool">AnswerSocrates</div><div class="sig-data">Very High freq</div><div class="sig-detail">"What weight to start?"</div></div>
+        <div class="sig-item"><div class="sig-tool">AnswerThePublic</div><div class="sig-data">940 searches</div><div class="sig-detail">"Are they worth buying?"</div></div>
+        <div class="sig-item"><div class="sig-tool">SimilarWeb</div><div class="sig-data">226K page visits</div><div class="sig-detail">4.2 min avg session</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="card-brief">
+    <div class="col-title"><span class="col-icon">🎬</span> Video Brief <span class="yt-pill" style="margin-left:6px;">YOUTUBE</span></div>
+    <div class="brief-header"><div class="brief-title-text">Best Adjustable Dumbbells 2025 — Bowflex vs PowerBlock vs NüBell (After 60 Days)</div></div>
+    <div class="brief-hook">"I bought all three of the most popular adjustable dumbbells so you don't have to — here's what nobody tells you about each one."</div>
+    <div class="brief-grid">
+      <div class="brief-box"><div class="brief-box-label">Target Length</div><div class="brief-box-val">16–20 minutes</div></div>
+      <div class="brief-box"><div class="brief-box-label">Thumbnail Concept</div><div class="brief-box-val">3 dumbbells side by side, big VS text, your face reacting</div></div>
+      <div class="brief-box"><div class="brief-box-label">Affiliate Strategy</div><div class="brief-box-val">Pin "best price" comment + description link stack</div></div>
+    </div>
+    <div class="outline-steps">
+      <div class="outline-step"><span class="step-num">1</span>Hook — Show all 3, say total cost (30s)</div>
+      <div class="outline-step"><span class="step-num">2</span>Why adjustable dumbbells? (1min)</div>
+      <div class="outline-step"><span class="step-num">3</span>Bowflex SelectTech 552 review (3min)</div>
+      <div class="outline-step"><span class="step-num">4</span>PowerBlock Elite EXP review (3min)</div>
+      <div class="outline-step"><span class="step-num">5</span>NüBell premium review (2min)</div>
+      <div class="outline-step"><span class="step-num">6</span>Budget pick under $200 (1min)</div>
+      <div class="outline-step"><span class="step-num">7</span>My final pick + who each is for (2min)</div>
+      <div class="outline-step"><span class="step-num">8</span>Affiliate CTA + pinned comment (1min)</div>
+    </div>
+    <div class="why-box"><strong>Why this wins:</strong> The "Bowflex vs PowerBlock" comparison gets 6,400 monthly searches alone on top of the main keyword. AnswerSocrates shows "what weight should a beginner start with?" is Very High frequency — adding a beginner buying guide section captures this audience and increases watch time, boosting the algorithm. High-ticket products mean 3–5 sales per 1,000 views equals $100–$250 RPE (revenue per episode).</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     OPPORTUNITY #3 — Home Gym Cable Machine
+════════════════════════════════════════ -->
+<div class="opp-card rank-3">
+  <div class="card-top">
+    <div class="card-top-row">
+      <div class="rank-badge rb-3">#3</div>
+      <div style="flex:1;">
+        <div class="card-kw">Best Cable Machine for Home Gym 2025</div>
+        <div class="card-tags">
+          <span class="tag tg">Low–Medium Competition</span>
+          <span class="tag tc">Commercial Intent</span>
+          <span class="tag ta">⚡ Exploding +156%</span>
+          <span class="tag tn">via Ahrefs · ExplodingTopics · VidIQ</span>
+        </div>
+      </div>
+      <div class="card-rev-block">
+        <div class="rev-label">Est. Revenue</div>
+        <div class="rev-val">$860</div>
+        <div class="rev-period">per month</div>
+      </div>
+    </div>
+    <div class="score-bar-row" style="margin-top:16px;">
+      <div class="score-meter"><div class="sm-label">Affiliate Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#f59e0b" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="17.6" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--amber);">8.6</div></div><div class="sm-sources">Ahrefs · SEMrush</div></div>
+      <div class="score-meter"><div class="sm-label">YouTube Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0891b2" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="17.6" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--cyan);">8.6</div></div><div class="sm-sources">VidIQ · SimilarWeb</div></div>
+      <div class="score-meter"><div class="sm-label">Trend Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#8b5cf6" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="20.1" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--purple);">8.4</div></div><div class="sm-sources">ExplodingTopics</div></div>
+      <div class="score-meter"><div class="sm-label">Overall Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#10b981" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="20.1" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--green);">8.4</div></div><div class="sm-sources">All 10 tools</div></div>
+    </div>
+  </div>
+  <div style="padding:16px 22px;border-bottom:1px solid var(--border);">
+    <div class="kw-data-row">
+      <div class="kw-data-box"><div class="kdb-label">Monthly Searches</div><div class="kdb-val sv-cyan">13,600</div></div>
+      <div class="kw-data-box"><div class="kdb-label">Keyword Difficulty</div><div class="kdb-val sv-green">35 / 100</div></div>
+      <div class="kw-data-box"><div class="kdb-label">Avg CPC</div><div class="kdb-val sv-amber">$4.90</div></div>
+      <div class="kw-data-box"><div class="kdb-label">YT Competition</div><div class="kdb-val sv-green">36 / 100</div></div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card-col">
+      <div class="col-title"><span class="col-icon">🛒</span> Affiliate Products to Feature</div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">REP Fitness FT-100</div><div class="prod-prog">REP Fitness Affiliate · Best Overall</div></div><div class="prod-right"><div class="prod-comm">$60–$90/sale</div><div class="prod-price">Avg price $899</div></div></div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">Archon Fitness Functional Trainer</div><div class="prod-prog">Amazon Associates · Budget</div></div><div class="prod-right"><div class="prod-comm">$35–$55/sale</div><div class="prod-price">Avg price $549</div></div></div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">Major Lutie Pulley System</div><div class="prod-prog">Amazon Associates · Compact</div></div><div class="prod-right"><div class="prod-comm">$12–$20/sale</div><div class="prod-price">Avg price $159</div></div></div>
+    </div>
+    <div class="card-col">
+      <div class="col-title"><span class="col-icon">📡</span> Cross-Tool Data Signals</div>
+      <div class="signals-grid">
+        <div class="sig-item"><div class="sig-tool">ExplodingTopics</div><div class="sig-data">+156% growth</div><div class="sig-detail">Status: EXPLODING</div></div>
+        <div class="sig-item"><div class="sig-tool">VidIQ</div><div class="sig-data">Score 71 / 100</div><div class="sig-detail">1.8M monthly views</div></div>
+        <div class="sig-item"><div class="sig-tool">Ahrefs</div><div class="sig-data">CPC $4.90</div><div class="sig-detail">High commercial value</div></div>
+        <div class="sig-item"><div class="sig-tool">AnswerSocrates</div><div class="sig-data">High frequency</div><div class="sig-detail">"Is it worth it?"</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="card-brief">
+    <div class="col-title"><span class="col-icon">🎬</span> Video Brief <span class="yt-pill" style="margin-left:6px;">YOUTUBE</span></div>
+    <div class="brief-header"><div class="brief-title-text">Best Cable Machine for Home Gym 2025 — Complete Buyer's Guide (All Budgets)</div></div>
+    <div class="brief-hook">"A cable machine completely replaced my gym membership — here's everything you need to know before spending $200 to $1,200."</div>
+    <div class="outline-steps">
+      <div class="outline-step"><span class="step-num">1</span>Why cable machines are worth it (1min)</div>
+      <div class="outline-step"><span class="step-num">2</span>Budget: pulley system under $200 (2min)</div>
+      <div class="outline-step"><span class="step-num">3</span>Mid-range: Archon $549 (2min)</div>
+      <div class="outline-step"><span class="step-num">4</span>Best overall: REP FT-100 (3min)</div>
+      <div class="outline-step"><span class="step-num">5</span>Space requirements guide (1min)</div>
+      <div class="outline-step"><span class="step-num">6</span>My final recommendation (1min)</div>
+    </div>
+    <div class="why-box"><strong>Why this wins:</strong> CPC of $4.90 is the highest in the niche — advertisers know buyers are high-intent and high-spend. ExplodingTopics shows +156% growth with the "functional trainer" sub-topic growing even faster at +172%. YouTube has very few updated 2025 videos on this topic. Average product price over $500 means each affiliate conversion generates $40–$90.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     OPPORTUNITY #4 — Peloton Alternative
+════════════════════════════════════════ -->
+<div class="opp-card rank-4">
+  <div class="card-top">
+    <div class="card-top-row">
+      <div class="rank-badge rb-4">#4</div>
+      <div style="flex:1;">
+        <div class="card-kw">Best Peloton Alternatives 2025</div>
+        <div class="card-tags">
+          <span class="tag ta">Medium Competition</span>
+          <span class="tag tc">Commercial Intent</span>
+          <span class="tag ta">⚡ +188% Growth</span>
+          <span class="tag tn">via SEMrush · ExplodingTopics · VidIQ</span>
+        </div>
+      </div>
+      <div class="card-rev-block">
+        <div class="rev-label">Est. Revenue</div>
+        <div class="rev-val">$640</div>
+        <div class="rev-period">per month</div>
+      </div>
+    </div>
+    <div class="score-bar-row" style="margin-top:16px;">
+      <div class="score-meter"><div class="sm-label">Affiliate Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#f59e0b" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="22.6" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--amber);">8.2</div></div><div class="sm-sources">SEMrush · Ahrefs</div></div>
+      <div class="score-meter"><div class="sm-label">YouTube Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0891b2" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="22.6" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--cyan);">8.2</div></div><div class="sm-sources">VidIQ</div></div>
+      <div class="score-meter"><div class="sm-label">Trend Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#8b5cf6" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="22.6" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--purple);">8.2</div></div><div class="sm-sources">ExplodingTopics</div></div>
+      <div class="score-meter"><div class="sm-label">Overall Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#10b981" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="25.1" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--green);">8.0</div></div><div class="sm-sources">All 10 tools</div></div>
+    </div>
+  </div>
+  <div style="padding:16px 22px;border-bottom:1px solid var(--border);">
+    <div class="kw-data-row">
+      <div class="kw-data-box"><div class="kdb-label">Monthly Searches</div><div class="kdb-val sv-cyan">8,200</div></div>
+      <div class="kw-data-box"><div class="kdb-label">Keyword Difficulty</div><div class="kdb-val sv-amber">43 / 100</div></div>
+      <div class="kw-data-box"><div class="kdb-label">Avg CPC</div><div class="kdb-val sv-amber">$4.20</div></div>
+      <div class="kw-data-box"><div class="kdb-label">YT Competition</div><div class="kdb-val sv-amber">48 / 100</div></div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card-col">
+      <div class="col-title"><span class="col-icon">🛒</span> Affiliate Products to Feature</div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">Echelon EX-5S Bike</div><div class="prod-prog">Echelon Affiliate Program</div></div><div class="prod-right"><div class="prod-comm">$45–$75/sale</div><div class="prod-price">Avg price $799</div></div></div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">NordicTrack S22i Studio Bike</div><div class="prod-prog">iFIT Affiliate Program</div></div><div class="prod-right"><div class="prod-comm">$80–$130/sale</div><div class="prod-price">Avg price $1,599</div></div></div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">Schwinn IC4 Indoor Bike</div><div class="prod-prog">Amazon Associates · Budget</div></div><div class="prod-right"><div class="prod-comm">$28–$42/sale</div><div class="prod-price">Avg price $449</div></div></div>
+    </div>
+    <div class="card-col">
+      <div class="col-title"><span class="col-icon">📡</span> Cross-Tool Data Signals</div>
+      <div class="signals-grid">
+        <div class="sig-item"><div class="sig-tool">ExplodingTopics</div><div class="sig-data">+188% growth</div><div class="sig-detail">Peloton alternatives</div></div>
+        <div class="sig-item"><div class="sig-tool">VidIQ</div><div class="sig-data">Score 63 / 100</div><div class="sig-detail">3.2M monthly views</div></div>
+        <div class="sig-item"><div class="sig-tool">AnswerSocrates</div><div class="sig-data">High frequency</div><div class="sig-detail">"What's cheaper?"</div></div>
+        <div class="sig-item"><div class="sig-tool">SEMrush</div><div class="sig-data">Intent: Commercial</div><div class="sig-detail">CPC $4.20</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="card-brief">
+    <div class="col-title"><span class="col-icon">🎬</span> Video Brief <span class="yt-pill" style="margin-left:6px;">YOUTUBE</span></div>
+    <div class="brief-header"><div class="brief-title-text">Best Peloton Alternatives 2025 — Same Quality, Half the Price</div></div>
+    <div class="brief-hook">"Peloton charges $1,445 — but I found 3 bikes that give you 90% of the experience for a fraction of the cost."</div>
+    <div class="outline-steps">
+      <div class="outline-step"><span class="step-num">1</span>What makes Peloton worth $1,445? (1min)</div>
+      <div class="outline-step"><span class="step-num">2</span>Echelon EX-5S deep dive (3min)</div>
+      <div class="outline-step"><span class="step-num">3</span>NordicTrack S22i comparison (3min)</div>
+      <div class="outline-step"><span class="step-num">4</span>Schwinn IC4 budget pick (2min)</div>
+      <div class="outline-step"><span class="step-num">5</span>Which subscription service is best (1min)</div>
+      <div class="outline-step"><span class="step-num">6</span>Final verdict by budget (1min)</div>
+    </div>
+    <div class="why-box"><strong>Why this wins:</strong> The NordicTrack affiliate commission alone is $80–$130 per sale — one of the highest payouts in home fitness. The "Peloton alternatives" framing captures searchers with high purchase intent who have already decided to buy a bike. AnswerSocrates shows "what is cheaper than Peloton" is a High-frequency PAA question, perfect for an FAQ section that captures featured snippet traffic.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     OPPORTUNITY #5 — Mini Stepper Machine
+════════════════════════════════════════ -->
+<div class="opp-card rank-5">
+  <div class="card-top">
+    <div class="card-top-row">
+      <div class="rank-badge rb-5">#5</div>
+      <div style="flex:1;">
+        <div class="card-kw">Best Mini Stepper Machine 2025</div>
+        <div class="card-tags">
+          <span class="tag tg">Low Competition</span>
+          <span class="tag tc">Commercial Intent</span>
+          <span class="tag tg">VidIQ Score 86/100</span>
+          <span class="tag tn">via VidIQ · Ubersuggest · AnswerThePublic</span>
+        </div>
+      </div>
+      <div class="card-rev-block">
+        <div class="rev-label">Est. Revenue</div>
+        <div class="rev-val">$320</div>
+        <div class="rev-period">per month</div>
+      </div>
+    </div>
+    <div class="score-bar-row" style="margin-top:16px;">
+      <div class="score-meter"><div class="sm-label">Affiliate Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#f59e0b" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="28.3" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--amber);">7.8</div></div><div class="sm-sources">Ubersuggest</div></div>
+      <div class="score-meter"><div class="sm-label">YouTube Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#0891b2" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="15.1" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--cyan);">8.8</div></div><div class="sm-sources">VidIQ Score 86</div></div>
+      <div class="score-meter"><div class="sm-label">Trend Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#8b5cf6" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="37.7" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--purple);">7.0</div></div><div class="sm-sources">ExplodingTopics</div></div>
+      <div class="score-meter"><div class="sm-label">Overall Score</div><div class="sm-ring"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#1e3a5f" stroke-width="4"/><circle cx="24" cy="24" r="20" fill="none" stroke="#10b981" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="31.4" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg><div class="sm-ring-val" style="color:var(--green);">7.5</div></div><div class="sm-sources">All 10 tools</div></div>
+    </div>
+  </div>
+  <div style="padding:16px 22px;border-bottom:1px solid var(--border);">
+    <div class="kw-data-row">
+      <div class="kw-data-box"><div class="kdb-label">Monthly Searches</div><div class="kdb-val sv-cyan">7,600</div></div>
+      <div class="kw-data-box"><div class="kdb-label">Keyword Difficulty</div><div class="kdb-val sv-green">21 / 100</div></div>
+      <div class="kw-data-box"><div class="kdb-label">Avg CPC</div><div class="kdb-val sv-green">$1.90</div></div>
+      <div class="kw-data-box"><div class="kdb-label">YT Competition</div><div class="kdb-val sv-green">16 / 100</div></div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card-col">
+      <div class="col-title"><span class="col-icon">🛒</span> Affiliate Products to Feature</div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">STEPFIT Mini Stepper</div><div class="prod-prog">Amazon Associates · Best Overall</div></div><div class="prod-right"><div class="prod-comm">$8–$14/sale</div><div class="prod-price">Avg price $89</div></div></div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">Sunny Health Twist Stepper</div><div class="prod-prog">Amazon Associates · Budget</div></div><div class="prod-right"><div class="prod-comm">$6–$10/sale</div><div class="prod-price">Avg price $69</div></div></div>
+      <div class="prod-row"><div class="prod-left"><div class="prod-name">Cubii Pro Under-Desk Elliptical</div><div class="prod-prog">Cubii Affiliate · Upsell Pick</div></div><div class="prod-right"><div class="prod-comm">$28–$45/sale</div><div class="prod-price">Avg price $349</div></div></div>
+    </div>
+    <div class="card-col">
+      <div class="col-title"><span class="col-icon">📡</span> Cross-Tool Data Signals</div>
+      <div class="signals-grid">
+        <div class="sig-item"><div class="sig-tool">VidIQ</div><div class="sig-data">Score 86 / 100</div><div class="sig-detail">Lowest competition</div></div>
+        <div class="sig-item"><div class="sig-tool">Ubersuggest</div><div class="sig-data">KD only 21</div><div class="sig-detail">Easy to rank</div></div>
+        <div class="sig-item"><div class="sig-tool">AnswerThePublic</div><div class="sig-data">720 searches/mo</div><div class="sig-detail">"Can it help lose weight?"</div></div>
+        <div class="sig-item"><div class="sig-tool">SimilarWeb</div><div class="sig-data">49K page visits</div><div class="sig-detail">45% bounce rate</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="card-brief">
+    <div class="col-title"><span class="col-icon">🎬</span> Video Brief <span class="yt-pill" style="margin-left:6px;">YOUTUBE</span></div>
+    <div class="brief-header"><div class="brief-title-text">Best Mini Stepper 2025 — I Used One Every Day for 30 Days (Real Results)</div></div>
+    <div class="brief-hook">"I stepped 12,000 steps a day without leaving my apartment — here's what actually happened to my body and the steppers worth buying."</div>
+    <div class="outline-steps">
+      <div class="outline-step"><span class="step-num">1</span>My 30-day results reveal (1min)</div>
+      <div class="outline-step"><span class="step-num">2</span>Best budget stepper under $70 (2min)</div>
+      <div class="outline-step"><span class="step-num">3</span>Best overall STEPFIT review (2min)</div>
+      <div class="outline-step"><span class="step-num">4</span>Cubii Pro upgrade option (2min)</div>
+      <div class="outline-step"><span class="step-num">5</span>Can you actually lose weight? (1min)</div>
+      <div class="outline-step"><span class="step-num">6</span>Final verdict + links (30s)</div>
+    </div>
+    <div class="why-box"><strong>Why this wins:</strong> VidIQ score of 86/100 with YouTube competition of only 16/100 — this is the easiest win in the set. Ranking on YouTube for this keyword requires almost zero effort compared to the others. The "30-day challenge" format drives massive watch time (algorithm boost) and the Cubii upsell ($28–$45 commission) added to the description turns a low-ticket video into a medium-revenue earner. Great first video for a new channel.</div>
+  </div>
+</div>
+
+<!-- QUICK ACTIONS -->
+<div class="quick-actions">
+  <div class="qa-card">
+    <div class="qa-icon">📝</div>
+    <div class="qa-title">Generate Full Video Script</div>
+    <div class="qa-desc">Pick any opportunity above and get a word-for-word YouTube script with affiliate CTAs built in at the right timestamps.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-icon">🔍</div>
+    <div class="qa-title">Deep-Dive Competitor Audit</div>
+    <div class="qa-desc">Analyze the top 5 YouTube videos already ranking for your chosen keyword so you know exactly how to beat them.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-icon">📊</div>
+    <div class="qa-title">Run New Analysis</div>
+    <div class="qa-desc">Change the niche or upload new tool exports to generate a fresh set of ranked opportunities for a different market.</div>
+  </div>
+</div>
+
+</div><!-- /main -->
+</body>
+</html>

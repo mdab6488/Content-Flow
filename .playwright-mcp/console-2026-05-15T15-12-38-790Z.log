@@ -1,0 +1,4 @@
+[      65ms] [ERROR] Not allowed to load local resource: file:///C:/Users/LAPTOP%20GADGET/Downloads/Content%20&%20Video%20Workflow%20Master%20Dashboard_files/css2 @ http://127.0.0.1:9090/Dashboard.html?v=2:7
+[     226ms] TypeError: Cannot read properties of null (reading 'querySelector')
+    at setupS2bUpload (http://127.0.0.1:9090/Dashboard.html?v=2:3770:30)
+    at http://127.0.0.1:9090/Dashboard.html?v=2:4034:1
