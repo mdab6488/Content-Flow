@@ -4128,6 +4128,66 @@ function copyS2bBrief() {
       <div class="upload-status" id="engine-semrush-affiliate-status"></div>
     </div>
   </div>
+
+  <div class="upload-row" style="margin-bottom:20px;">
+    <div class="upload-box" id="engine-semrush-paa-box" style="flex:1;">
+      <div class="upload-header">
+        <span class="bc-tool-badge bc-semrush">Semrush</span>
+        <span style="font-size:11px;color:#475569;font-weight:600;">People Also Ask — get questions for any keyword</span>
+      </div>
+      <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+        <span style="font-weight:600;">📍 Semrush Home</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Keyword Overview</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Enter your target keyword</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Scroll to "People Also Ask" section</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Copy all questions → paste into merged CSV</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+        <span class="bc-filter">Focus on: questions with search volume ≥ 1,000</span>
+        <span class="bc-filter export">PRO: Sort by volume descending — high-volume questions = best chapter topics</span>
+      </div>
+      <div class="upload-dropzone" id="engine-semrush-paa-dropzone">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">Drop Semrush PAA questions CSV here or click to browse</div>
+        <div class="upload-hint">Expects: Question, Volume, CPC, Intent</div>
+        <input type="file" accept=".csv" id="engine-semrush-paa-csv" style="display:none">
+      </div>
+      <div class="upload-status" id="engine-semrush-paa-status"></div>
+    </div>
+
+    <div class="upload-box" id="engine-atp-box" style="flex:1;">
+      <div class="upload-header">
+        <span class="bc-tool-badge" style="background:#8b5cf6;color:#fff;">AnswerThePublic</span>
+        <span style="font-size:11px;color:#475569;font-weight:600;">Discover question-based keyword variations</span>
+      </div>
+      <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+        <span style="font-weight:600;">📍 AnswerThePublic</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Enter your target keyword</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">View "Questions" section</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Copy questions from What/Why/How/Can categories</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Paste into merged CSV with source label</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+        <span class="bc-filter">Focus on: How, Why, What questions (best for video chapters)</span>
+        <span class="bc-filter export">PRO: Cross-reference with Semrush — if both tools show the same question, it's high-priority</span>
+      </div>
+      <div class="upload-dropzone" id="engine-atp-dropzone">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">Drop AnswerThePublic questions CSV here or click to browse</div>
+        <div class="upload-hint">Expects: Question, Category, Frequency, Source</div>
+        <input type="file" accept=".csv" id="engine-atp-csv" style="display:none">
+      </div>
+      <div class="upload-status" id="engine-atp-status"></div>
+    </div>
+  </div>
 </div>
 
 <!-- ────────────────────── AI Affiliate Research Engine: Competitor Analysis ── -->
@@ -4251,6 +4311,16 @@ function copyS2bBrief() {
       <strong>Look for:</strong> The "Search Intent" label (Informational, Navigational, Commercial, Transactional) tells you exactly what kind of article you need to write.
     </div>
 
+    <div class="tip tip-amber" style="margin-bottom:20px;">
+      <strong>💡 PRO TIP: The Freshness Exploit</strong><br>
+      Check the <strong>'Last Updated'</strong> date. If the competitor's article is <strong>6+ months old</strong>, they're missing newer product releases. Feature the newer models in your video/article for instant relevance and higher CTR.
+    </div>
+
+    <div class="tip tip-amber" style="margin-bottom:20px;">
+      <strong>💡 PRO TIP: GEO-Ready Content</strong><br>
+      PAA questions = pre-built video chapters AND pre-built FAQ schema. Answer each one clearly in your content for instant GEO-ready structured data.
+    </div>
+
     <div style="overflow-x:auto;border-radius:10px;border:1px solid #e2e8f0;">
       <table style="width:100%;border-collapse:collapse;font-size:13px;">
         <thead>
@@ -4274,6 +4344,10 @@ function copyS2bBrief() {
             <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Featured Products &amp; Prices (Manual)</th>
             <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Outbound Link Patterns (Semrush)</th>
             <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Identified Affiliate Networks</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Extracted Question</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Mapped Video Chapter</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">FAQ Schema Ready</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Question Type</th>
           </tr>
         </thead>
         <tbody>
@@ -4297,6 +4371,22 @@ function copyS2bBrief() {
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">Treadmill $999 · Dumbbells $349 · Adjustable Bench $249</td>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">Amazon (7) · Walmart (3) · Dicks (2)</td>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Amazon Associates, ShareASale</span></td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <div style="margin-bottom:4px;">• What is the best home gym equipment for small spaces?</div>
+              <div style="margin-bottom:4px;">• How much should I spend on home gym equipment?</div>
+              <div style="margin-bottom:4px;">• Which home gym equipment gives the best value?</div>
+              <div style="margin-bottom:4px;">• Can I build a home gym under $500?</div>
+            </td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <div><strong>0:00</strong> Intro</div>
+              <div><strong>2:15</strong> Top Picks Overview</div>
+              <div><strong>5:30</strong> Budget vs Premium</div>
+            </td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">✅ Ready</span></td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Best-of</span>
+              <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Comparison</span>
+            </td>
           </tr>
           <tr>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;text-align:center;">2</td>
@@ -4318,6 +4408,22 @@ function copyS2bBrief() {
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">Squat Rack $499 · Barbell $299 · Flooring $2.50/sqft</td>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">Amazon (4) · Rogue (2) · Rep Fitness (1)</td>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Amazon Associates, Rogue Affiliate</span></td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <div style="margin-bottom:4px;">• How do I set up a home gym for beginners?</div>
+              <div style="margin-bottom:4px;">• What equipment do I need to start a home gym?</div>
+              <div style="margin-bottom:4px;">• What is the best flooring for a home gym?</div>
+              <div style="margin-bottom:4px;">• How much space do I need for a home gym?</div>
+            </td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <div><strong>0:00</strong> Intro</div>
+              <div><strong>1:45</strong> Equipment List</div>
+              <div><strong>4:20</strong> Flooring & Space</div>
+            </td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fef9c3;color:#854d0e;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">🔄 Draft</span></td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">How-to</span>
+              <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Guide</span>
+            </td>
           </tr>
           <tr>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;text-align:center;">3</td>
@@ -4339,6 +4445,22 @@ function copyS2bBrief() {
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">Treadmill $699 · Bike $399 · Dumbbells $199</td>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">Amazon (8) · Walmart (4) · Best Buy (2)</td>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Amazon Associates, CJ Affiliate, Impact</span></td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <div style="margin-bottom:4px;">• Where can I find the best home gym deals?</div>
+              <div style="margin-bottom:4px;">• Are there any active coupon codes for gym equipment?</div>
+              <div style="margin-bottom:4px;">• When is the best time to buy home gym equipment?</div>
+              <div style="margin-bottom:4px;">• Which brands offer the biggest discounts?</div>
+            </td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <div><strong>0:00</strong> Intro</div>
+              <div><strong>1:30</strong> Top Deals</div>
+              <div><strong>3:45</strong> Coupon Codes</div>
+            </td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">✅ Ready</span></td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Deal-finder</span>
+              <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Transactional</span>
+            </td>
           </tr>
           <tr>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;text-align:center;">4</td>
@@ -4360,6 +4482,22 @@ function copyS2bBrief() {
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#64748b;font-style:italic;">None featured</td>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">No outbound affiliate links found</td>
             <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">None</span></td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <div style="margin-bottom:4px;">• How much does a home gym cost to build?</div>
+              <div style="margin-bottom:4px;">• What is the average cost of home gym equipment?</div>
+              <div style="margin-bottom:4px;">• Is it cheaper to build a home gym or buy a membership?</div>
+              <div style="margin-bottom:4px;">• Can I build a home gym for under $1,000?</div>
+            </td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <div><strong>0:00</strong> Intro</div>
+              <div><strong>2:00</strong> Cost Breakdown</div>
+              <div><strong>4:30</strong> vs Gym Membership</div>
+            </td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">❌ Not Started</span></td>
+            <td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#475569;">
+              <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Cost Guide</span>
+              <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Informational</span>
+            </td>
           </tr>
           <tr>
             <td style="padding:13px 14px;font-weight:700;color:#0f172a;text-align:center;">5</td>
@@ -4381,6 +4519,22 @@ function copyS2bBrief() {
             <td style="padding:13px 14px;font-size:12px;color:#475569;">Resistance Bands $25 · Jump Rope $15 · Yoga Mat $30</td>
             <td style="padding:13px 14px;font-size:12px;color:#475569;">Amazon (5) · Target (1)</td>
             <td style="padding:13px 14px;"><span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Amazon Associates</span></td>
+            <td style="padding:13px 14px;font-size:12px;color:#475569;">
+              <div style="margin-bottom:4px;">• How can I build a home gym on a tight budget?</div>
+              <div style="margin-bottom:4px;">• What cheap home gym equipment actually works?</div>
+              <div style="margin-bottom:4px;">• Where to buy used gym equipment?</div>
+              <div style="margin-bottom:4px;">• What is the minimum equipment for a home workout?</div>
+            </td>
+            <td style="padding:13px 14px;font-size:12px;color:#475569;">
+              <div><strong>0:00</strong> Intro</div>
+              <div><strong>1:15</strong> Budget Tips</div>
+              <div><strong>3:00</strong> Used Gear Guide</div>
+            </td>
+            <td style="padding:13px 14px;"><span style="background:#fef9c3;color:#854d0e;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">🔄 Draft</span></td>
+            <td style="padding:13px 14px;font-size:12px;color:#475569;">
+              <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">Budget Guide</span>
+              <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">How-to</span>
+            </td>
           </tr>
         </tbody>
       </table>
