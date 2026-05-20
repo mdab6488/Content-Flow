@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Keyword Research SaaS — Full Build Prompt Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f1f5f9;
+    --card: #ffffff;
+    --card-shadow: 0 1px 3px rgba(0,0,0,.07), 0 4px 16px rgba(0,0,0,.05);
+    --accent: #2563eb;
+    --cyan: #0891b2;
+    --dark: #0b1120;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border: #e2e8f0;
+    --radius: 10px;
+    --green: #16a34a;
+    --green-bg: #dcfce7;
+    --amber: #b45309;
+    --amber-bg: #fffbeb;
+    --amber-border: #f59e0b;
+    --red: #991b1b;
+    --red-bg: #fee2e2;
+    --score-green: #22c55e;
+    --score-yellow: #f59e0b;
+    --score-red: #ef4444;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 36px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--dark);
+    border-radius: var(--radius);
+    padding: 48px 40px;
+    margin-bottom: 32px;
+    box-shadow: var(--card-shadow);
+  }
+  .hero h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  .hero .tagline {
+    display: inline-block;
+    background: rgba(37,99,235,.15);
+    color: #93c5fd;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+    margin-top: 12px;
+  }
+  .hero .sub {
+    color: var(--slate-400);
+    font-size: 15px;
+    margin-top: 10px;
+    max-width: 640px;
+  }
+  .hero .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .hero .stack span {
+    background: rgba(255,255,255,.08);
+    color: var(--slate-300);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.2px;
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: box-shadow .2s;
+  }
+  .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.1), 0 8px 24px rgba(0,0,0,.07); }
+
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .badge-count {
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    padding: 1px 9px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  /* ─── TIP BOX ─── */
+  .tip-box {
+    border-left: 4px solid var(--amber-border);
+    background: var(--amber-bg);
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+  .tip-box .tip-title { font-weight: 700; font-size: 14px; color: var(--amber); margin-bottom: 4px; }
+  .tip-box .tip-body { font-size: 13px; color: var(--text-secondary); }
+
+  /* ─── CYAN TIP BOX ─── */
+  .tip-box-cyan { border-left: 4px solid var(--cyan); background: rgba(8,145,178,.08); padding: 14px 18px; border-radius: 6px; margin-bottom: 16px; }
+  .tip-box-cyan .tip-title { font-weight: 700; font-size: 14px; color: var(--cyan); margin-bottom: 4px; }
+  .tip-box-cyan .tip-body { font-size: 13px; color: var(--text-secondary); }
+
+  /* ─── GREEN TIP BOX ─── */
+  .tip-box-green { border-left: 4px solid var(--score-green); background: rgba(34,197,94,.08); padding: 14px 18px; border-radius: 6px; margin-bottom: 16px; }
+  .tip-box-green .tip-title { font-weight: 700; font-size: 14px; color: var(--score-green); margin-bottom: 4px; }
+  .tip-box-green .tip-body { font-size: 13px; color: var(--text-secondary); }
+
+  /* ─── BADGES ─── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #dbeafe; color: #1d4ed8; }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-yellow { background: #fef3c7; color: #b45309; }
+  .badge-red { background: var(--red-bg); color: var(--red); }
+  .badge-gray { background: #f1f5f9; color: #475569; }
+  .badge-cyan { background: #cffafe; color: #0891b2; }
+
+  /* ─── STAT CARD ─── */
+  .stat-card {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .stat-card .stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+  .stat-card .stat-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 2px;
+  }
+
+  /* ─── SCORE RING ─── */
+  .score-ring-container { display: flex; gap: 16px; flex-wrap: wrap; }
+  .score-ring-wrap { text-align: center; }
+  .score-ring-wrap .label { font-size: 11px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.3px; margin-top: 6px; }
+
+  /* ─── GRIDS ─── */
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .grid-3x2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .grid-4x2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  @media (max-width: 900px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3x2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-4x2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-2 { grid-template-columns: 1fr; }
+    .container { padding: 16px; }
+  }
+  @media (max-width: 540px) {
+    .grid-4, .grid-3x2, .grid-4x2 { grid-template-columns: 1fr; }
+  }
+
+  /* ─── NAV TREE ─── */
+  .nav-tree { padding: 8px 0; }
+  .nav-tree .level { display: flex; align-items: center; gap: 8px; padding: 6px 0; }
+  .nav-tree .level .icon { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .nav-tree .level .icon.folder { background: var(--cyan); }
+  .nav-tree .level .icon.page { background: var(--accent); }
+  .nav-tree .level .icon.tab { background: var(--amber-border); width: 4px; height: 4px; }
+  .nav-tree .level .lbl { font-size: 13px; font-weight: 500; }
+  .nav-tree .level .lbl.folder-label { color: var(--text-primary); }
+  .nav-tree .level .lbl.page-label { color: var(--cyan); }
+  .nav-tree .level .lbl.tab-label { color: var(--text-secondary); font-size: 12px; }
+  .nav-tree .level .desc { font-size: 11px; color: var(--slate-400); font-style: italic; }
+  .nav-tree .indent-1 { padding-left: 24px; }
+  .nav-tree .indent-2 { padding-left: 48px; }
+  .nav-tree .indent-3 { padding-left: 72px; }
+  .nav-tree .branch { border-left: 2px solid var(--border); margin-left: 3px; padding-left: 16px; }
+
+  /* ─── SCHEMA TABLE ─── */
+  .schema-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .schema-table thead th {
+    background: var(--dark);
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  .schema-table tbody td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .schema-table tbody tr:hover td { background: #f8fafc; }
+  .schema-table .col-name { font-weight: 600; color: var(--text-primary); font-family: 'Space Mono', monospace; font-size: 12px; }
+  .schema-table .col-type { color: var(--cyan); font-family: 'Space Mono', monospace; font-size: 12px; }
+  .schema-table .col-null { font-size: 11px; color: var(--slate-400); }
+  .schema-table .col-default { font-size: 11px; color: var(--text-secondary); }
+  .schema-table .col-comment { font-size: 12px; color: var(--text-secondary); }
+  .schema-card { margin-bottom: 16px; overflow-x: auto; }
+
+  /* ─── STEP ─── */
+  .step {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    transition: border-color .2s;
+  }
+  .step:hover { border-color: var(--accent); }
+  .step .step-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+  .step .step-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step .step-title { font-size: 18px; font-weight: 700; }
+  .step .step-body { font-size: 14px; color: var(--text-secondary); padding-left: 50px; }
+  .step .step-body ul { margin: 8px 0; padding-left: 20px; }
+  .step .step-body ul li { margin-bottom: 4px; }
+  .step .step-body code {
+    background: #f1f5f9;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--cyan);
+  }
+  .step .step-body pre {
+    background: var(--dark);
+    color: #e2e8f0;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    overflow-x: auto;
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+
+  /* ─── CHECKLIST ─── */
+  .checklist { list-style: none; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li .cb { width: 20px; height: 20px; border: 2px solid var(--border); border-radius: 4px; flex-shrink: 0; margin-top: 1px; }
+  .checklist li .cb.checked { background: var(--green); border-color: var(--green); position: relative; }
+  .checklist li .cb.checked::after {
+    content: '✓';
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  /* ─── TOOL SIGNAL PANEL ─── */
+  .tool-panel {
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .tool-panel .tool-name { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .tool-panel .metric { font-size: 22px; font-weight: 800; }
+  .tool-panel .sub-metric { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+  /* ─── DESIGN QUICK-CARD ─── */
+  .design-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .design-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; border-radius: 6px; background: #f8fafc; font-size: 13px; }
+  .design-item .elem { font-weight: 600; }
+  .design-item .spec { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--text-secondary); }
+  .design-swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: middle; margin-right: 4px; border: 1px solid rgba(0,0,0,.06); }
+
+  /* ─── PILLS ─── */
+  .pill { display: inline-flex; align-items: center; font-size: 11px; font-weight: 500; padding: 2px 10px; border-radius: 12px; background: #f1f5f9; color: var(--text-secondary); border: 1px solid var(--border); }
+
+  /* ─── COMPETITOR SECTION ─── */
+  .comp-section { margin-bottom: 18px; }
+  .comp-section .comp-sect-title { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+  .chip-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { background: #dbeafe; color: #1d4ed8; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 14px; }
+
+  /* ─── PAA LIST ─── */
+  .paa-list { list-style: none; }
+  .paa-list li { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 14px; color: var(--text-secondary); }
+  .paa-list li::before { content: '•'; color: var(--cyan); font-weight: 700; font-size: 18px; }
+
+  /* ─── TABS DEMO ─── */
+  .tab-bar { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 20px; overflow-x: auto; }
+  .tab-bar .tab { padding: 8px 18px; font-size: 13px; font-weight: 500; color: var(--text-secondary); white-space: nowrap; cursor: default; border-bottom: 3px solid transparent; }
+  .tab-bar .tab.active { color: var(--cyan); border-bottom-color: var(--cyan); background: var(--card); }
+
+  /* ─── PRODUCTION SHEET DEMO ─── */
+  .prod-table { width: 100%; border-collapse: collapse; font-size: 13px; border-radius: 8px; overflow: hidden; }
+  .prod-table thead th { background: var(--dark); color: #94a3b8; font-size: 11px; font-weight: 600; text-transform: uppercase; padding: 10px 14px; text-align: left; }
+  .prod-table tbody td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  .prod-table tbody tr:nth-child(even) td { background: #f8fafc; }
+  .prod-table tbody tr:hover td { background: #f1f5f9; }
+
+  /* ─── APP PRODUCT ROW ─── */
+  .product-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 8px; }
+  .product-row:last-child { border-bottom: none; }
+  .product-row:hover { background: #f8fafc; margin: 0 -12px; padding: 12px 12px; border-radius: 6px; }
+
+  /* ─── KEYWORD CARD ─── */
+  .kw-card { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 10px; transition: box-shadow .2s, border-color .2s; flex-wrap: wrap; gap: 12px; }
+  .kw-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.06); border-color: var(--accent); }
+  .kw-card .kw-name { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+  .kw-card .score-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+  .kw-card .score-pill { display: flex; align-items: center; gap: 4px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .kw-card .score-pill .num { font-weight: 700; font-size: 13px; }
+
+  /* ─── MISC ─── */
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; border: none; cursor: default; transition: opacity .2s; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+  .btn-cyan { background: var(--cyan); color: #fff; }
+  .btn-green { background: var(--green); color: #fff; }
+  .btn-amber { background: var(--amber-border); color: #fff; }
+  .btn-gray { background: #e2e8f0; color: var(--text-secondary); }
+
+  .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+  .search-input { padding: 8px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; background: var(--card); min-width: 200px; }
+  .select-input { padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; background: var(--card); }
+
+  .mb-8 { margin-bottom: 8px; }
+  .mb-12 { margin-bottom: 12px; }
+  .mb-16 { margin-bottom: 16px; }
+  .mb-20 { margin-bottom: 20px; }
+  .mb-24 { margin-bottom: 24px; }
+  .mt-12 { margin-top: 12px; }
+  .mt-8 { margin-top: 8px; }
+  .flex { display: flex; }
+  .flex-wrap { flex-wrap: wrap; }
+  .gap-6 { gap: 6px; }
+  .gap-8 { gap: 8px; }
+  .gap-12 { gap: 12px; }
+  .gap-16 { gap: 16px; }
+  .items-center { align-items: center; }
+  .text-sm { font-size: 13px; }
+  .text-xs { font-size: 12px; }
+  .text-muted { color: var(--text-secondary); }
+  .text-green { color: var(--green); }
+  .text-amber { color: var(--amber); }
+  .text-cyan { color: var(--cyan); }
+  .font-bold { font-weight: 700; }
+  .font-mono { font-family: 'Space Mono', monospace; }
+
+  .pagination { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 0; }
+  .pagination .page-indicator { font-family: 'Space Mono', monospace; font-size: 13px; color: var(--text-secondary); }
+
+  .skeleton { background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 6px; }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+  /* ─── BREADCRUMB ─── */
+  .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); margin-bottom: 20px; flex-wrap: wrap; }
+  .breadcrumb a { color: var(--cyan); text-decoration: none; cursor: default; }
+  .breadcrumb .sep { color: var(--slate-400); font-size: 10px; }
+  .breadcrumb .current { color: var(--text-primary); font-weight: 600; }
+
+  /* ─── MODAL ─── */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+  .modal-box { background: var(--card); border-radius: var(--radius); box-shadow: 0 20px 60px rgba(0,0,0,.2); padding: 28px; width: 420px; max-width: 90vw; }
+  .modal-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .modal-box .modal-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+  .modal-box input { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; margin-bottom: 16px; }
+  .modal-box .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+
+  /* ─── DRAG-DROP ZONE ─── */
+  .drag-zone { border: 2px dashed var(--border); border-radius: var(--radius); padding: 40px 20px; text-align: center; cursor: default; transition: border-color .2s, background .2s; }
+  .drag-zone:hover { border-color: var(--accent); background: #f8fafc; }
+  .drag-zone .icon { font-size: 36px; margin-bottom: 8px; }
+  .drag-zone .text { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+  .drag-zone .sub { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+
+  /* ─── STATE CARDS (empty/error/404) ─── */
+  .state-card { text-align: center; padding: 48px 24px; }
+  .state-card .state-icon { font-size: 48px; margin-bottom: 12px; }
+  .state-card .state-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .state-card .state-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+
+  /* ─── SKELETON LOADER ─── */
+  .skeleton-demo { display: flex; flex-direction: column; gap: 12px; padding: 16px; }
+  .skeleton-row { display: flex; gap: 12px; align-items: center; }
+  .skeleton-box { background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: skeleton-shimmer 1.5s infinite; border-radius: 6px; }
+  @keyframes skeleton-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+  /* ─── KEYWORD GAP CARD ─── */
+  .gap-card { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; transition: border-color .2s; }
+  .gap-card:hover { border-color: var(--accent); background: #f8fafc; }
+  .gap-card .sparkline { font-size: 14px; letter-spacing: 2px; font-family: 'Space Mono', monospace; }
+
+  /* ─── EXPORT BAR ─── */
+  .export-bar { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 0; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+
+  /* ─── TOAST SYSTEM ─── */
+  .toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; flex-direction: column; gap: 8px; }
+  .toast-item { padding: 12px 20px; border-radius: 10px; font-size: 13px; font-weight: 500; box-shadow: 0 4px 20px rgba(0,0,0,.2); display: flex; align-items: center; gap: 8px; animation: toast-in .3s ease; }
+  @keyframes toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .toast-success { background: var(--green); color: #fff; }
+  .toast-error { background: var(--red); color: #fff; }
+
+  /* ─── PULSING DOT ─── */
+  .pulsing-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--score-green); margin-right: 6px; animation: pulse-dot 1.5s ease-in-out infinite; }
+  @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(1.4); } }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <div class="hero">
+    <div class="tagline">AI-Assisted Full Build Prompt Kit</div>
+    <h1>Keyword Research SaaS</h1>
+    <p class="sub">Affiliate &amp; YouTube Keyword Research SaaS — a multi-page intelligence tool that helps content creators find profitable keywords, analyze competitor articles, generate video briefs, and identify content gaps.</p>
+    <div class="stack">
+      <span>Next.js 14</span>
+      <span>TypeScript</span>
+      <span>Drizzle ORM</span>
+      <span>PostgreSQL</span>
+      <span>Tailwind CSS</span>
+      <span>Clerk Auth</span>
+      <span>Shadcn/ui</span>
+      <span>Recharts</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ BREADCRUMB ═══════════════ -->
+  <div class="breadcrumb">
+    <a>Dashboard</a>
+    <span class="sep">›</span>
+    <a>Keywords</a>
+    <span class="sep">›</span>
+    <a>under-desk-treadmill</a>
+    <span class="sep">›</span>
+    <span class="current">Competitor Analysis</span>
+  </div>
+
+  <!-- ═══════════════ DESIGN SYSTEM ═══════════════ -->
+  <div class="card">
+    <div class="section-title">🎨 Design System</div>
+    <div class="design-grid">
+      <div class="design-item"><span class="elem">Background</span><span class="spec"><span class="design-swatch" style="background:#f1f5f9"></span> #f1f5f9</span></div>
+      <div class="design-item"><span class="elem">Card</span><span class="spec"><span class="design-swatch" style="background:#fff"></span> #ffffff · radius 10px · shadow</span></div>
+      <div class="design-item"><span class="elem">Dark Accent</span><span class="spec"><span class="design-swatch" style="background:#0b1120"></span> #0b1120</span></div>
+      <div class="design-item"><span class="elem">Primary Blue</span><span class="spec"><span class="design-swatch" style="background:#2563eb"></span> #2563eb</span></div>
+      <div class="design-item"><span class="elem">Cyan</span><span class="spec"><span class="design-swatch" style="background:#0891b2"></span> #0891b2</span></div>
+      <div class="design-item"><span class="elem">Text Primary</span><span class="spec"><span class="design-swatch" style="background:#0f172a"></span> #0f172a</span></div>
+      <div class="design-item"><span class="elem">Text Secondary</span><span class="spec"><span class="design-swatch" style="background:#475569"></span> #475569</span></div>
+      <div class="design-item"><span class="elem">Border</span><span class="spec"><span class="design-swatch" style="background:#e2e8f0"></span> #e2e8f0</span></div>
+      <div class="design-item"><span class="elem">Green</span><span class="spec"><span class="design-swatch" style="background:#16a34a"></span> #16a34a</span></div>
+      <div class="design-item"><span class="elem">Amber</span><span class="spec"><span class="design-swatch" style="background:#f59e0b"></span> #f59e0b</span></div>
+      <div class="design-item"><span class="elem">Red</span><span class="spec"><span class="design-swatch" style="background:#ef4444"></span> #ef4444 / #991b1b</span></div>
+      <div class="design-item"><span class="elem">Score Green</span><span class="spec"><span class="design-swatch" style="background:#22c55e"></span> #22c55e (≥70)</span></div>
+      <div class="design-item"><span class="elem">Score Yellow</span><span class="spec"><span class="design-swatch" style="background:#f59e0b"></span> #f59e0b (40–69)</span></div>
+      <div class="design-item"><span class="elem">Score Red</span><span class="spec"><span class="design-swatch" style="background:#ef4444"></span> #ef4444 (&lt;40)</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ NAVIGATION FLOW ═══════════════ -->
+  <div class="card">
+    <div class="section-title">🗂️ Navigation Flow <span class="badge-count">6 Pages</span></div>
+    <div class="nav-tree">
+      <div class="level"><span class="icon folder"></span><span class="lbl folder-label">/dashboard</span></div>
+      <div class="branch">
+        <div class="level indent-1"><span class="icon folder"></span><span class="lbl folder-label">/keywords</span><span class="desc">← Keywords List Page</span></div>
+        <div class="branch">
+          <div class="level indent-2"><span class="icon folder"></span><span class="lbl folder-label">/keywords/[slug]</span><span class="desc">← Keyword Detail Page</span></div>
+          <div class="branch">
+            <div class="level indent-3"><span class="icon tab"></span><span class="lbl tab-label">Overview tab</span></div>
+            <div class="level indent-3"><span class="icon tab"></span><span class="lbl tab-label">Tool Signals tab</span><span class="desc">(Ahrefs, VidIQ, ExplodingTopics, etc.)</span></div>
+            <div class="level indent-3"><span class="icon tab"></span><span class="lbl tab-label">Affiliate Products tab</span></div>
+            <div class="level indent-3"><span class="icon tab"></span><span class="lbl tab-label">Video Brief tab</span></div>
+            <div class="level indent-3"><span class="icon tab"></span><span class="lbl tab-label">Competitor Analysis tab</span></div>
+            <div class="branch">
+              <div class="level indent-3"><span class="icon page"></span><span class="lbl page-label">/keywords/[slug]/competitors/[rank]</span><span class="desc">← Competitor Detail (tabs 01–50)</span></div>
+            </div>
+            <div class="branch">
+              <div class="level indent-3"><span class="icon page"></span><span class="lbl page-label">/keywords/[slug]/competitors/import</span><span class="desc">← CSV Import Page</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ DATABASE SCHEMA ═══════════════ -->
+  <div class="card">
+    <div class="section-title">📦 Database Schema <span class="badge-count">4 Tables</span></div>
+
+    <!-- KEYWORDS -->
+    <div class="schema-card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span class="badge badge-cyan">pgTable</span>
+        <code style="font-family:'Space Mono',monospace;font-weight:700;font-size:15px">keywords</code>
+      </div>
+      <table class="schema-table">
+        <thead><tr><th>Column</th><th>Type</th><th>Default</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="col-name">id</td><td class="col-type">serial</td><td class="col-default">PK</td><td class="col-comment">Primary key</td></tr>
+          <tr><td class="col-name">user_id</td><td class="col-type">text NOT NULL</td><td class="col-default">—</td><td class="col-comment">Clerk user ID</td></tr>
+          <tr><td class="col-name">slug</td><td class="col-type">text NOT NULL UNIQUE</td><td class="col-default">—</td><td class="col-comment">URL-safe slug</td></tr>
+          <tr><td class="col-name">keyword</td><td class="col-type">text NOT NULL</td><td class="col-default">—</td><td class="col-comment">The keyword phrase</td></tr>
+          <tr><td class="col-name">est_revenue_per_month</td><td class="col-type">integer</td><td class="col-default">null</td><td class="col-comment">Estimated monthly revenue</td></tr>
+          <tr><td class="col-name">affiliate_score</td><td class="col-type">integer</td><td class="col-default">null</td><td class="col-comment">0–100</td></tr>
+          <tr><td class="col-name">youtube_score</td><td class="col-type">integer</td><td class="col-default">null</td><td class="col-comment">0–100</td></tr>
+          <tr><td class="col-name">trend_score</td><td class="col-type">integer</td><td class="col-default">null</td><td class="col-comment">0–100</td></tr>
+          <tr><td class="col-name">overall_score</td><td class="col-type">integer</td><td class="col-default">null</td><td class="col-comment">0–100</td></tr>
+          <tr><td class="col-name">monthly_searches</td><td class="col-type">integer</td><td class="col-default">null</td><td class="col-comment">Monthly search volume</td></tr>
+          <tr><td class="col-name">avg_cpc</td><td class="col-type">decimal(6,2)</td><td class="col-default">null</td><td class="col-comment">Average cost-per-click</td></tr>
+          <tr><td class="col-name">yt_competition</td><td class="col-type">integer</td><td class="col-default">null</td><td class="col-comment">YouTube competition 0–100</td></tr>
+          <tr><td class="col-name">ahrefs_data</td><td class="col-type">jsonb</td><td class="col-default">null</td><td class="col-comment">{ kd, cpc, globalVolume }</td></tr>
+          <tr><td class="col-name">vidiq_data</td><td class="col-type">jsonb</td><td class="col-default">null</td><td class="col-comment">{ score, monthlyViews }</td></tr>
+          <tr><td class="col-name">exploding_topics_data</td><td class="col-type">jsonb</td><td class="col-default">null</td><td class="col-comment">{ growth, status }</td></tr>
+          <tr><td class="col-name">answer_the_public_data</td><td class="col-type">jsonb</td><td class="col-default">null</td><td class="col-comment">{ searches, topQuestion }</td></tr>
+          <tr><td class="col-name">similar_web_data</td><td class="col-type">jsonb</td><td class="col-default">null</td><td class="col-comment">{ visitsPerMonth, avgSession }</td></tr>
+          <tr><td class="col-name">answer_socrates_data</td><td class="col-type">jsonb</td><td class="col-default">null</td><td class="col-comment">{ frequency, type }</td></tr>
+          <tr><td class="col-name">competitor_count</td><td class="col-type">integer</td><td class="col-default">0</td><td class="col-comment">Number of competitor articles</td></tr>
+          <tr><td class="col-name">created_at</td><td class="col-type">timestamp</td><td class="col-default">now()</td><td class="col-comment">—</td></tr>
+          <tr><td class="col-name">updated_at</td><td class="col-type">timestamp</td><td class="col-default">now()</td><td class="col-comment">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- AFFILIATE PRODUCTS -->
+    <div class="schema-card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span class="badge badge-cyan">pgTable</span>
+        <code style="font-family:'Space Mono',monospace;font-weight:700;font-size:15px">affiliate_products</code>
+        <span class="badge badge-gray">FK → keywords.id</span>
+      </div>
+      <table class="schema-table">
+        <thead><tr><th>Column</th><th>Type</th><th>Default</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="col-name">id</td><td class="col-type">serial</td><td class="col-default">PK</td><td class="col-comment">—</td></tr>
+          <tr><td class="col-name">keyword_id</td><td class="col-type">integer</td><td class="col-default">null</td><td class="col-comment">FK → keywords.id (cascade delete)</td></tr>
+          <tr><td class="col-name">product_name</td><td class="col-type">text NOT NULL</td><td class="col-default">—</td><td class="col-comment">Product display name</td></tr>
+          <tr><td class="col-name">network</td><td class="col-type">text NOT NULL</td><td class="col-default">—</td><td class="col-comment">e.g. "Amazon Associates", "Flexispot"</td></tr>
+          <tr><td class="col-name">category</td><td class="col-type">text</td><td class="col-default">null</td><td class="col-comment">"Budget Pick", "Premium", "Walking Pad"</td></tr>
+          <tr><td class="col-name">min_commission</td><td class="col-type">decimal(6,2)</td><td class="col-default">null</td><td class="col-comment">Minimum commission per sale</td></tr>
+          <tr><td class="col-name">max_commission</td><td class="col-type">decimal(6,2)</td><td class="col-default">null</td><td class="col-comment">Maximum commission per sale</td></tr>
+          <tr><td class="col-name">avg_price</td><td class="col-type">decimal(8,2)</td><td class="col-default">null</td><td class="col-comment">Average product price</td></tr>
+          <tr><td class="col-name">affiliate_url</td><td class="col-type">text</td><td class="col-default">null</td><td class="col-comment">Affiliate link URL</td></tr>
+          <tr><td class="col-name">sort_order</td><td class="col-type">integer</td><td class="col-default">0</td><td class="col-comment">Display sort order</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- VIDEO BRIEFS -->
+    <div class="schema-card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span class="badge badge-cyan">pgTable</span>
+        <code style="font-family:'Space Mono',monospace;font-weight:700;font-size:15px">video_briefs</code>
+        <span class="badge badge-gray">FK → keywords.id (unique)</span>
+      </div>
+      <table class="schema-table">
+        <thead><tr><th>Column</th><th>Type</th><th>Default</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="col-name">id</td><td class="col-type">serial</td><td class="col-default">PK</td><td class="col-comment">—</td></tr>
+          <tr><td class="col-name">keyword_id</td><td class="col-type">integer UNIQUE</td><td class="col-default">null</td><td class="col-comment">FK → keywords.id (cascade delete)</td></tr>
+          <tr><td class="col-name">title</td><td class="col-type">text NOT NULL</td><td class="col-default">—</td><td class="col-comment">Video title</td></tr>
+          <tr><td class="col-name">hook_concept</td><td class="col-type">text</td><td class="col-default">null</td><td class="col-comment">Video hook concept</td></tr>
+          <tr><td class="col-name">target_length_min</td><td class="col-type">integer</td><td class="col-default">null</td><td class="col-comment">Min target length (minutes)</td></tr>
+          <tr><td class="col-name">target_length_max</td><td class="col-type">integer</td><td class="col-default">null</td><td class="col-comment">Max target length (minutes)</td></tr>
+          <tr><td class="col-name">thumbnail_concept</td><td class="col-type">text</td><td class="col-default">null</td><td class="col-comment">Thumbnail concept description</td></tr>
+          <tr><td class="col-name">best_upload_time</td><td class="col-type">text</td><td class="col-default">null</td><td class="col-comment">Best upload day/time</td></tr>
+          <tr><td class="col-name">why_this_wins</td><td class="col-type">text</td><td class="col-default">null</td><td class="col-comment">Why this video will win</td></tr>
+          <tr><td class="col-name">outline</td><td class="col-type">jsonb</td><td class="col-default">null</td><td class="col-comment">[{ step, title, duration }]</td></tr>
+          <tr><td class="col-name">production_sheet</td><td class="col-type">jsonb</td><td class="col-default">null</td><td class="col-comment">[{ timestamp, section, talkingPoints, bRoll }]</td></tr>
+          <tr><td class="col-name">revenue_per_thousand</td><td class="col-type">decimal(6,2)</td><td class="col-default">null</td><td class="col-comment">Revenue per 1,000 views</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- COMPETITOR ARTICLES -->
+    <div class="schema-card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span class="badge badge-cyan">pgTable</span>
+        <code style="font-family:'Space Mono',monospace;font-weight:700;font-size:15px">competitor_articles</code>
+        <span class="badge badge-gray">FK → keywords.id</span>
+      </div>
+      <table class="schema-table">
+        <thead><tr><th>Column</th><th>Type</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="col-name">id</td><td class="col-type">serial</td><td class="col-comment">PK</td></tr>
+          <tr><td class="col-name">keyword_id</td><td class="col-type">integer</td><td class="col-comment">FK → keywords.id (cascade delete)</td></tr>
+          <tr><td class="col-name">rank</td><td class="col-type">integer NOT NULL</td><td class="col-comment">Rank position 1–50</td></tr>
+          <tr><td class="col-name">article_title</td><td class="col-type">text NOT NULL</td><td class="col-comment">Article title</td></tr>
+          <tr><td class="col-name">page_url</td><td class="col-type">text NOT NULL</td><td class="col-comment">Article URL</td></tr>
+          <tr><td class="col-name">page_traffic</td><td class="col-type">integer</td><td class="col-comment">Ahrefs page traffic estimate</td></tr>
+          <tr><td class="col-name">url_keywords</td><td class="col-type">text</td><td class="col-comment">Ahrefs URL keywords</td></tr>
+          <tr><td class="col-name">search_intent</td><td class="col-type">text</td><td class="col-comment">Commercial | Informational | Transactional | Navigational</td></tr>
+          <tr><td class="col-name">product_count</td><td class="col-type">integer</td><td class="col-comment">Semrush product count</td></tr>
+          <tr><td class="col-name">outbound_link_patterns</td><td class="col-type">text</td><td class="col-comment">e.g. "Amazon (7) · Walmart (3)"</td></tr>
+          <tr><td class="col-name">h2h3_structure</td><td class="col-type">text</td><td class="col-comment">H2/H3 heading hierarchy</td></tr>
+          <tr><td class="col-name">word_count</td><td class="col-type">integer</td><td class="col-comment">Total word count</td></tr>
+          <tr><td class="col-name">published_date</td><td class="col-type">date</td><td class="col-comment">Date published</td></tr>
+          <tr><td class="col-name">last_updated</td><td class="col-type">date</td><td class="col-comment">Date last updated</td></tr>
+          <tr><td class="col-name">page_h1_tag</td><td class="col-type">text</td><td class="col-comment">H1 tag text</td></tr>
+          <tr><td class="col-name">freshness_score</td><td class="col-type">integer</td><td class="col-comment">0–100</td></tr>
+          <tr><td class="col-name">product_list_with_pricing</td><td class="col-type">text</td><td class="col-comment">Products with prices</td></tr>
+          <tr><td class="col-name">featured_products</td><td class="col-type">text</td><td class="col-comment">Featured products</td></tr>
+          <tr><td class="col-name">modifier_tags</td><td class="col-type">text[]</td><td class="col-comment">SEO modifier tags</td></tr>
+          <tr><td class="col-name">content_gap_status</td><td class="col-type">text</td><td class="col-comment">🟢 Low Competition | 🟡 Research Needed | 🔴 Avoid</td></tr>
+          <tr><td class="col-name">affiliate_networks</td><td class="col-type">text[]</td><td class="col-comment">Detected affiliate networks</td></tr>
+          <tr><td class="col-name">extracted_questions</td><td class="col-type">text[]</td><td class="col-comment">PAA extracted questions</td></tr>
+          <tr><td class="col-name">mapped_video_chapters</td><td class="col-type">jsonb</td><td class="col-comment">[{ time, label }]</td></tr>
+          <tr><td class="col-name">faq_schema_ready</td><td class="col-type">text</td><td class="col-comment">✅ Ready | 🔄 Draft | ❌ Not Started</td></tr>
+          <tr><td class="col-name">question_types</td><td class="col-type">text[]</td><td class="col-comment">Question type classifications</td></tr>
+          <tr><td class="col-name">created_at</td><td class="col-type">timestamp</td><td class="col-comment">now()</td></tr>
+          <tr><td class="col-name">updated_at</td><td class="col-type">timestamp</td><td class="col-comment">now()</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SEED DATA PREVIEW ═══════════════ -->
+  <div class="card">
+    <div class="section-title">🌱 Seed Data <span class="badge-count">"under desk treadmills"</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div>
+        <div class="stat-card mb-12"><div class="stat-label">Scores</div><div class="stat-value">Affiliate 88 · YouTube 76 · Trend 92 · Overall 85</div></div>
+        <div class="stat-card mb-12"><div class="stat-label">Ahrefs Data</div><div class="stat-value">KD 28 · CPC $2.40 · Global Volume 38,000</div></div>
+        <div class="stat-card mb-12"><div class="stat-label">VidIQ Data</div><div class="stat-value">Score 72 · Monthly Views 4,200,000</div></div>
+        <div class="stat-card mb-12"><div class="stat-label">Exploding Topics</div><div class="stat-value">+284% growth · Status: EXPLODING</div></div>
+      </div>
+      <div>
+        <div class="stat-card mb-12"><div class="stat-label">AnswerThePublic</div><div class="stat-value">2,600 searches · Top: "Are they worth it?"</div></div>
+        <div class="stat-card mb-12"><div class="stat-label">SimilarWeb</div><div class="stat-value">186K visits/mo · 4.8 min avg session</div></div>
+        <div class="stat-card mb-12"><div class="stat-label">AnswerSocrates</div><div class="stat-value">Frequency: Very High · Top buyer question</div></div>
+        <div class="stat-card mb-12"><div class="stat-label">Products</div><div class="stat-value">3 products · 5 competitors · 1 video brief</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ STEP 1–12 BUILD ORDER ═══════════════ -->
+  <div class="card">
+    <div class="section-title">🏗️ Build Order <span class="badge-count">12 Steps</span></div>
+
+    <!-- STEP 1 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">1</span>
+        <span class="step-title">Project Setup &amp; Shared Components</span>
+      </div>
+      <div class="step-body">
+        <p><strong>Dependencies:</strong> drizzle-orm, drizzle-kit, @neondatabase/serverless, @clerk/nextjs, shadcn/ui (slate), recharts, lucide-react, date-fns</p>
+        <div class="mt-12"><strong>Components to build:</strong></div>
+        <ul>
+          <li><code>&lt;Card&gt;</code> — white bg, radius 10px, shadow, padding 24px</li>
+          <li><code>&lt;StatCard&gt;</code> — slate bg, label (11px uppercase), value (15px bold)</li>
+          <li><code>&lt;Badge&gt;</code> — variants: commercial/informational/transactional/navigational + green/yellow/red/blue/gray</li>
+          <li><code>&lt;ScoreRing&gt;</code> — 64px SVG ring, color by score (green ≥70 / yellow ≥40 / red &lt;40)</li>
+          <li><code>&lt;TipBox&gt;</code> — amber left border 4px, light yellow bg, title + children</li>
+          <li><code>&lt;SectionTitle&gt;</code> — 14px bold, border-bottom, margin-bottom</li>
+        </ul>
+        <p class="mt-12 text-sm text-muted">All components go in <code>/components/ui/</code>, exported from an <code>index.ts</code> barrel file.</p>
+        <div class="mt-12"><strong>CSS Variables:</strong></div>
+        <pre>:root {
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --card-shadow: 0 1px 3px rgba(0,0,0,.07), 0 4px 16px rgba(0,0,0,.05);
+  --accent: #2563eb;
+  --cyan: #0891b2;
+  --dark: #0b1120;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border: #e2e8f0;
+  --radius: 10px;
+}</pre>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">2</span>
+        <span class="step-title">Database Setup + Seed Data</span>
+      </div>
+      <div class="step-body">
+        <p>Create Drizzle ORM schema in <code>/db/schema.ts</code> with all 4 tables: <strong>keywords</strong>, <strong>affiliateProducts</strong>, <strong>videoBriefs</strong>, <strong>competitorArticles</strong>.</p>
+        <p class="mt-12">Create seed entry for <code>"under desk treadmills"</code> with full score data, tool signals, 3 affiliate products, 1 video brief, and 5 competitor articles.</p>
+        <pre>npx drizzle-kit push && npx tsx db/seed.ts</pre>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">3</span>
+        <span class="step-title">Keywords List Page</span>
+      </div>
+      <div class="step-body">
+        <p>Page at <code>/app/(dashboard)/keywords/page.tsx</code> — horizontal card layout (not table).</p>
+        <div class="mb-12"><strong>Card layout:</strong></div>
+        <div class="kw-card">
+          <div>
+            <div class="kw-name">under desk treadmill</div>
+            <div class="flex gap-8 mt-8">
+              <span class="pill">14.8K searches</span>
+              <span class="pill" style="color:var(--green);border-color:#bbf7d0">CPC $2.40</span>
+            </div>
+          </div>
+          <div class="score-pills">
+            <span class="score-pill"><span style="font-size:9px;text-transform:uppercase;color:var(--text-secondary)">Affiliate</span> <span class="num" style="color:var(--score-green)">88</span></span>
+            <span class="score-pill"><span style="font-size:9px;text-transform:uppercase;color:var(--text-secondary)">YouTube</span> <span class="num" style="color:var(--score-yellow)">76</span></span>
+            <span class="score-pill"><span style="font-size:9px;text-transform:uppercase;color:var(--text-secondary)">Trend</span> <span class="num" style="color:var(--score-green)">92</span></span>
+            <span class="score-pill"><span style="font-size:9px;text-transform:uppercase;color:var(--text-secondary)">Overall</span> <span class="num" style="color:var(--score-green)">85</span></span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:800;color:var(--score-green)">$3,200<small style="font-size:13px;font-weight:400;color:var(--slate-400)"> / mo</small></div>
+            <span class="btn btn-primary" style="margin-top:6px;font-size:12px;padding:5px 14px">View Details →</span>
+          </div>
+        </div>
+        <div class="mb-12"><strong>Top Toolbar:</strong></div>
+        <div class="toolbar">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input class="search-input" placeholder="Search keywords..." value="treadmill" />
+            <select class="select-input"><option>Sort: Overall Score</option><option>Revenue</option><option>Monthly Searches</option><option>CPC</option></select>
+          </div>
+          <span class="btn btn-primary" onclick="document.getElementById('kw-modal-overlay').style.display='flex'">+ Add Keyword</span>
+        </div>
+
+        <!-- Modal demo -->
+        <div id="kw-modal-overlay" class="modal-overlay" style="display:none;position:relative;border-radius:10px;margin-bottom:12px;background:transparent;height:auto">
+          <div class="modal-box" style="margin:0 auto">
+            <h3>Add Keyword</h3>
+            <div class="modal-desc">Enter a keyword to research and analyze.</div>
+            <input placeholder="e.g. under desk treadmill" value="under desk treadmill" />
+            <div class="modal-actions">
+              <span class="btn btn-ghost" onclick="document.getElementById('kw-modal-overlay').style.display='none'">Cancel</span>
+              <span class="btn btn-primary">Add Keyword</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-12"><strong>Blue left border (active card):</strong></div>
+        <div class="kw-card" style="border-left:4px solid var(--accent);padding-left:16px;background:#f8fafc">
+          <div>
+            <div class="kw-name">walking pad</div>
+            <div class="flex gap-8 mt-8">
+              <span class="pill">8.2K searches</span>
+              <span class="pill" style="color:var(--green);border-color:#bbf7d0">CPC $1.80</span>
+            </div>
+          </div>
+          <div class="score-pills">
+            <span class="score-pill"><span style="font-size:9px;text-transform:uppercase;color:var(--text-secondary)">Affiliate</span> <span class="num" style="color:var(--score-yellow)">62</span></span>
+            <span class="score-pill"><span style="font-size:9px;text-transform:uppercase;color:var(--text-secondary)">YouTube</span> <span class="num" style="color:var(--score-green)">81</span></span>
+            <span class="score-pill"><span style="font-size:9px;text-transform:uppercase;color:var(--text-secondary)">Trend</span> <span class="num" style="color:var(--score-yellow)">55</span></span>
+            <span class="score-pill"><span style="font-size:9px;text-transform:uppercase;color:var(--text-secondary)">Overall</span> <span class="num" style="color:var(--score-yellow)">66</span></span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:800;color:var(--score-green)">$1,450<small style="font-size:13px;font-weight:400;color:var(--slate-400)"> / mo</small></div>
+            <span class="btn btn-primary" style="margin-top:6px;font-size:12px;padding:5px 14px">View Details →</span>
+          </div>
+        </div>
+
+        <div class="mb-12"><strong>Pagination (20 per page):</strong></div>
+        <div class="pagination">
+          <span class="btn btn-ghost" style="opacity:.4">← Prev</span>
+          <span class="page-indicator">Page 1 of 5</span>
+          <span class="btn btn-ghost">Next →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">4</span>
+        <span class="step-title">Keyword Detail Page (Main Page)</span>
+      </div>
+      <div class="step-body">
+        <p>Page at <code>/app/(dashboard)/keywords/[slug]/page.tsx</code> — 5 major sections.</p>
+
+        <div class="tip-box">
+          <div class="tip-title">Section A: Keyword Hero</div>
+          <div class="tip-body">Dark background (#0b1120) card. Left: keyword title 28px bold white + 3 pills (Monthly Searches, Avg CPC, YT Competition). Right: "$X,XXX / month" in bright green (#22c55e) 36px bold.</div>
+        </div>
+
+        <div style="background:var(--dark);border-radius:8px;padding:20px;margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+            <div>
+              <div style="font-size:24px;font-weight:700;color:#fff">under desk treadmill</div>
+              <div class="flex gap-8 mt-8">
+                <span class="pill" style="background:rgba(255,255,255,.1);color:#cbd5e1;border:none">14.8K searches</span>
+                <span class="pill" style="background:rgba(255,255,255,.1);color:#cbd5e1;border:none">CPC $2.40</span>
+                <span class="pill" style="background:rgba(255,255,255,.1);color:#cbd5e1;border:none">YT Comp 45</span>
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:32px;font-weight:800;color:var(--score-green)">$3,200<span style="font-size:14px;font-weight:400;color:#94a3b8"> / month</span></div>
+              <div style="font-size:11px;color:#94a3b8">projected monthly affiliate earnings</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-title">Section B: Score Dashboard</div>
+          <div class="tip-body">4 ScoreRing components (Affiliate / YouTube / Trend / Overall) in responsive grid. 80px SVG circles with color coding.</div>
+        </div>
+
+        <div class="score-ring-container mb-16">
+          <div class="score-ring-wrap">
+            <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#e2e8f0" stroke-width="6"/><circle cx="40" cy="40" r="32" fill="none" stroke="#22c55e" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="28" stroke-linecap="round" transform="rotate(-90 40 40)"/><text x="40" y="40" text-anchor="middle" dy="5" font-size="20" font-weight="700" fill="#0f172a">88</text></svg>
+            <div class="label">Affiliate</div>
+          </div>
+          <div class="score-ring-wrap">
+            <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#e2e8f0" stroke-width="6"/><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="50" stroke-linecap="round" transform="rotate(-90 40 40)"/><text x="40" y="40" text-anchor="middle" dy="5" font-size="20" font-weight="700" fill="#0f172a">76</text></svg>
+            <div class="label">YouTube</div>
+          </div>
+          <div class="score-ring-wrap">
+            <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#e2e8f0" stroke-width="6"/><circle cx="40" cy="40" r="32" fill="none" stroke="#22c55e" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="16" stroke-linecap="round" transform="rotate(-90 40 40)"/><text x="40" y="40" text-anchor="middle" dy="5" font-size="20" font-weight="700" fill="#0f172a">92</text></svg>
+            <div class="label">Trend</div>
+          </div>
+          <div class="score-ring-wrap">
+            <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="#e2e8f0" stroke-width="6"/><circle cx="40" cy="40" r="32" fill="none" stroke="#22c55e" stroke-width="6" stroke-dasharray="201" stroke-dashoffset="30" stroke-linecap="round" transform="rotate(-90 40 40)"/><text x="40" y="40" text-anchor="middle" dy="5" font-size="20" font-weight="700" fill="#0f172a">85</text></svg>
+            <div class="label">Overall</div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-title">Section C: Tool Signals (6-panel grid)</div>
+          <div class="tip-body">White card with title "Research Tool Signals". 3×2 grid with tool panels for Ahrefs, VidIQ, Exploding Topics, AnswerThePublic, SimilarWeb, AnswerSocrates.</div>
+        </div>
+
+        <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;background:var(--card)">
+          <div class="section-title" style="font-size:13px;margin-bottom:16px">🔬 Research Tool Signals</div>
+          <div class="grid-3x2">
+            <div class="tool-panel" style="border-color:#dbeafe;background:#eff6ff">
+              <div class="tool-name" style="color:#1d4ed8">🔍 AHREFS</div>
+              <div class="flex gap-8 items-center mb-8"><span class="badge badge-green" style="font-size:12px;padding:2px 8px">KD 28</span></div>
+              <div class="metric">KD 28 · <span style="color:var(--green)">CPC $2.40</span></div>
+              <div class="sub-metric">38K global volume</div>
+            </div>
+            <div class="tool-panel" style="border-color:#fef3c7;background:#fffbeb">
+              <div class="tool-name" style="color:#b45309">📊 VIDIQ</div>
+              <div class="metric">72<span style="font-size:14px;font-weight:400;color:var(--text-secondary)">/100</span></div>
+              <div style="height:6px;background:#e2e8f0;border-radius:3px;margin:6px 0;overflow:hidden"><div style="width:72%;height:100%;background:var(--score-yellow);border-radius:3px"></div></div>
+              <div class="sub-metric">4.2M monthly views</div>
+            </div>
+            <div class="tool-panel" style="border-color:#bbf7d0;background:#f0fdf4">
+              <div class="tool-name" style="color:var(--green)">🚀 EXPLODING TOPICS</div>
+              <div class="metric" style="color:var(--green)">+284%</div>
+              <div style="display:flex;align-items:center;gap:6px"><span class="pulsing-dot"></span><span class="badge badge-green" style="font-size:12px;padding:2px 10px">EXPLODING</span></div>
+            </div>
+            <div class="tool-panel" style="border-color:#f1f5f9">
+              <div class="tool-name" style="color:#6366f1">💬 ANSWER THE PUBLIC</div>
+              <div class="metric">2,600</div>
+              <div class="sub-metric" style="font-style:italic">"Are they worth it?"</div>
+            </div>
+            <div class="tool-panel" style="border-color:#dbeafe;background:#eff6ff">
+              <div class="tool-name" style="color:#0891b2">🌐 SIMILARWEB</div>
+              <div class="metric">186K visits/mo</div>
+              <div class="sub-metric">4.8 min avg session</div>
+            </div>
+            <div class="tool-panel" style="border-color:#fce7f3;background:#fdf2f8">
+              <div class="tool-name" style="color:#db2777">🧠 ANSWER SOCRATES</div>
+              <div><span class="badge badge-green" style="font-size:12px;padding:2px 8px">Very High</span></div>
+              <div class="metric" style="font-size:16px;margin-top:8px">Top buyer question</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-title">Section D: Affiliate Products</div>
+          <div class="tip-body">White card with product rows showing name, network badge, commission range, avg price, Copy Link button.</div>
+        </div>
+
+        <div style="border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:16px">
+          <div style="font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:8px">Affiliate Products to Feature</div>
+          <div class="product-row">
+            <div><span style="font-weight:700">LifeSpan TR1200-DT3</span> <span class="badge badge-cyan">Amazon Associates</span></div>
+            <div><span style="color:var(--green);font-weight:700">$14–$28/sale</span></div>
+            <div><span style="color:var(--text-secondary)">Avg price $799</span></div>
+            <div><span class="btn btn-ghost" style="padding:4px 12px;font-size:12px">Copy Link</span></div>
+          </div>
+          <div class="product-row">
+            <div><span style="font-weight:700">Urevo Foldi Mini</span> <span class="badge badge-cyan">Amazon Associates</span> <span class="badge badge-green">Budget Pick</span></div>
+            <div><span style="color:var(--green);font-weight:700">$5–$10/sale</span></div>
+            <div><span style="color:var(--text-secondary)">Avg price $299</span></div>
+            <div><span class="btn btn-ghost" style="padding:4px 12px;font-size:12px">Copy Link</span></div>
+          </div>
+          <div class="product-row">
+            <div><span style="font-weight:700">Walkingpad A1 Pro</span> <span class="badge badge-cyan">Flexispot</span> <span class="badge badge-blue">Premium</span></div>
+            <div><span style="color:var(--green);font-weight:700">$20–$40/sale</span></div>
+            <div><span style="color:var(--text-secondary)">Avg price $599</span></div>
+            <div><span class="btn btn-ghost" style="padding:4px 12px;font-size:12px">Copy Link</span></div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-title">Section E: Video Brief</div>
+          <div class="tip-body">Dark card (#0b1120) with video title, hook, info pills, thumbnail concept, 8-step timeline outline, Why This Wins, and production sheet table.</div>
+        </div>
+
+        <div style="background:var(--dark);border-radius:var(--radius);padding:24px;margin-bottom:12px">
+          <div style="color:var(--slate-400);font-size:12px;font-weight:600;letter-spacing:0.5px;margin-bottom:12px">🎬 Video Brief · YOUTUBE</div>
+          <div style="font-size:22px;font-weight:700;color:#fff;margin-bottom:8px">Under Desk Treadmill Buyer's Guide: 5 Best Picks for 2025</div>
+          <div style="font-style:italic;color:var(--slate-300);font-size:14px;margin-bottom:14px">"Stop sitting all day — here are the 5 treadmills that actually fit under your desk..."</div>
+          <div class="flex gap-8 flex-wrap mb-16">
+            <span class="pill" style="background:rgba(255,255,255,.1);color:#cbd5e1;border:none">Target: 12–15 min</span>
+            <span class="pill" style="background:rgba(255,255,255,.1);color:#cbd5e1;border:none">Best: Tue 8am</span>
+            <span class="pill" style="background:rgba(255,255,255,.1);color:#cbd5e1;border:none">$18.50 / 1K views</span>
+          </div>
+          <div class="tip-box" style="border-left-color:var(--amber-border);background:rgba(245,158,11,.12)">
+            <div class="tip-title" style="color:var(--amber-border)">🎨 Thumbnail Concept</div>
+            <div class="tip-body" style="color:var(--slate-300)">Split-screen: "Under Desk" vs "Walking" — product lineup with "$299–$799" price banner, arrow pointing to the best pick.</div>
+          </div>
+          <div style="margin-top:16px">
+            <div style="font-size:12px;font-weight:600;color:var(--slate-400);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px">Video Outline</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:50%;background:rgba(8,145,178,.2);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">1</span><span style="color:#fff;font-size:14px">The Sitting Problem</span><span class="badge badge-gray" style="margin-left:auto">0:00–1:30</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:50%;background:rgba(8,145,178,.2);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">2</span><span style="color:#fff;font-size:14px">What to Look For</span><span class="badge badge-gray" style="margin-left:auto">1:30–3:30</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:50%;background:rgba(8,145,178,.2);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">3</span><span style="color:#fff;font-size:14px">Budget Pick: Urevo Foldi Mini</span><span class="badge badge-gray" style="margin-left:auto">3:30–5:30</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:50%;background:rgba(8,145,178,.2);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">4</span><span style="color:#fff;font-size:14px">Premium Pick: LifeSpan TR1200-DT3</span><span class="badge badge-gray" style="margin-left:auto">5:30–8:00</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:50%;background:rgba(8,145,178,.2);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">5</span><span style="color:#fff;font-size:14px">Walkingpad A1 Pro Review</span><span class="badge badge-gray" style="margin-left:auto">8:00–10:00</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:50%;background:rgba(8,145,178,.2);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">6</span><span style="color:#fff;font-size:14px">Side-by-Side Comparison</span><span class="badge badge-gray" style="margin-left:auto">10:00–12:00</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:50%;background:rgba(8,145,178,.2);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">7</span><span style="color:#fff;font-size:14px">Final Verdict</span><span class="badge badge-gray" style="margin-left:auto">12:00–13:30</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:50%;background:rgba(8,145,178,.2);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">8</span><span style="color:#fff;font-size:14px">Outro + Affiliate Links</span><span class="badge badge-gray" style="margin-left:auto">13:30–15:00</span></div>
+            </div>
+          </div>
+          <div class="tip-box mt-16" style="background:rgba(245,158,11,.12);border-left-color:var(--amber-border)">
+            <div class="tip-title" style="color:var(--amber-border)">💡 WHY THIS WINS</div>
+            <div class="tip-body" style="color:var(--slate-300)">Low competition (VidIQ 28), high buyer intent (CPC $2.40), and trending +284% — this is the perfect affiliate video play. Amazon commissions are strong at $5–$40/sale.</div>
+          </div>
+          <div class="flex gap-12 mt-16">
+            <span class="btn btn-primary">✍️ Write the Script</span>
+            <span class="btn btn-ghost" style="color:#94a3b8;border-color:#334155">📋 View Production Sheet</span>
+          </div>
+        </div>
+
+        <!-- Production Sheet -->
+        <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px">
+          <div style="background:var(--dark);color:#94a3b8;font-size:11px;font-weight:600;text-transform:uppercase;padding:10px 16px">🎬 Production Sheet</div>
+          <table class="prod-table">
+            <thead><tr><th>Timestamp</th><th>Section</th><th>Talking Points</th><th>B-Roll</th></tr></thead>
+            <tbody>
+              <tr><td>0:00–1:30</td><td>Intro</td><td>Sitting problem, hook, preview top 3</td><td>Person sitting, product lineup</td></tr>
+              <tr><td>1:30–3:30</td><td>Buying Guide</td><td>Motor, deck size, noise level, warranty</td><td>Comparison chart, spec overlay</td></tr>
+              <tr><td>3:30–5:30</td><td>Budget Pick</td><td>Urevo Foldi Mini review, pros/cons</td><td>Product footage, close-ups</td></tr>
+              <tr><td>5:30–8:00</td><td>Premium Pick</td><td>LifeSpan TR1200-DT3 deep dive</td><td>Walking demo, build quality</td></tr>
+              <tr><td>8:00–10:00</td><td>Walkingpad A1</td><td>Flexispot model, best for standing desks</td><td>Under desk fit test, noise test</td></tr>
+              <tr><td>10:00–15:00</td><td>Comparison &amp; Outro</td><td>Side-by-side specs, final verdict</td><td>3-up split screen, price overlay</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">5</span>
+        <span class="step-title">Competitor Analysis Section</span>
+      </div>
+      <div class="step-body">
+        <p><strong>PART 1:</strong> Keyword Gap &amp; YouTube Topic Validator</p>
+        <div class="grid-2 mt-12">
+          <div class="tip-box">
+            <div class="tip-title">💡 The CPC Predictor</div>
+            <div class="tip-body">CPC &gt; $1.50 = high buyer intent. CPC &gt; $3.00 = very lucrative.</div>
+          </div>
+          <div class="tip-box">
+            <div class="tip-title">💡 The Content Gap Exploit</div>
+            <div class="tip-body">VidIQ &lt; 50 + Article traffic &gt; 5K but YT views &lt; 100K = HUGE gap.</div>
+          </div>
+        </div>
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:14px 18px;margin-bottom:14px">
+          <div style="font-weight:700;color:var(--green)">🎯 Sweet Spot Filter: 1K–50K Traffic + Intent = Commercial or Informational.</div>
+        </div>
+
+        <div class="mb-12"><strong>Keyword Gap Opportunities (responsive card list):</strong></div>
+
+        <div class="gap-card">
+          <div><strong>walking pad under desk</strong> <span class="pill" style="margin-left:8px">3.6K</span></div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <span style="color:var(--score-green);font-weight:600">$2.10</span>
+            <span style="color:var(--green);font-weight:700;font-size:13px">$7,560</span>
+            <span class="sparkline">▂▃▅▆▇▆▅</span>
+            <span class="badge badge-blue" style="font-size:10px">Commercial</span>
+            <span style="color:var(--score-green)">↗ Rising</span>
+            <span class="badge badge-yellow" style="font-size:10px">YT 62</span>
+            <span style="font-size:12px;color:var(--text-secondary)">48K avg views</span>
+          </div>
+          <span class="btn btn-green" style="font-size:11px;padding:4px 12px">🚀 Create Script</span>
+        </div>
+
+        <div class="gap-card">
+          <div><strong>best compact treadmill</strong> <span class="pill" style="margin-left:8px">2.1K</span></div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <span style="color:var(--amber);font-weight:600">$1.85</span>
+            <span style="color:var(--green);font-weight:700;font-size:13px">$3,990</span>
+            <span class="sparkline">▃▄▅▆▇▆▅▄</span>
+            <span class="badge badge-blue" style="font-size:10px">Commercial</span>
+            <span style="color:var(--score-yellow)">→ Stable</span>
+            <span class="badge badge-green" style="font-size:10px">YT 38</span>
+            <span style="font-size:12px;color:var(--text-secondary)">22K avg views</span>
+          </div>
+          <span class="btn btn-amber" style="font-size:11px;padding:4px 12px">🔎 Research</span>
+        </div>
+
+        <div class="gap-card">
+          <div><strong>treadmill for standing desk</strong> <span class="pill" style="margin-left:8px">1.2K</span></div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <span style="color:var(--text-secondary);font-weight:600">$1.20</span>
+            <span style="color:var(--green);font-weight:700;font-size:13px">$1,440</span>
+            <span class="sparkline">▂▃▄▃▂</span>
+            <span class="badge badge-green" style="font-size:10px">Informational</span>
+            <span style="color:var(--score-red)">↘ Falling</span>
+            <span class="badge badge-red" style="font-size:10px">YT 85</span>
+            <span style="font-size:12px;color:var(--text-secondary)">6K avg views</span>
+          </div>
+          <span class="btn btn-gray" style="font-size:11px;padding:4px 12px">⏸ Pass</span>
+        </div>
+
+        <div class="mt-12"><strong>PART 2:</strong> Competitor Articles Header</div>
+        <div style="border:1px solid var(--border);border-radius:8px;padding:20px;margin-top:8px">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+            <div>
+              <div style="font-size:16px;font-weight:700">Top 5 Competitor Articles</div>
+              <div style="font-size:13px;color:var(--text-secondary)">Click any tab to deep-dive into each ranking article.</div>
+            </div>
+            <span class="btn btn-cyan" style="font-size:12px;padding:6px 16px">View All Competitors →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">6</span>
+        <span class="step-title">Competitor Articles Detail Page (The Tabbed Page)</span>
+      </div>
+      <div class="step-body">
+        <p>Page at <code>/app/(dashboard)/keywords/[slug]/competitors/page.tsx</code> with numbered tab navigation (01–50).</p>
+
+        <!-- PAGE HEADER CARD -->
+        <div class="tip-box-cyan" style="margin-bottom:12px">
+          <div class="tip-title" style="font-size:13px">← Back to under desk treadmill</div>
+          <div class="tip-body" style="font-size:17px;font-weight:700;color:var(--text-primary);margin-top:4px">under desk treadmill — Competitor Analysis</div>
+          <div class="tip-body" style="margin-top:6px">Deep-dive analysis of 23 ranking competitor articles. Compare content strategies, find gaps, and identify opportunities for your content.</div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-title">Filter Tips</div>
+          <div class="tip-body">Language, traffic min 500/1000, word count 1500+, look for Intent label</div>
+        </div>
+        <div class="tip-box">
+          <div class="tip-title">PRO TIP: The Freshness Exploit</div>
+          <div class="tip-body">Check Last Updated, if 6+ months old → opportunity</div>
+        </div>
+        <div class="tip-box">
+          <div class="tip-title">PRO TIP: GEO-Ready Content</div>
+          <div class="tip-body">PAA questions = video chapters + FAQ schema</div>
+        </div>
+
+        <!-- TAB BAR DEMO -->
+        <div style="display:flex;align-items:center;gap:4px">
+          <span class="btn btn-ghost" style="padding:4px 8px;font-size:12px;flex-shrink:0">←</span>
+          <div class="tab-bar" style="flex:1;margin-bottom:0">
+            <span class="tab active">01</span>
+            <span class="tab">02</span>
+            <span class="tab">03</span>
+            <span class="tab">04</span>
+            <span class="tab">05</span>
+            <span class="tab">06</span>
+            <span class="tab">07</span>
+            <span class="tab">08</span>
+            <span class="tab">09</span>
+            <span class="tab">10</span>
+          </div>
+          <span class="btn btn-ghost" style="padding:4px 8px;font-size:12px;flex-shrink:0">→</span>
+        </div>
+
+        <!-- COMPETITOR DETAIL PREVIEW -->
+        <div style="border:1px solid var(--border);border-radius:8px;padding:20px">
+          <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:10px;margin-bottom:16px">
+            <div>
+              <div style="font-size:20px;font-weight:700">#01. The 5 Best Under Desk Treadmills of 2025</div>
+              <div style="color:var(--cyan);font-size:12px">therunningadvisor.com/best-under-desk-treadmills</div>
+            </div>
+            <span class="badge badge-blue" style="font-size:12px;padding:4px 12px">Commercial</span>
+          </div>
+
+          <!-- 8 STAT CARDS -->
+          <div class="grid-4x2 mb-16">
+            <div class="stat-card"><div class="stat-label">Page Traffic</div><div class="stat-value">24,500</div></div>
+            <div class="stat-card"><div class="stat-label">URL Keywords</div><div class="stat-value">847</div></div>
+            <div class="stat-card"><div class="stat-label">Word Count</div><div class="stat-value">3,240</div></div>
+            <div class="stat-card"><div class="stat-label">Published</div><div class="stat-value">2024-03-15</div></div>
+            <div class="stat-card"><div class="stat-label">Products</div><div class="stat-value">12</div></div>
+            <div class="stat-card"><div class="stat-label">Last Updated</div><div class="stat-value">2025-01-20</div></div>
+            <div class="stat-card"><div class="stat-label">Freshness Score</div><div class="stat-value"><span class="badge badge-green" style="font-size:12px">72 — Fresh</span></div></div>
+            <div class="stat-card"><div class="stat-label">Content Gap</div><div class="stat-value"><span class="badge badge-yellow" style="font-size:12px">🟡 Research Needed</span></div></div>
+          </div>
+
+          <!-- 11 SECTIONS -->
+          <div class="comp-section">
+            <div class="comp-sect-title">Page H1 Tag</div>
+            <div style="font-size:15px;font-weight:600;color:var(--text-primary)">5 Best Under Desk Treadmills for Walking While Working (2025)</div>
+          </div>
+          <div class="comp-section">
+            <div class="comp-sect-title">H2 / H3 Structure</div>
+            <pre style="background:#f8fafc;padding:10px 14px;border-radius:6px;font-size:12px;font-family:'Space Mono',monospace">H2: Why Use an Under Desk Treadmill?
+  H3: Health Benefits
+  H3: Productivity Boost
+H2: Top 5 Under Desk Treadmills
+  H3: 1. LifeSpan TR1200-DT3
+  H3: 2. Walkingpad A1 Pro
+H2: Buyer's Guide</pre>
+          </div>
+          <div class="comp-section">
+            <div class="comp-sect-title">Modifier Tags</div>
+            <div class="chip-list">
+              <span class="chip">best</span>
+              <span class="chip">top</span>
+              <span class="chip">2025</span>
+              <span class="chip">review</span>
+              <span class="chip">budget</span>
+              <span class="chip">premium</span>
+              <span class="chip">buying guide</span>
+            </div>
+          </div>
+          <div class="comp-section">
+            <div class="comp-sect-title">Product List with Pricing</div>
+            <div style="color:var(--text-secondary);font-size:14px">LifeSpan TR1200-DT3 ($799), Walkingpad A1 Pro ($599), Urevo Foldi Mini ($299), Goplus 2-in-1 ($349), Sunny Health &amp; Fitness ($429)</div>
+          </div>
+          <div class="comp-section">
+            <div class="comp-sect-title">Featured Products &amp; Prices</div>
+            <div style="color:var(--text-secondary);font-size:14px">LifeSpan TR1200-DT3 — $799 (Editor's Choice), Walkingpad A1 Pro — $599 (Best Value)</div>
+          </div>
+          <div class="comp-section">
+            <div class="comp-sect-title">Outbound Link Patterns</div>
+            <div style="color:var(--text-secondary)">Amazon (7) · Walmart (3) · Dicks (2)</div>
+          </div>
+          <div class="comp-section">
+            <div class="comp-sect-title">Identified Affiliate Networks</div>
+            <div class="chip-list">
+              <span class="badge badge-cyan" style="font-size:11px">Amazon Associates</span>
+              <span class="badge badge-cyan" style="font-size:11px">ShareASale</span>
+              <span class="badge badge-cyan" style="font-size:11px">Flexispot Direct</span>
+            </div>
+          </div>
+          <div class="comp-section">
+            <div class="comp-sect-title">Extracted Questions (PAA)</div>
+            <ul class="paa-list">
+              <li>Are under desk treadmills worth it? <span class="btn btn-ghost" style="padding:2px 8px;font-size:11px;margin-left:8px">→ Add to FAQ</span></li>
+              <li>How much should I spend on an under desk treadmill? <span class="btn btn-ghost" style="padding:2px 8px;font-size:11px;margin-left:8px">→ Add to FAQ</span></li>
+              <li>Can you walk on a treadmill while working? <span class="btn btn-ghost" style="padding:2px 8px;font-size:11px;margin-left:8px">→ Add to FAQ</span></li>
+              <li>What is the quietest under desk treadmill? <span class="btn btn-ghost" style="padding:2px 8px;font-size:11px;margin-left:8px">→ Add to FAQ</span></li>
+              <li>Do under desk treadmills have a weight limit? <span class="btn btn-ghost" style="padding:2px 8px;font-size:11px;margin-left:8px">→ Add to FAQ</span></li>
+            </ul>
+          </div>
+          <div class="comp-section">
+            <div class="comp-sect-title">Mapped Video Chapters</div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;align-items:center;gap:10px"><span class="badge badge-cyan" style="font-size:10px;padding:1px 8px">0:00</span><span style="font-size:14px">Intro</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span class="badge badge-cyan" style="font-size:10px;padding:1px 8px">2:15</span><span style="font-size:14px">Top Picks Overview</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span class="badge badge-cyan" style="font-size:10px;padding:1px 8px">5:30</span><span style="font-size:14px">Budget vs Premium</span></div>
+            </div>
+          </div>
+          <div class="comp-section">
+            <div class="comp-sect-title">FAQ Schema Status</div>
+            <span class="badge badge-green" style="font-size:13px;padding:4px 14px">✅ Ready</span>
+          </div>
+          <div class="comp-section">
+            <div class="comp-sect-title">Question Types</div>
+            <div class="chip-list">
+              <span class="chip">What</span>
+              <span class="chip">How</span>
+              <span class="chip">Can</span>
+              <span class="chip">Are</span>
+              <span class="chip">Do</span>
+            </div>
+          </div>
+
+          <!-- BOTTOM NAV -->
+          <div class="pagination" style="border-top:1px solid var(--border);padding-top:16px;margin-top:16px">
+            <span class="btn btn-ghost" style="opacity:.4">← Prev</span>
+            <span class="page-indicator">01 / 23</span>
+            <span class="btn btn-ghost">Next →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">7</span>
+        <span class="step-title">Server Actions &amp; Data Layer</span>
+      </div>
+      <div class="step-body">
+        <p>Files in <code>/app/actions/</code>:</p>
+        <div class="grid-2 mt-12">
+          <div>
+            <div class="comp-sect-title">keywords.ts</div>
+            <ul>
+              <li><code>getKeywords(userId)</code> — ordered by overallScore desc</li>
+              <li><code>getKeywordBySlug(slug, userId)</code> — with all relations</li>
+              <li><code>createKeyword(data)</code> — insert, return id</li>
+              <li><code>updateKeyword(id, data)</code> — partial update</li>
+              <li><code>deleteKeyword(id)</code> — soft delete</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">competitors.ts</div>
+            <ul>
+              <li><code>getCompetitorsByKeyword(keywordId)</code> — ordered by rank</li>
+              <li><code>getCompetitorByRank(keywordId, rank)</code></li>
+              <li><code>upsertCompetitor(keywordId, data)</code></li>
+              <li><code>bulkUpsertCompetitors(keywordId, [])</code> — CSV import</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">affiliateProducts.ts</div>
+            <ul>
+              <li><code>getProductsByKeyword(keywordId)</code></li>
+              <li><code>upsertProduct(data)</code></li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">videoBriefs.ts</div>
+            <ul>
+              <li><code>getBriefByKeyword(keywordId)</code></li>
+              <li><code>upsertBrief(keywordId, data)</code></li>
+            </ul>
+          </div>
+        </div>
+        <div class="tip-box mt-12">
+          <div class="tip-title">All actions:</div>
+          <div class="tip-body">Use <code>'use server'</code> directive + Clerk <code>auth()</code> validation. Return <code>{ data, error }</code>. Use Drizzle ORM.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 8 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">8</span>
+        <span class="step-title">CSV Import Feature</span>
+      </div>
+      <div class="step-body">
+        <p>Page at <code>/app/(dashboard)/keywords/[slug]/competitors/import/page.tsx</code></p>
+
+        <div class="drag-zone mb-16">
+          <div class="icon">📄</div>
+          <div class="text">Drop your CSV file here</div>
+          <div class="sub">or click to browse — accepts .csv files only</div>
+        </div>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+          <span class="btn btn-ghost">⬇ Download Template CSV</span>
+        </div>
+
+        <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px">
+          <div style="background:var(--dark);color:#94a3b8;font-size:11px;font-weight:600;text-transform:uppercase;padding:8px 14px">Preview (first 5 rows)</div>
+          <table class="prod-table">
+            <thead><tr><th>rank</th><th>article_title</th><th>page_url</th><th>search_intent</th><th>word_count</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>The 5 Best Under Desk...</td><td>therunningadvisor.com/...</td><td><span class="badge badge-blue" style="font-size:10px">Commercial</span></td><td>3,240</td></tr>
+              <tr><td>2</td><td>Under Desk Treadmill...</td><td>treadmillreviews.net/...</td><td><span class="badge badge-blue" style="font-size:10px">Commercial</span></td><td>2,890</td></tr>
+              <tr><td>3</td><td>Are Under Desk Tread...</td><td>fitnessnomad.com/...</td><td><span class="badge badge-green" style="font-size:10px">Informational</span></td><td>1,760</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display:flex;gap:8px;align-items:center">
+          <span class="btn btn-primary">Import 5 Competitors</span>
+        </div>
+
+        <p class="mt-12"><strong>Parsing rules:</strong> Pipe-separated fields for <code>modifier_tags</code>, <code>affiliate_networks</code>, <code>extracted_questions</code>, <code>question_types</code>, <code>mapped_video_chapters</code>.</p>
+        <pre>rank, article_title, page_url, page_traffic, url_keywords, search_intent,
+word_count, published_date, product_count, last_updated, page_h1_tag,
+h2h3_structure, modifier_tags, freshness_score, product_list_with_pricing,
+content_gap_status, featured_products, outbound_link_patterns,
+affiliate_networks, extracted_questions, mapped_video_chapters,
+faq_schema_ready, question_types</pre>
+        <p class="mt-12">Uses <strong>Papa Parse</strong> client-side. On success: toast + redirect to <code>?rank=1</code>.</p>
+      </div>
+    </div>
+
+    <!-- STEP 9 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">9</span>
+        <span class="step-title">Analytics &amp; Scoring Engine</span>
+      </div>
+      <div class="step-body">
+        <p>File at <code>/lib/scoring.ts</code> — calculates all 4 scores:</p>
+        <div class="grid-2 mt-12">
+          <div>
+            <div class="comp-sect-title">affiliateScore (0–100)</div>
+            <ul>
+              <li>cpcScore: &gt;$4 → 40pts, &gt;$3 → 35, &gt;$2 → 28, &gt;$1.50 → 20, else 10</li>
+              <li>densityScore: &gt;10 links → 30, 7–10 → 22, 4–6 → 15, 1–3 → 8</li>
+              <li>networkScore: Amazon=20, ShareASale=18, Direct=15, None=0</li>
+              <li>Capped at 100</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">youtubeScore (0–100)</div>
+            <ul>
+              <li>volumeScore: &gt;5K→35, &gt;2K→28, &gt;500→20, else 10</li>
+              <li>competitionScore: &lt;40→40, &lt;60→28, &lt;80→15, else 5</li>
+              <li>freshnessScore: &gt;18mo→25, &gt;12mo→18, &gt;6mo→10, else 3</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">trendScore (0–100)</div>
+            <ul>
+              <li>growthScore: &gt;200%→50, &gt;100%→40, &gt;50%→28, &gt;0%→15, negative→0</li>
+              <li>directionScore: EXPLODING→30, RISING→22, STABLE→12, FALLING→0</li>
+              <li>stabilityScore: &gt;6mo→20, else proportional</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">overallScore</div>
+            <div style="font-family:'Space Mono',monospace;font-size:12px;color:var(--text-secondary)">(affiliate × 0.35) + (youtube × 0.30) + (trend × 0.25) + (volumeNormalized × 0.10)</div>
+          </div>
+        </div>
+        <div class="tip-box mt-12">
+          <div class="tip-title">estRevenuePerMonth</div>
+          <div class="tip-body"><code style="font-size:12px">(monthlySearches × 0.03 × conversionRate × avgCommission)</code><br>conversionRate: CPC &gt;$3 → 4%, &gt;$1.5 → 3%, else 2%<br>Returns integer dollars/month.</div>
+        </div>
+        <div class="tip-box-green mt-12">
+          <div class="tip-title" style="color:var(--score-green)">Export: calculateAllScores(keywordData)</div>
+          <div class="tip-body">→ <code>{ affiliateScore, youtubeScore, trendScore, overallScore, estRevenuePerMonth }</code></div>
+        </div>
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px">
+          <strong>🔄 Recalculate Scores</strong> — Server action that runs scoring engine on demand for any keyword.
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 10 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">10</span>
+        <span class="step-title">Freshness Score Calculator</span>
+      </div>
+      <div class="step-body">
+        <p>File at <code>/lib/freshness.ts</code> — 0–100 score for competitor articles.</p>
+        <div class="grid-2 mt-12">
+          <div>
+            <div class="comp-sect-title">Recency (40pts)</div>
+            <ul>
+              <li>&lt;30 days → 40</li>
+              <li>&lt;90 days → 32</li>
+              <li>&lt;180 days → 22</li>
+              <li>&lt;365 days → 12</li>
+              <li>&gt;365 → 4 | None → 0</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">Word Count (25pts)</div>
+            <ul>
+              <li>&gt;3K → 25, &gt;2K → 20</li>
+              <li>&gt;1.5K → 15, &gt;1K → 10</li>
+              <li>&lt;1K → 5</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">Product Count (20pts)</div>
+            <ul>
+              <li>&gt;8 → 20, 5–8 → 15</li>
+              <li>3–4 → 10, 1–2 → 6, 0 → 0</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">Publish Date (15pts)</div>
+            <ul>
+              <li>&lt;6mo → 15, &lt;12mo → 12</li>
+              <li>&lt;24mo → 8, &gt;24mo → 3</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-12"><strong>Result:</strong> ≥70 → "Fresh" (green), ≥40 → "Aging" (yellow), &lt;40 → "Stale" (red)</div>
+      </div>
+    </div>
+
+    <!-- STEP 11 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">11</span>
+        <span class="step-title">Export Features</span>
+      </div>
+      <div class="step-body">
+        <div class="export-bar">
+          <span class="btn btn-ghost" style="font-size:12px;padding:5px 14px">📥 Export to CSV</span>
+          <span class="btn btn-ghost" style="font-size:12px;padding:5px 14px">📄 Export Video Brief (.md)</span>
+          <span class="btn btn-ghost" style="font-size:12px;padding:5px 14px">📋 Export FAQ Schema (JSON-LD)</span>
+          <span class="btn btn-ghost" style="font-size:12px;padding:5px 14px" onclick="copiedToast()">📑 Copy PAA Questions</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <div class="comp-sect-title">Export to CSV</div>
+            <p style="font-size:13px">All 23 competitor fields, arrays joined by " | ". Filename: <code>[slug]-competitors-[date].csv</code></p>
+          </div>
+          <div>
+            <div class="comp-sect-title">Export Video Brief</div>
+            <p style="font-size:13px">Markdown file with title, hook, production table, outline, Why This Wins, affiliate products. <code>[slug]-video-brief.md</code></p>
+          </div>
+          <div>
+            <div class="comp-sect-title">Copy PAA Questions</div>
+            <p style="font-size:13px">Numbered list to clipboard. Shows "Copied! ✓" feedback for 2 seconds.</p>
+          </div>
+          <div>
+            <div class="comp-sect-title">Export FAQ Schema JSON</div>
+            <p style="font-size:13px">JSON-LD schema <code>@type: FAQPage</code> → clipboard + download as .json.</p>
+            <pre style="font-size:11px;margin-top:6px">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Are under desk treadmills worth it?", "acceptedAnswer": { "@type": "Answer", "text": "..." } }
+  ]
+}</pre>
+          </div>
+        </div>
+        <div class="tip-box mt-12">
+          <div class="tip-title">Browser native APIs</div>
+          <div class="tip-body">Uses <code>URL.createObjectURL</code> + click. No external libraries needed.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 12 -->
+    <div class="step">
+      <div class="step-header">
+        <span class="step-num">12</span>
+        <span class="step-title">Polish &amp; Final Integration</span>
+      </div>
+      <div class="step-body">
+        <div class="grid-2">
+          <div>
+            <div class="comp-sect-title">📍 Navigation</div>
+            <ul>
+              <li>Breadcrumb: Dashboard → Keywords → [Keyword] → Competitors</li>
+              <li>Active sidebar state</li>
+            </ul>
+            <div class="breadcrumb mt-12" style="font-size:11px">
+              <a>Dashboard</a><span class="sep">›</span><a>Keywords</a><span class="sep">›</span><span class="current">under-desk-treadmill</span>
+            </div>
+          </div>
+          <div>
+            <div class="comp-sect-title">⏳ Loading States (Skeletons)</div>
+            <ul>
+              <li>Skeleton loaders with shape-matching content</li>
+            </ul>
+            <div class="skeleton-demo" style="border:1px solid var(--border);border-radius:8px;margin-top:8px">
+              <div class="skeleton-row"><div class="skeleton-box" style="width:60%;height:18px"></div></div>
+              <div class="skeleton-row"><div class="skeleton-box" style="width:40%;height:14px"></div><div class="skeleton-box" style="width:25%;height:14px"></div></div>
+              <div class="skeleton-row"><div class="skeleton-box" style="width:35%;height:14px"></div><div class="skeleton-box" style="width:20%;height:14px"></div><div class="skeleton-box" style="width:15%;height:14px"></div></div>
+              <div class="skeleton-row"><div class="skeleton-box" style="width:50%;height:40px;border-radius:8px"></div><div class="skeleton-box" style="width:30%;height:40px;border-radius:8px"></div></div>
+            </div>
+          </div>
+          <div>
+            <div class="comp-sect-title">🫙 Empty States</div>
+            <div style="border:1px solid var(--border);border-radius:8px;margin-top:4px">
+              <div class="state-card" style="padding:24px 16px">
+                <div class="state-icon">🔍</div>
+                <div class="state-title">No keywords yet</div>
+                <div class="state-desc">Add your first keyword to get started with research and analysis.</div>
+                <span class="btn btn-primary" style="font-size:12px;padding:6px 16px">+ Add Your First Keyword</span>
+              </div>
+              <div style="border-top:1px solid var(--border);padding:8px 0;margin:0 16px">
+                <div class="state-card" style="padding:16px 0">
+                  <div class="state-icon" style="font-size:32px">📄</div>
+                  <div class="state-title" style="font-size:15px">No competitors imported</div>
+                  <div class="state-desc" style="font-size:12px">Import competitors via CSV or add manually.</div>
+                  <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                    <span class="btn btn-ghost" style="font-size:11px;padding:4px 12px">📥 Import CSV</span>
+                    <span class="btn btn-ghost" style="font-size:11px;padding:4px 12px">✏️ Add Manually</span>
+                  </div>
+                </div>
+              </div>
+              <div style="border-top:1px solid var(--border);padding:8px 0;margin:0 16px">
+                <div class="state-card" style="padding:16px 0">
+                  <div class="state-icon" style="font-size:32px">🎬</div>
+                  <div class="state-title" style="font-size:15px">No video brief yet</div>
+                  <div class="state-desc" style="font-size:12px">Generate your first video brief for YouTube.</div>
+                  <span class="btn btn-cyan" style="font-size:11px;padding:4px 14px">🎬 Generate Video Brief</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="comp-sect-title">⚠️ Error States</div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+              <div style="background:var(--red-bg);border:1px solid #fecaca;border-radius:6px;padding:12px 16px;font-size:13px;display:flex;align-items:center;gap:8px">
+                <span style="font-size:18px">❌</span> <strong style="color:var(--red)">Error:</strong> <span style="color:var(--text-secondary)">Failed to load keyword data. Please try again.</span>
+              </div>
+              <div class="state-card" style="padding:24px 16px;border:1px solid var(--border);border-radius:6px">
+                <div class="state-icon" style="font-size:42px">404</div>
+                <div class="state-title" style="font-size:16px;color:var(--red)">Keyword Not Found</div>
+                <div class="state-desc" style="font-size:12px">The keyword "best-treadmills-123" doesn't exist or has been removed.</div>
+                <span class="btn btn-primary" style="font-size:12px;padding:5px 14px">← Back to Keywords</span>
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap">
+                <span class="toast-item toast-success">✓ 5 competitors imported successfully</span>
+                <span class="toast-item toast-error">✗ Failed to import CSV. Check file format.</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="comp-sect-title">📱 Responsive</div>
+            <ul>
+              <li>Keywords: 1 col mobile</li>
+              <li>Score rings: 2×2 mobile</li>
+              <li>Tool signals: 2 per row mobile</li>
+              <li>Stats: 2×4 mobile</li>
+              <li>Tab bar: horizontally scrollable</li>
+              <li>Production sheet: horizontally scrollable on mobile</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">⌨️ Keyboard</div>
+            <ul>
+              <li>←/→ arrows navigate competitor tabs</li>
+              <li>ESC closes modals</li>
+              <li>Logical Tab order throughout</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">🔗 URL State</div>
+            <ul>
+              <li>Competitor page: <code>?rank=1</code> (1-indexed)</li>
+              <li>Keywords page: <code>?sort=overall&q=term&page=1</code></li>
+              <li>Uses <code>useSearchParams</code> + <code>router.push</code></li>
+              <li>Shareable/bookmarkable links</li>
+            </ul>
+          </div>
+          <div>
+            <div class="comp-sect-title">🏷️ Meta Tags</div>
+            <ul>
+              <li>Title: <code>"[Keyword] Analysis | YourAppName"</code></li>
+              <li>Description from keyword's top insight</li>
+              <li>Per-keyword detail page metadata</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ DESIGN REFERENCE QUICK-CARD ═══════════════ -->
+  <div class="card">
+    <div class="section-title">🎨 Design Reference Quick-Card</div>
+    <div class="design-grid">
+      <div class="design-item"><span class="elem">Page background</span><span class="spec"><span class="design-swatch" style="background:#f1f5f9"></span> #f1f5f9</span></div>
+      <div class="design-item"><span class="elem">Card background</span><span class="spec"><span class="design-swatch" style="background:#fff"></span> #ffffff · radius 10px · shadow</span></div>
+      <div class="design-item"><span class="elem">Section headers</span><span class="spec"><span class="design-swatch" style="background:#0b1120"></span> #0b1120 bg · #94a3b8 text · 11px uppercase</span></div>
+      <div class="design-item"><span class="elem">Primary action</span><span class="spec"><span class="design-swatch" style="background:#2563eb"></span> #2563eb blue</span></div>
+      <div class="design-item"><span class="elem">Secondary action</span><span class="spec"><span class="design-swatch" style="background:#0891b2"></span> #0891b2 cyan</span></div>
+      <div class="design-item"><span class="elem">Success / green</span><span class="spec"><span class="design-swatch" style="background:#16a34a"></span> #16a34a text · #dcfce7 bg</span></div>
+      <div class="design-item"><span class="elem">Warning / amber</span><span class="spec"><span class="design-swatch" style="background:#b45309"></span> #b45309 text · #fffbeb bg</span></div>
+      <div class="design-item"><span class="elem">Danger / red</span><span class="spec"><span class="design-swatch" style="background:#991b1b"></span> #991b1b text · #fee2e2 bg</span></div>
+      <div class="design-item"><span class="elem">Score: High (≥70)</span><span class="spec"><span class="design-swatch" style="background:#22c55e"></span> #22c55e green ring</span></div>
+      <div class="design-item"><span class="elem">Score: Mid (40–69)</span><span class="spec"><span class="design-swatch" style="background:#f59e0b"></span> #f59e0b yellow ring</span></div>
+      <div class="design-item"><span class="elem">Score: Low (&lt;40)</span><span class="spec"><span class="design-swatch" style="background:#ef4444"></span> #ef4444 red ring</span></div>
+      <div class="design-item"><span class="elem">Monospace font</span><span class="spec">Space Mono</span></div>
+      <div class="design-item"><span class="elem">Body font</span><span class="spec">Segoe UI, system-ui</span></div>
+      <div class="design-item"><span class="elem">Amber tip boxes</span><span class="spec">Left border: 4px solid #f59e0b</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ CHECKLIST ═══════════════ -->
+  <div class="card">
+    <div class="section-title">📋 Checklist <span class="badge-count">13 Items</span></div>
+    <ul class="checklist">
+      <li><span class="cb"></span> Keywords List Page with scores + revenue preview</li>
+      <li><span class="cb"></span> Keyword Detail Page (Hero + Score Dashboard + Tool Signals + Affiliate Products + Video Brief + Competitor Analysis)</li>
+      <li><span class="cb"></span> Video Brief with outline timeline + production sheet table</li>
+      <li><span class="cb"></span> Competitor Articles Page with numbered tabs (01–50), prev/next, URL state</li>
+      <li><span class="cb"></span> Each competitor shows 11 detailed sections (NOT a horizontal-scrolling table)</li>
+      <li><span class="cb"></span> CSV import for bulk competitor data</li>
+      <li><span class="cb"></span> Scoring engine (Affiliate / YouTube / Trend / Overall)</li>
+      <li><span class="cb"></span> Freshness score calculator</li>
+      <li><span class="cb"></span> Export: CSV, Markdown video brief, FAQ JSON-LD, clipboard copy</li>
+      <li><span class="cb"></span> Responsive on all screen sizes</li>
+      <li><span class="cb"></span> Keyboard navigation for competitor tabs</li>
+      <li><span class="cb"></span> URL-based state (shareable links)</li>
+      <li><span class="cb"></span> Loading skeletons + empty states + error toasts</li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <div style="text-align:center;padding:24px 0 8px;font-size:12px;color:var(--slate-400)">
+    Generated from CLAUDE.md — Full Build Prompt Kit · Keyword Research SaaS
+  </div>
+
+</div>
+
+<div class="toast-container" id="toast-container"></div>
+
+<script>
+  function showToast(message, type) {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'toast-item toast-' + type;
+    const icon = type === 'success' ? '✓' : '✗';
+    toast.textContent = icon + ' ' + message;
+    container.appendChild(toast);
+    setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity .3s'; setTimeout(() => toast.remove(), 300); }, 2500);
+  }
+
+  function copiedToast() {
+    showToast('Copied to clipboard!', 'success');
+  }
+
+  // Checklist toggle
+  document.querySelectorAll('.checklist .cb').forEach(cb => {
+    cb.addEventListener('click', function() { this.classList.toggle('checked'); });
+  });
+
+  // Copy buttons
+  document.querySelectorAll('.btn-ghost').forEach(btn => {
+    if (btn.textContent.includes('Copy Link') || btn.textContent.includes('Add to FAQ') || btn.textContent.includes('Copy PAA')) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        copiedToast();
+      });
+    }
+  });
+
+  // Modal open/close
+  document.querySelector('.btn-primary')?.addEventListener('click', function(e) {
+    if (this.textContent.includes('Add Keyword') && !this.closest('.modal-box')) {
+      const overlay = document.getElementById('kw-modal-overlay');
+      if (overlay) overlay.style.display = 'flex';
+    }
+  });
+
+  // Import button toast
+  document.querySelectorAll('.btn-primary').forEach(btn => {
+    if (btn.textContent.includes('Import')) {
+      btn.addEventListener('click', function() {
+        showToast('5 competitors imported successfully', 'success');
+      });
+    }
+  });
+
+  // Export button toasts
+  document.querySelectorAll('.export-bar .btn-ghost').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const txt = this.textContent.trim();
+      if (txt.includes('CSV')) showToast('competitors-exported-2025-05-20.csv downloaded', 'success');
+      else if (txt.includes('Video Brief')) showToast('under-desk-treadmill-video-brief.md downloaded', 'success');
+      else if (txt.includes('FAQ')) showToast('FAQ schema JSON copied to clipboard', 'success');
+    });
+  });
+
+  // ESC closes modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.getElementById('kw-modal-overlay').style.display = 'none';
+    }
+    // Left/Right arrows for competitor tabs (simulated)
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      const tabs = document.querySelectorAll('.tab-bar .tab');
+      const active = document.querySelector('.tab-bar .tab.active');
+      if (active && tabs.length) {
+        const idx = Array.from(tabs).indexOf(active);
+        let next = e.key === 'ArrowRight' ? Math.min(idx + 1, tabs.length - 1) : Math.max(idx - 1, 0);
+        active.classList.remove('active');
+        tabs[next].classList.add('active');
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

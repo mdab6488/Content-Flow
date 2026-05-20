@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competitor Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --sidebar-w: 290px;
+  --sidebar-bg: #0b1120;
+  --sidebar-border: #1e2d45;
+  --sidebar-text: #94a3b8;
+  --sidebar-active-bg: #1e3a5f;
+  --sidebar-active-text: #60a5fa;
+  --sidebar-hover: #131f35;
+  --content-bg: #f1f5f9;
+  --card-bg: #ffffff;
+  --card-shadow: 0 1px 3px rgba(0,0,0,.07), 0 4px 16px rgba(0,0,0,.05);
+  --accent: #2563eb;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border: #e2e8f0;
+  --s2: #0891b2;
+}
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--content-bg); color: var(--text-primary); }
+
+#main { max-width: 1280px; margin: 0 auto; padding: 32px 36px 60px; }
+
+.card {
+  background: var(--card-bg); border-radius: 10px;
+  box-shadow: var(--card-shadow); padding: 24px; margin-bottom: 22px;
+}
+
+.step-hero {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin-bottom: 24px;
+}
+.step-hero-text h1 {
+  font-size: 22px; font-weight: 800; color: var(--text-primary);
+  margin-bottom: 6px; line-height: 1.25;
+}
+.step-hero-text p {
+  font-size: 15px; color: #475569; line-height: 1.6; margin: 0;
+  max-width: 620px;
+}
+
+.tip { padding: 14px 16px; border-radius: 0 6px 6px 0; margin-bottom: 20px; font-size: 14px; line-height: 1.6; }
+.tip strong { display: block; font-size: 14px; margin-bottom: 4px; }
+.tip-amber { background:#fffbeb; border-left:4px solid #f59e0b; }  .tip-amber strong { color:#b45309; }
+
+.sparkline { font-family: 'Space Mono', monospace; font-size: 14px; letter-spacing: 1px; color: #2563eb; padding: 13px 14px; border-bottom: 1px solid #e2e8f0; white-space: nowrap; }
+
+.s2-page { font-family: 'Atkinson Hyperlegible', sans-serif; }
+.s2-page p, .s2-page li, .s2-page td, .s2-page label {
+  font-size: 15.5px; line-height: 1.8; letter-spacing: 0.02em;
+}
+.s2-page h1 { font-size: 22px; font-weight: 700; margin-bottom: 22px; line-height: 1.3; }
+
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 600; color: #0891b2;
+  text-decoration: none; margin-bottom: 20px;
+  cursor: pointer;
+}
+.back-link:hover { text-decoration: underline; }
+
+@media(max-width:700px){
+  #main { padding: 14px; }
+  .step-hero { flex-direction: column; }
+}
+</style>
+</head>
+<body class="s2-page">
+
+<div id="main">
+
+  <div class="card">
+    <div class="step-hero">
+      <div class="step-hero-text">
+        <h1>Competitor List</h1>
+        <p><strong>Why:</strong> This is where we start — raw competitor data in, actionable insights out.</p>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto;border-radius:10px;border:1px solid #e2e8f0;">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="background:#0b1120;">
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Competing Domain</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Organic Traffic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">semrush.com</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">2,450,100</td></tr>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">moz.com</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">1,120,400</td></tr>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">searchenginejournal.com</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">1,890,550</td></tr>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">backlinko.com</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">450,800</td></tr>
+          <tr><td style="padding:13px 14px;font-weight:700;color:#0f172a;">yoast.com</td><td style="padding:13px 14px;font-weight:700;">890,300</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="step-hero" style="margin-top:16px;">
+      <div class="step-hero-text">
+        <h1>Competitor Niche Categories</h1>
+        <p style="max-width:none;">Upload a CSV export of your competitor's niche categories. Each row is a subfolder on their site with traffic share, monthly visits, and top keyword. Select a niche to deep-dive into individual posts.</p>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto;border-radius:10px;border:1px solid #e2e8f0;">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="background:#0b1120;">
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Subfolder</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Traffic Share</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Monthly Visits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">/seo-tools</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#047857;">28%</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">686,000</td></tr>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">/blog</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#047857;">22%</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">539,000</td></tr>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">/academy</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#047857;">15%</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">367,500</td></tr>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">/guides</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#047857;">9%</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">220,500</td></tr>
+          <tr><td style="padding:13px 14px;font-weight:700;color:#0f172a;">/reviews</td><td style="padding:13px 14px;font-weight:700;color:#047857;">6%</td><td style="padding:13px 14px;font-weight:700;">147,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="step-hero" style="margin-top:16px;">
+      <div class="step-hero-text">
+        <h1>Keyword Gap &amp; YouTube Topic Validator</h1>
+        <p style="max-width:none;">Uncover high-intent, profitable keywords your competitors are already monetizing. This tool identifies valuable cross-sell opportunities through keyword overlap and validates profitability using CPC data to estimate YouTube RPM and affiliate potential. By integrating search trends, it ensures you only invest in growing markets. It also pinpoints massive content gaps by highlighting low-competition topics (VidIQ score &lt; 50) where high-traffic articles (&gt;5K/mo) face little competition from top YouTube videos (&lt;100K views).</p>
+      </div>
+    </div>
+
+    <div class="tip tip-amber" style="margin-bottom:20px;">
+      <strong>💡 PRO TIP: The CPC Predictor</strong>
+      CPC above <strong style="font-size:16px;">$1.50</strong> = high buyer intent. CPC above <strong style="font-size:16px;">$3.00</strong> = very lucrative niche with excellent YouTube RPM &amp; affiliate conversion potential.
+    </div>
+
+    <div class="tip tip-amber" style="margin-bottom:20px;">
+      <strong>💡 PRO TIP: The Content Gap Exploit</strong>
+      VidIQ Competition Score under 50 = low competition. Find keywords where Article traffic is <strong>&gt; 5K/mo</strong> BUT top YouTube videos have <strong>&lt; 100K views</strong>. This is a <strong style="font-size:16px;">HUGE content gap</strong>.
+    </div>
+
+    <div style="background:#eef2ff;border:1.5px solid #818cf8;border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#1e1b4b;line-height:1.5;">
+      <strong style="color:#4338ca;">🎯 Sweet Spot Filter:</strong> 1K–50K Traffic + Intent = Commercial (C) or Informational (I). These pages rank well enough to validate the niche but don't have the authority to defend against a superior piece of content.
+    </div>
+
+    <div style="overflow-x:auto;border-radius:10px;border:1px solid #e2e8f0;">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="background:#0b1120;">
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Shared Keyword</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Search Volume</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">CPC ($)</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Traffic Value ($)</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">12-Month Trend Visual (Simulated)</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Intent Status</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Trend Direction</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">YT Search Volume</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">VidIQ Comp. Score</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Avg Top Video Views</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Subfolder</th>
+            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">best cooling mattress</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">18,100</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$3.50</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$21,500</td><td class="sparkline"> ▂▃▄▅▆▇█████</td><td><span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">🔥 Very Lucrative</span></td><td style="font-size:16px;">↗ Rising</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">2,400</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#bbf7d0;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">42 🟢</span></td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#475569;">45K</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#0f172a;font-weight:600;">/sleep</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#dcfce7;color:#166534;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">🚀 Create Script</span></td></tr>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">mattress in a box</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">40,500</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$4.10</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$58,000</td><td class="sparkline">  ▂▂▃▄▅▆▇███</td><td><span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">🔥 Very Lucrative</span></td><td style="font-size:16px;">↗ Rising</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">5,100</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#bbf7d0;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">38 🟢</span></td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#475569;">82K</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#0f172a;font-weight:600;">/sleep</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#dcfce7;color:#166534;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">🚀 Create Script</span></td></tr>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">best pillows for neck pain</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">22,000</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$1.80</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$12,400</td><td class="sparkline">▆▇▆▆▇▆▆▆▇▆▆▇</td><td><span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">🔥 Very Lucrative</span></td><td style="font-size:16px;">↗ Rising</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">1,800</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fef9c3;color:#854d0e;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">55 🟡</span></td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#475569;">28K</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#0f172a;font-weight:600;">/pillows</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fef9c3;color:#854d0e;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">🔎 Research</span></td></tr>
+          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">adjustable bed frames</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">33,100</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$2.90</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$24,100</td><td class="sparkline">██▇▇▆▅▄▃▂   </td><td><span style="background:#fef9c3;color:#854d0e;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">💰 High Buyer Intent</span></td><td style="font-size:16px;">→ Stable</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">950</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fef9c3;color:#854d0e;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">61 🟡</span></td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#475569;">15K</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#0f172a;font-weight:600;">/furniture</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fef9c3;color:#854d0e;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">🔎 Research</span></td></tr>
+          <tr><td style="padding:13px 14px;font-weight:700;color:#0f172a;">bamboo sheets review</td><td style="padding:13px 14px;font-weight:700;">9,900</td><td style="padding:13px 14px;color:#047857;font-weight:700;">$1.20</td><td style="padding:13px 14px;color:#047857;font-weight:700;">$1,850</td><td class="sparkline">▃▃▂▂▂       </td><td><span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">📉 Low / Informational</span></td><td style="font-size:16px;color:#b91c1c;">↘ Falling</td><td style="padding:13px 14px;font-weight:700;">620</td><td style="padding:13px 14px;"><span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">72 🔴</span></td><td style="padding:13px 14px;color:#475569;">8K</td><td style="padding:13px 14px;color:#0f172a;font-weight:600;">/bedding</td><td style="padding:13px 14px;"><span style="background:#e2e8f0;color:#475569;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">⏸ Pass</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

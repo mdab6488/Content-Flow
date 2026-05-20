@@ -716,7 +716,7 @@ h2.sec-h2 { color:#2563eb; font-size:16px; margin:22px 0 10px; border-bottom:1px
     <div class="stage-sections">
       <div class="nav-item" onclick="showSection(&#39;s2-step1&#39;)">Upload Tool Data
 </div>
-      <div class="nav-item" onclick="showSection(&#39;s2-step2&#39;)">AI Analysis</div>
+      <div class="nav-item" onclick="window.location.href=&#39;competitor-analysis.html&#39;">Competitor Analysis</div>
     </div>
   </div>
 
@@ -3879,7 +3879,7 @@ function copyS2bBrief() {
     </div>
 
     <div class="upload-row" style="margin-bottom:20px;">
-      <div class="upload-box" id="engine-vidiq-kwg-box" style="border:1.5px solid #00b2ff;flex:1;">
+      <div class="upload-box" id="engine-vidiq-kwg-box">
         <div class="upload-header">
           <span class="bc-tool-badge bc-vidiq">VidIQ</span>
           <span style="font-size:11px;color:#475569;font-weight:600;">Check YouTube search volume, competition score &amp; top video metrics</span>
@@ -3943,112 +3943,253 @@ function copyS2bBrief() {
     <div style="text-align:center;padding:24px 0 8px;">
       <button onclick="alert('Analysis started! This will process all uploaded CSV data and generate insights.')" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border:none;padding:14px 36px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(99,102,241,0.35);transition:transform 0.15s,box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(99,102,241,0.45)';" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 16px rgba(99,102,241,0.35)';">⚡ Analyze with AI</button>
     </div>
+
+  </div>
+
+  <h2 class="sec-h2" style="margin-top:24px;">4. Extract Content from Keyword</h2>
+  <p style="margin:0 0 16px 0;font-size:13px;color:#475569;">Use these tools to extract heading structures, page metadata, and content signals from competitor articles.</p>
+
+  <div class="upload-row" style="margin-bottom:20px;">
+    <div class="upload-box" id="engine-serp-ahrefs-box">
+      <div class="upload-header">
+        <span class="bc-tool-badge bc-ahrefs">Ahrefs</span>
+        <span style="font-size:11px;color:#475569;font-weight:600;">SERP Overview from Keywords Explorer</span>
+      </div>
+      <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+        <span style="font-weight:600;">📍 Ahrefs Home</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Keywords Explorer</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Search "best running shoes"</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Scroll to SERP Overview</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+        <span class="bc-filter">Extract top-ranking URLs</span>
+        <span class="bc-filter export">Focus on high-traffic pages</span>
+        <span class="bc-filter note">Note: Domain Rating, Backlinks, Traffic</span>
+      </div>
+      <div class="upload-dropzone" id="engine-serp-ahrefs-dropzone">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">Drop Ahrefs SERP overview CSV here or click to browse</div>
+        <div class="upload-hint">Expects: URL, Domain Rating, Backlinks, Traffic, Keyword</div>
+        <input type="file" accept=".csv" id="engine-serp-ahrefs-csv" style="display:none">
+      </div>
+      <div class="upload-status" id="engine-serp-ahrefs-status"></div>
+    </div>
+
+    <div class="upload-box" id="engine-serp-semrush-box">
+      <div class="upload-header">
+        <span class="bc-tool-badge bc-semrush">Semrush</span>
+        <span style="font-size:11px;color:#475569;font-weight:600;">SERP Analysis from Keyword Overview</span>
+      </div>
+      <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+        <span style="font-weight:600;">📍 Semrush Home</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">SEO (Left Sidebar)</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Keyword Overview</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Search "best running shoes"</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Scroll to SERP Analysis</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+        <span class="bc-filter">Extract top 10 results</span>
+        <span class="bc-filter export">Note: Intent, Traffic, URL</span>
+        <span class="bc-filter note">Focus on Commercial &amp; Transactional intent</span>
+      </div>
+      <div class="upload-dropzone" id="engine-serp-semrush-dropzone">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">Drop Semrush SERP analysis CSV here or click to browse</div>
+        <div class="upload-hint">Expects: URL, Intent, Traffic, Keyword, Position</div>
+        <input type="file" accept=".csv" id="engine-serp-semrush-csv" style="display:none">
+      </div>
+      <div class="upload-status" id="engine-serp-semrush-status"></div>
+    </div>
+  </div>
+
+  <div class="upload-row" style="margin-bottom:20px;">
+    <div class="upload-box" id="engine-content-ahrefs-box">
+      <div class="upload-header">
+        <span class="bc-tool-badge bc-ahrefs">Ahrefs</span>
+        <span style="font-size:11px;color:#475569;font-weight:600;">Content Explorer — In title search</span>
+      </div>
+      <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+        <span style="font-weight:600;">📍 Ahrefs Home</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Content Explorer</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Type "best running shoes"</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Change drop-down to "In title"</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Search</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+        <span class="bc-filter">Filter: Traffic ≥ 1,000</span>
+        <span class="bc-filter export">Sort by: Traffic (Descending)</span>
+        <span class="bc-filter note">PRO: Focus on pages with low DR but high traffic</span>
+      </div>
+      <div class="upload-dropzone" id="engine-content-ahrefs-dropzone">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">Drop Ahrefs Content Explorer CSV here or click to browse</div>
+        <div class="upload-hint">Expects: URL, Title, Traffic, DR, Backlinks, Social</div>
+        <input type="file" accept=".csv" id="engine-content-ahrefs-csv" style="display:none">
+      </div>
+      <div class="upload-status" id="engine-content-ahrefs-status"></div>
+    </div>
+
+    <div class="upload-box">
+      <div class="upload-header">
+        <span class="bc-tool-badge" style="background:#059669;color:#fff;">SEOptimer</span>
+        <span style="font-size:11px;color:#475569;font-weight:600;">🔍 Extract heading structure &amp; page metadata</span>
+      </div>
+      <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+        <span style="font-weight:600;">Enter competitor URL</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Run Audit</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Scroll to "Heading Structure"</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Copy H1, H2, H3 hierarchy</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+        <span class="bc-filter">Look for: number of H2 product sections</span>
+        <span class="bc-filter note">Look for: "Best Budget" / "Best Overall" H2s</span>
+        <span class="bc-filter export">Manual: Check "Last Updated" date in article</span>
+      </div>
+      <div class="upload-dropzone" id="engine-seoptimer-dropzone">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">Drop SEOptimer heading structure CSV here or click to browse</div>
+        <div class="upload-hint">Expects: URL, H1, H2, H3, Metadata</div>
+        <input type="file" accept=".csv" id="engine-seoptimer-csv" style="display:none">
+      </div>
+      <div class="upload-status" id="engine-seoptimer-status"></div>
+    </div>
+
+    <div class="upload-box">
+      <div class="upload-header">
+        <span class="bc-tool-badge bc-semrush">Semrush</span>
+        <span style="font-size:11px;color:#475569;font-weight:600;">📊 See heading structure of any competitor article</span>
+      </div>
+      <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+        <span style="font-weight:600;">Semrush Home</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">On Page &amp; Tech SEO</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">On Page SEO Checker</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Paste article URL</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Headings tab (H1, H2, H3)</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+        <span class="bc-filter">Look for: number of H2 product sections</span>
+        <span class="bc-filter note">Look for: "Best Budget" / "Best Overall" H2s</span>
+      </div>
+      <div class="upload-dropzone" id="engine-semrush-headings-dropzone">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">Drop Semrush heading structure CSV here or click to browse</div>
+        <div class="upload-hint">Expects: URL, H1, H2, H3, Structure</div>
+        <input type="file" accept=".csv" id="engine-semrush-headings-csv" style="display:none">
+      </div>
+      <div class="upload-status" id="engine-semrush-headings-status"></div>
+    </div>
+  </div>
+
+  <div class="upload-row" style="margin-bottom:20px;">
+    <div class="upload-box" id="engine-semrush-affiliate-box" style="flex:1;">
+      <div class="upload-header">
+        <span class="bc-tool-badge bc-semrush">Semrush</span>
+        <span style="font-size:11px;color:#475569;font-weight:600;">Check what affiliate program they use</span>
+      </div>
+      <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+        <span style="font-weight:600;">Semrush Home</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Domain Overview</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Paste the competitor domain</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">See "Outbound Links" section</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+        <span class="bc-filter">amazon.com/dp/ links = Amazon Associates</span>
+        <span class="bc-filter note">shareasale.com = ShareASale network</span>
+        <span class="bc-filter export">impact.com = Impact network</span>
+        <span class="bc-filter" style="background:#fef9c3;border-color:#fcd34d;color:#854d0e;">Check: direct affiliate links vs. branded redirects</span>
+      </div>
+      <div class="upload-dropzone" id="engine-semrush-affiliate-dropzone">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">Drop Semrush outbound links CSV here or click to browse</div>
+        <div class="upload-hint">Expects: URL, Outbound Links, Affiliate Domains</div>
+        <input type="file" accept=".csv" id="engine-semrush-affiliate-csv" style="display:none">
+      </div>
+      <div class="upload-status" id="engine-semrush-affiliate-status"></div>
+    </div>
+  </div>
+
+  <div class="upload-row" style="margin-bottom:20px;">
+    <div class="upload-box" id="engine-semrush-paa-box" style="flex:1;">
+      <div class="upload-header">
+        <span class="bc-tool-badge bc-semrush">Semrush</span>
+        <span style="font-size:11px;color:#475569;font-weight:600;">People Also Ask — get questions for any keyword</span>
+      </div>
+      <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+        <span style="font-weight:600;">📍 Semrush Home</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Keyword Overview</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Enter your target keyword</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Scroll to "People Also Ask" section</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Copy all questions → paste into merged CSV</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+        <span class="bc-filter">Focus on: questions with search volume ≥ 1,000</span>
+        <span class="bc-filter export">PRO: Sort by volume descending — high-volume questions = best chapter topics</span>
+      </div>
+      <div class="upload-dropzone" id="engine-semrush-paa-dropzone">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">Drop Semrush PAA questions CSV here or click to browse</div>
+        <div class="upload-hint">Expects: Question, Volume, CPC, Intent</div>
+        <input type="file" accept=".csv" id="engine-semrush-paa-csv" style="display:none">
+      </div>
+      <div class="upload-status" id="engine-semrush-paa-status"></div>
+    </div>
+
+    <div class="upload-box" id="engine-atp-box" style="flex:1;">
+      <div class="upload-header">
+        <span class="bc-tool-badge" style="background:#8b5cf6;color:#fff;">AnswerThePublic</span>
+        <span style="font-size:11px;color:#475569;font-weight:600;">Discover question-based keyword variations</span>
+      </div>
+      <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+        <span style="font-weight:600;">📍 AnswerThePublic</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Enter your target keyword</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">View "Questions" section</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Copy questions from What/Why/How/Can categories</span>
+        <span style="color:#94a3b8;"> → </span>
+        <span style="font-weight:600;">Paste into merged CSV with source label</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+        <span class="bc-filter">Focus on: How, Why, What questions (best for video chapters)</span>
+        <span class="bc-filter export">PRO: Cross-reference with Semrush — if both tools show the same question, it's high-priority</span>
+      </div>
+      <div class="upload-dropzone" id="engine-atp-dropzone">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">Drop AnswerThePublic questions CSV here or click to browse</div>
+        <div class="upload-hint">Expects: Question, Category, Frequency, Source</div>
+        <input type="file" accept=".csv" id="engine-atp-csv" style="display:none">
+      </div>
+      <div class="upload-status" id="engine-atp-status"></div>
+    </div>
   </div>
 </div>
 
-<!-- ────────────────────── AI Affiliate Research Engine: Competitor Analysis ── -->
-<div id="s2-step2" class="section-page s2-page">
-  <div class="card">
-    <div class="step-hero">
-      <div class="step-hero-text">
-        <h1>Competitor List</h1>
-        <p><strong>Why:</strong> This is where we start — raw competitor data in, actionable insights out.</p>
-      </div>
-    </div>
-
-    <div style="overflow-x:auto;border-radius:10px;border:1px solid #e2e8f0;">
-      <table style="width:100%;border-collapse:collapse;font-size:13px;">
-        <thead>
-          <tr style="background:#0b1120;">
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Competing Domain</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Organic Traffic</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">semrush.com</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">2,450,100</td></tr>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">moz.com</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">1,120,400</td></tr>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">searchenginejournal.com</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">1,890,550</td></tr>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">backlinko.com</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">450,800</td></tr>
-          <tr><td style="padding:13px 14px;font-weight:700;color:#0f172a;">yoast.com</td><td style="padding:13px 14px;font-weight:700;">890,300</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="step-hero" style="margin-top:16px;">
-      <div class="step-hero-text">
-        <h1>Competitor Niche Categories</h1>
-        <p style="max-width:none;">Upload a CSV export of your competitor's niche categories. Each row is a subfolder on their site with traffic share, monthly visits, and top keyword. Select a niche to deep-dive into individual posts.</p>
-      </div>
-    </div>
-
-    <div style="overflow-x:auto;border-radius:10px;border:1px solid #e2e8f0;">
-      <table style="width:100%;border-collapse:collapse;font-size:13px;">
-        <thead>
-          <tr style="background:#0b1120;">
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Subfolder</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Traffic Share</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Monthly Visits</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">/seo-tools</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#047857;">28%</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">686,000</td></tr>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">/blog</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#047857;">22%</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">539,000</td></tr>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">/academy</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#047857;">15%</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">367,500</td></tr>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">/guides</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#047857;">9%</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">220,500</td></tr>
-          <tr><td style="padding:13px 14px;font-weight:700;color:#0f172a;">/reviews</td><td style="padding:13px 14px;font-weight:700;color:#047857;">6%</td><td style="padding:13px 14px;font-weight:700;">147,000</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="step-hero" style="margin-top:16px;">
-      <div class="step-hero-text">
-        <h1>Keyword Gap &amp; YouTube Topic Validator</h1>
-        <p style="max-width:none;">Uncover high-intent, profitable keywords your competitors are already monetizing. This tool identifies valuable cross-sell opportunities through keyword overlap and validates profitability using CPC data to estimate YouTube RPM and affiliate potential. By integrating search trends, it ensures you only invest in growing markets. It also pinpoints massive content gaps by highlighting low-competition topics (VidIQ score &lt; 50) where high-traffic articles (&gt;5K/mo) face little competition from top YouTube videos (&lt;100K views).</p>
-      </div>
-    </div>
-
-    <div class="tip tip-amber" style="margin-bottom:20px;">
-      <strong>💡 PRO TIP: The CPC Predictor</strong>
-      CPC above <strong style="font-size:16px;">$1.50</strong> = high buyer intent. CPC above <strong style="font-size:16px;">$3.00</strong> = very lucrative niche with excellent YouTube RPM &amp; affiliate conversion potential.
-    </div>
-
-    <div class="tip tip-amber" style="margin-bottom:20px;">
-      <strong>💡 PRO TIP: The Content Gap Exploit</strong>
-      VidIQ Competition Score under 50 = low competition. Find keywords where Article traffic is <strong>&gt; 5K/mo</strong> BUT top YouTube videos have <strong>&lt; 100K views</strong>. This is a <strong style="font-size:16px;">HUGE content gap</strong>.
-    </div>
-
-    <div style="background:#eef2ff;border:1.5px solid #818cf8;border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#1e1b4b;line-height:1.5;">
-      <strong style="color:#4338ca;">🎯 Sweet Spot Filter:</strong> 1K–50K Traffic + Intent = Commercial (C) or Informational (I). These pages rank well enough to validate the niche but don't have the authority to defend against a superior piece of content.
-    </div>
-
-    <div style="overflow-x:auto;border-radius:10px;border:1px solid #e2e8f0;">
-      <table style="width:100%;border-collapse:collapse;font-size:13px;">
-        <thead>
-          <tr style="background:#0b1120;">
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Shared Keyword</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Search Volume</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">CPC ($)</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Traffic Value ($)</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">12-Month Trend Visual (Simulated)</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Intent Status</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Trend Direction</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">YT Search Volume</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">VidIQ Comp. Score</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Avg Top Video Views</th>
-            <th style="padding:11px 14px;text-align:left;color:#94a3b8;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">best cooling mattress</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">18,100</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$3.50</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$21,500</td><td class="sparkline"> ▂▃▄▅▆▇█████</td><td><span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">🔥 Very Lucrative</span></td><td style="font-size:16px;">↗ Rising</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">2,400</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#bbf7d0;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">42 🟢</span></td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#475569;">45K</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#dcfce7;color:#166534;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">🚀 Create Script</span></td></tr>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">mattress in a box</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">40,500</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$4.10</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$58,000</td><td class="sparkline">  ▂▂▃▄▅▆▇███</td><td><span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">🔥 Very Lucrative</span></td><td style="font-size:16px;">↗ Rising</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">5,100</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#bbf7d0;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">38 🟢</span></td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#475569;">82K</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#dcfce7;color:#166534;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">🚀 Create Script</span></td></tr>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">best pillows for neck pain</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">22,000</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$1.80</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$12,400</td><td class="sparkline">▆▇▆▆▇▆▆▆▇▆▆▇</td><td><span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">🔥 Very Lucrative</span></td><td style="font-size:16px;">↗ Rising</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">1,800</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fef9c3;color:#854d0e;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">55 🟡</span></td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#475569;">28K</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fef9c3;color:#854d0e;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">🔎 Research</span></td></tr>
-          <tr><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0f172a;">adjustable bed frames</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">33,100</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$2.90</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#047857;font-weight:700;">$24,100</td><td class="sparkline">██▇▇▆▅▄▃▂   </td><td><span style="background:#fef9c3;color:#854d0e;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">💰 High Buyer Intent</span></td><td style="font-size:16px;">→ Stable</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;font-weight:700;">950</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fef9c3;color:#854d0e;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">61 🟡</span></td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;color:#475569;">15K</td><td style="padding:13px 14px;border-bottom:1px solid #e2e8f0;"><span style="background:#fef9c3;color:#854d0e;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">🔎 Research</span></td></tr>
-          <tr><td style="padding:13px 14px;font-weight:700;color:#0f172a;">bamboo sheets review</td><td style="padding:13px 14px;font-weight:700;">9,900</td><td style="padding:13px 14px;color:#047857;font-weight:700;">$1.20</td><td style="padding:13px 14px;color:#047857;font-weight:700;">$1,850</td><td class="sparkline">▃▃▂▂▂       </td><td><span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">📉 Low / Informational</span></td><td style="font-size:16px;color:#b91c1c;">↘ Falling</td><td style="padding:13px 14px;font-weight:700;">620</td><td style="padding:13px 14px;"><span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;">72 🔴</span></td><td style="padding:13px 14px;color:#475569;">8K</td><td style="padding:13px 14px;"><span style="background:#e2e8f0;color:#475569;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;">⏸ Pass</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
 
 <!-- ══════════════════════════════════════════════════════════════
      STAGE 2  —  RESEARCH & DISCOVERY

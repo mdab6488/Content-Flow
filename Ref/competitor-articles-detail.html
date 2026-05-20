@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">keyword details analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --sidebar-w: 290px;
+  --sidebar-bg: #0b1120;
+  --sidebar-border: #1e2d45;
+  --sidebar-text: #94a3b8;
+  --sidebar-active-bg: #1e3a5f;
+  --sidebar-active-text: #60a5fa;
+  --sidebar-hover: #131f35;
+  --content-bg: #f1f5f9;
+  --card-bg: #ffffff;
+  --card-shadow: 0 1px 3px rgba(0,0,0,.07), 0 4px 16px rgba(0,0,0,.05);
+  --accent: #2563eb;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border: #e2e8f0;
+  --s2: #0891b2;
+}
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--content-bg); color: var(--text-primary); }
+
+#main { max-width: 1280px; margin: 0 auto; padding: 32px 36px 60px; }
+
+.card {
+  background: var(--card-bg); border-radius: 10px;
+  box-shadow: var(--card-shadow); padding: 24px; margin-bottom: 22px;
+}
+
+.step-hero {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin-bottom: 24px;
+}
+.step-hero-text h1 {
+  font-size: 22px; font-weight: 800; color: var(--text-primary);
+  margin-bottom: 6px; line-height: 1.25;
+}
+.step-hero-text p {
+  font-size: 15px; color: #475569; line-height: 1.6; margin: 0;
+  max-width: 620px;
+}
+
+.tip { padding: 14px 16px; border-radius: 0 6px 6px 0; margin-bottom: 20px; font-size: 14px; line-height: 1.6; }
+.tip strong { display: block; font-size: 14px; margin-bottom: 4px; }
+.tip-amber { background:#fffbeb; border-left:4px solid #f59e0b; }
+.tip-amber strong { color:#b45309; }
+
+/* ── TAB BAR ── */
+.tab-bar {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 20px; border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0;
+}
+.tab-btn {
+  padding: 10px 18px; border: none; background: none;
+  font-size: 13px; font-weight: 700; color: #64748b;
+  cursor: pointer; position: relative;
+  transition: color .15s;
+  border-radius: 8px 8px 0 0;
+  font-family: 'Space Mono', monospace;
+}
+.tab-btn:hover { color: #0f172a; background: #f8fafc; }
+.tab-btn.active {
+  color: #0891b2; background: #fff;
+  border: 2px solid #e2e8f0;
+  border-bottom-color: #fff;
+  margin-bottom: -2px;
+}
+.tab-pane { display: none; }
+.tab-pane.active { display: block; animation: fadeIn .2s ease; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+/* ── COMPETITOR DETAIL GRID ── */
+.comp-detail { display: flex; flex-direction: column; gap: 16px; }
+.comp-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+  padding-bottom: 16px; border-bottom: 1px solid #e2e8f0;
+}
+.comp-header h2 { font-size: 18px; font-weight: 800; color: #0f172a; flex: 1; }
+.comp-header .comp-url {
+  font-size: 13px; color: #2563eb; font-weight: 600;
+  word-break: break-all;
+}
+.comp-stats {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+.stat-card {
+  background: #f8fafc; border-radius: 8px; padding: 12px 14px;
+}
+.stat-card .stat-label {
+  font-size: 11px; font-weight: 700; color: #64748b;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  display: block; margin-bottom: 4px;
+}
+.stat-card .stat-value {
+  font-size: 15px; font-weight: 700; color: #0f172a;
+}
+
+.badge { display:inline-block; padding:3px 8px; border-radius:4px; font-size:11px; font-weight:700; }
+.badge-commercial { background: #dbeafe; color: #1e40af; }
+.badge-informational { background: #dcfce7; color: #166534; }
+.badge-transactional { background: #fef9c3; color: #854d0e; }
+.badge-navigational { background: #fee2e2; color: #991b1b; }
+.badge-green { background: #dcfce7; color: #166534; }
+.badge-yellow { background: #fef9c3; color: #854d0e; }
+.badge-red { background: #fee2e2; color: #991b1b; }
+.badge-blue { background: #dbeafe; color: #1e40af; }
+
+.tag {
+  display: inline-block; background: #dbeafe; color: #1e40af;
+  padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 700;
+  margin: 2px;
+}
+
+.section-title {
+  font-size: 14px; font-weight: 800; color: #0f172a;
+  margin-bottom: 10px; padding-bottom: 6px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.comp-section { margin-bottom: 20px; }
+
+.freshness-score { font-weight: 700; }
+
+.affiliate-network {
+  display: inline-block; background: #dbeafe; color: #1e40af;
+  padding: 3px 10px; border-radius: 6px; font-size: 12px; font-weight: 700;
+  margin: 3px; border: 1px solid #bfdbfe;
+}
+
+.question-item {
+  padding: 6px 0; font-size: 14px; color: #475569;
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.question-item::before { content: "•"; color: #0891b2; font-weight: 700; }
+
+.chapter-item {
+  padding: 4px 0; font-size: 14px; color: #475569;
+}
+
+.page-controls {
+  display: flex; justify-content: center; align-items: center;
+  gap: 12px; margin-top: 24px;
+}
+.page-controls button {
+  padding: 8px 20px; border: 1.5px solid #cbd5e1;
+  background: #fff; border-radius: 8px;
+  font-size: 13px; font-weight: 700; color: #475569;
+  cursor: pointer; transition: .15s;
+  font-family: 'Space Mono', monospace;
+}
+.page-controls button:hover { background: #f1f5f9; border-color: #94a3b8; }
+.page-controls button:disabled { opacity: 0.4; cursor: not-allowed; }
+.page-controls .page-indicator {
+  font-size: 14px; font-weight: 700; color: #0f172a;
+  font-family: 'Space Mono', monospace;
+}
+
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 600; color: #0891b2;
+  text-decoration: none; margin-bottom: 20px;
+  cursor: pointer;
+}
+.back-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div id="main">
+
+  <div class="card" style="margin-top:0;">
+    <div class="step-hero">
+      <div class="step-hero-text">
+        <h1 id="page-heading">keyword details analysis</h1>
+        <p style="max-width:none;">Enter a keyword to see which competitor pages rank for it — along with traffic estimates, search intent, and content signals to guide your strategy.</p>
+      </div>
+    </div>
+
+    <div class="tip tip-amber" style="margin-bottom:20px;">
+      <strong>Tips &amp; Filters</strong><br>
+      <strong>Filter by Language:</strong> Set to English (or your target language).<br>
+      <strong>Filter by Organic Traffic:</strong> Set the minimum traffic to 500 or 1,000 to only see articles that are actually getting consistent views.<br>
+      <strong>Filter by Word Count:</strong> If you want to see long-form guides, set the minimum word count to 1,500.<br>
+      <strong>Look for:</strong> The "Search Intent" label (Informational, Navigational, Commercial, Transactional) tells you exactly what kind of article you need to write.
+    </div>
+
+    <div class="tip tip-amber" style="margin-bottom:20px;">
+      <strong>PRO TIP: The Freshness Exploit</strong><br>
+      Check the <strong>'Last Updated'</strong> date. If the competitor's article is <strong>6+ months old</strong>, they're missing newer product releases. Feature the newer models in your video/article for instant relevance and higher CTR.
+    </div>
+
+    <div class="tip tip-amber" style="margin-bottom:20px;">
+      <strong>PRO TIP: GEO-Ready Content</strong><br>
+      PAA questions = pre-built video chapters AND pre-built FAQ schema. Answer each one clearly in your content for instant GEO-ready structured data.
+    </div>
+
+    <div id="tab-bar" class="tab-bar"></div>
+
+    <div id="tab-content"></div>
+
+    <div class="page-controls">
+      <button id="prev-btn" onclick="goToTab(currentTab - 1)">← Prev</button>
+      <span class="page-indicator" id="page-indicator">01 / 05</span>
+      <button id="next-btn" onclick="goToTab(currentTab + 1)">Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const competitors = [
+  {
+    rank: 1,
+    title: "Best Home Gym Equipment 2024",
+    url: "fitnessequipment.com/best-home-gym-equipment",
+    pageTraffic: "2,850",
+    urlKeywords: "home gym, best equipment",
+    searchIntent: "Commercial",
+    wordCount: "3,200",
+    publishedDate: "2024-03-12",
+    productCount: "7",
+    lastUpdated: "2024-09-15",
+    h1Tag: "Best Home Gym Equipment 2024 – Top Picks",
+    h2h3Structure: "H2: Reviews, Buying Guide, FAQs<br>H3: Budget Options, Premium Picks",
+    modifierTags: ["best", "top", "2024", "review"],
+    freshnessScore: "85/100",
+    freshnessClass: "badge-green",
+    productList: "Treadmill $999 · Dumbbell Set $349 · Bench $249 · Rower $799",
+    contentGapStatus: "🟢 Low Competition",
+    contentGapClass: "badge-green",
+    featuredProducts: "Treadmill $999 · Dumbbells $349 · Adjustable Bench $249",
+    outboundLinks: "Amazon (7) · Walmart (3) · Dicks (2)",
+    affiliateNetworks: ["Amazon Associates", "ShareASale"],
+    questions: [
+      "What is the best home gym equipment for small spaces?",
+      "How much should I spend on home gym equipment?",
+      "Which home gym equipment gives the best value?",
+      "Can I build a home gym under $500?"
+    ],
+    videoChapters: [
+      { time: "0:00", label: "Intro" },
+      { time: "2:15", label: "Top Picks Overview" },
+      { time: "5:30", label: "Budget vs Premium" }
+    ],
+    faqReady: "✅ Ready",
+    faqClass: "badge-green",
+    questionTypes: ["Best-of", "Comparison"]
+  },
+  {
+    rank: 2,
+    title: "The Complete Home Gym Setup Guide",
+    url: "garagegympro.com/home-gym-setup-guide",
+    pageTraffic: "1,920",
+    urlKeywords: "home gym, setup, guide",
+    searchIntent: "Informational",
+    wordCount: "4,800",
+    publishedDate: "2024-01-25",
+    productCount: "3",
+    lastUpdated: "2024-08-30",
+    h1Tag: "Complete Home Gym Setup Guide for Beginners",
+    h2h3Structure: "H2: Equipment List, Flooring, Budget Tips<br>H3: Squat Racks, Dumbbells, Benches",
+    modifierTags: ["guide", "complete", "beginner", "ultimate"],
+    freshnessScore: "60/100",
+    freshnessClass: "badge-yellow",
+    productList: "Squat Rack $499 · Barbell Set $299 · Flooring $2.50/sqft",
+    contentGapStatus: "🟡 Medium Competition",
+    contentGapClass: "badge-yellow",
+    featuredProducts: "Squat Rack $499 · Barbell $299 · Flooring $2.50/sqft",
+    outboundLinks: "Amazon (4) · Rogue (2) · Rep Fitness (1)",
+    affiliateNetworks: ["Amazon Associates", "Rogue Affiliate"],
+    questions: [
+      "How do I set up a home gym for beginners?",
+      "What equipment do I need to start a home gym?",
+      "What is the best flooring for a home gym?",
+      "How much space do I need for a home gym?"
+    ],
+    videoChapters: [
+      { time: "0:00", label: "Intro" },
+      { time: "1:45", label: "Equipment List" },
+      { time: "4:20", label: "Flooring & Space" }
+    ],
+    faqReady: "🔄 Draft",
+    faqClass: "badge-yellow",
+    questionTypes: ["How-to", "Guide"]
+  },
+  {
+    rank: 3,
+    title: "Best Home Gym Deals & Discounts",
+    url: "homegymdeals.com/best-home-gym-deals",
+    pageTraffic: "3,400",
+    urlKeywords: "deals, discounts, home gym",
+    searchIntent: "Transactional",
+    wordCount: "1,950",
+    publishedDate: "2024-05-08",
+    productCount: "12",
+    lastUpdated: "2024-10-02",
+    h1Tag: "Best Home Gym Deals – Save Big in 2024",
+    h2h3Structure: "H2: Top Deals, Coupon Codes, Sales Calendar<br>H3: Treadmills, Bikes, Free Weights",
+    modifierTags: ["deals", "discounts", "coupon", "sale", "cheap"],
+    freshnessScore: "95/100",
+    freshnessClass: "badge-green",
+    productList: "Treadmill $699 (30% off) · Bike $399 · Dumbbells $199",
+    contentGapStatus: "🔴 High Competition",
+    contentGapClass: "badge-red",
+    featuredProducts: "Treadmill $699 · Bike $399 · Dumbbells $199",
+    outboundLinks: "Amazon (8) · Walmart (4) · Best Buy (2)",
+    affiliateNetworks: ["Amazon Associates", "CJ Affiliate", "Impact"],
+    questions: [
+      "Where can I find the best home gym deals?",
+      "Are there any active coupon codes for gym equipment?",
+      "When is the best time to buy home gym equipment?",
+      "Which brands offer the biggest discounts?"
+    ],
+    videoChapters: [
+      { time: "0:00", label: "Intro" },
+      { time: "1:30", label: "Top Deals" },
+      { time: "3:45", label: "Coupon Codes" }
+    ],
+    faqReady: "✅ Ready",
+    faqClass: "badge-green",
+    questionTypes: ["Deal-finder", "Transactional"]
+  },
+  {
+    rank: 4,
+    title: "Home Gym Equipment Cost Breakdown",
+    url: "fitnesstips.com/home-gym-equipment-cost",
+    pageTraffic: "1,100",
+    urlKeywords: "cost, budget, equipment",
+    searchIntent: "Navigational",
+    wordCount: "2,100",
+    publishedDate: "2023-11-03",
+    productCount: "0",
+    lastUpdated: "2023-11-03",
+    h1Tag: "Home Gym Equipment Cost – Full Breakdown",
+    h2h3Structure: "H2: Budget Breakdown, Price Ranges, Brands<br>H3: Entry-Level, Mid-Range, Premium",
+    modifierTags: ["cost", "breakdown", "budget", "price"],
+    freshnessScore: "25/100",
+    freshnessClass: "badge-red",
+    productList: "No products listed (guide only)",
+    contentGapStatus: "🟢 Gap: Update + Add Products",
+    contentGapClass: "badge-green",
+    featuredProducts: "None featured",
+    outboundLinks: "No outbound affiliate links found",
+    affiliateNetworks: ["None"],
+    questions: [
+      "How much does a home gym cost to build?",
+      "What is the average cost of home gym equipment?",
+      "Is it cheaper to build a home gym or buy a membership?",
+      "Can I build a home gym for under $1,000?"
+    ],
+    videoChapters: [
+      { time: "0:00", label: "Intro" },
+      { time: "2:00", label: "Cost Breakdown" },
+      { time: "4:30", label: "vs Gym Membership" }
+    ],
+    faqReady: "❌ Not Started",
+    faqClass: "badge-red",
+    questionTypes: ["Cost Guide", "Informational"]
+  },
+  {
+    rank: 5,
+    title: "DIY Home Gym on a Budget",
+    url: "budgetfitness.com/diy-home-gym-budget",
+    pageTraffic: "780",
+    urlKeywords: "diy, budget, home gym",
+    searchIntent: "Informational",
+    wordCount: "3,600",
+    publishedDate: "2024-06-20",
+    productCount: "5",
+    lastUpdated: "2024-11-18",
+    h1Tag: "DIY Home Gym on a Budget – Build for Under $500",
+    h2h3Structure: "H2: Equipment Ideas, Space Setup, Routine<br>H3: Bodyweight, Resistance Bands, Used Gear",
+    modifierTags: ["diy", "budget", "cheap", "affordable", "under"],
+    freshnessScore: "90/100",
+    freshnessClass: "badge-green",
+    productList: "Resistance Bands $25 · Jump Rope $15 · Yoga Mat $30",
+    contentGapStatus: "🟢 Low Competition",
+    contentGapClass: "badge-green",
+    featuredProducts: "Resistance Bands $25 · Jump Rope $15 · Yoga Mat $30",
+    outboundLinks: "Amazon (5) · Target (1)",
+    affiliateNetworks: ["Amazon Associates"],
+    questions: [
+      "How can I build a home gym on a tight budget?",
+      "What cheap home gym equipment actually works?",
+      "Where to buy used gym equipment?",
+      "What is the minimum equipment for a home workout?"
+    ],
+    videoChapters: [
+      { time: "0:00", label: "Intro" },
+      { time: "1:15", label: "Budget Tips" },
+      { time: "3:00", label: "Used Gear Guide" }
+    ],
+    faqReady: "🔄 Draft",
+    faqClass: "badge-yellow",
+    questionTypes: ["Budget Guide", "How-to"]
+  }
+];
+
+function intentBadge(intent) {
+  const map = {
+    'Commercial': 'badge-commercial',
+    'Informational': 'badge-informational',
+    'Transactional': 'badge-transactional',
+    'Navigational': 'badge-navigational'
+  };
+  return `<span class="badge ${map[intent] || 'badge-blue'}">${intent}</span>`;
+}
+
+function renderTabContent(index) {
+  const c = competitors[index];
+  const container = document.getElementById('tab-content');
+  container.innerHTML = `
+    <div class="comp-detail">
+      <div class="comp-header">
+        <div>
+          <h2>#${c.rank}. ${c.title}</h2>
+          <div class="comp-url">${c.url}</div>
+        </div>
+        ${intentBadge(c.searchIntent)}
+      </div>
+
+      <div class="comp-stats">
+        <div class="stat-card">
+          <span class="stat-label">Page Traffic (Ahrefs)</span>
+          <span class="stat-value">${c.pageTraffic}</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">URL Keywords (Ahrefs)</span>
+          <span class="stat-value">${c.urlKeywords}</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Word Count</span>
+          <span class="stat-value">${c.wordCount}</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Published Date</span>
+          <span class="stat-value">${c.publishedDate}</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Product Count (Semrush)</span>
+          <span class="stat-value">${c.productCount}</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Last Updated</span>
+          <span class="stat-value">${c.lastUpdated}</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Freshness Score</span>
+          <span class="stat-value"><span class="badge ${c.freshnessClass}">${c.freshnessScore}</span></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Content Gap Status</span>
+          <span class="stat-value"><span class="badge ${c.contentGapClass}">${c.contentGapStatus}</span></span>
+        </div>
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">Page H1 Tag</div>
+        <div style="font-size:15px;font-weight:700;color:#0f172a;">${c.h1Tag}</div>
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">H2 / H3 Structure</div>
+        <div style="font-size:14px;color:#475569;line-height:1.7;">${c.h2h3Structure}</div>
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">Modifier Tags</div>
+        <div>${c.modifierTags.map(t => `<span class="tag">${t}</span>`).join(' ')}</div>
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">Product List with Pricing</div>
+        <div style="font-size:14px;color:#475569;line-height:1.7;">${c.productList}</div>
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">Featured Products &amp; Prices</div>
+        <div style="font-size:14px;color:#475569;line-height:1.7;">${c.featuredProducts}</div>
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">Outbound Link Patterns</div>
+        <div style="font-size:14px;color:#475569;">${c.outboundLinks}</div>
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">Identified Affiliate Networks</div>
+        <div>${c.affiliateNetworks.map(n => `<span class="affiliate-network">${n}</span>`).join(' ')}</div>
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">Extracted Questions (PAA)</div>
+        ${c.questions.map(q => `<div class="question-item">${q}</div>`).join('')}
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">Mapped Video Chapters</div>
+        ${c.videoChapters.map(ch => `<div class="chapter-item"><strong>${ch.time}</strong> ${ch.label}</div>`).join('')}
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">FAQ Schema</div>
+        <span class="badge ${c.faqClass}" style="font-size:14px;padding:6px 14px;">${c.faqReady}</span>
+      </div>
+
+      <div class="comp-section">
+        <div class="section-title">Question Types</div>
+        ${c.questionTypes.map(t => `<span class="tag">${t}</span>`).join(' ')}
+      </div>
+    </div>
+  `;
+}
+
+let currentTab = 0;
+
+function renderTabs() {
+  const bar = document.getElementById('tab-bar');
+  bar.innerHTML = competitors.map((c, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    const active = i === currentTab ? 'active' : '';
+    return `<button class="tab-btn ${active}" onclick="goToTab(${i})">${num}</button>`;
+  }).join('');
+}
+
+function goToTab(index) {
+  if (index < 0 || index >= competitors.length) return;
+  currentTab = index;
+  renderTabs();
+  renderTabContent(index);
+  const total = String(competitors.length).padStart(2, '0');
+  document.getElementById('page-indicator').textContent =
+    String(index + 1).padStart(2, '0') + ' / ' + total;
+  document.getElementById('prev-btn').disabled = index === 0;
+  document.getElementById('next-btn').disabled = index === competitors.length - 1;
+}
+
+function init() {
+  const params = new URLSearchParams(window.location.search);
+  const kw = params.get('keyword') || 'home gym equipment';
+  const title = kw + ' details analysis';
+  document.title = title;
+  document.getElementById('page-heading').textContent = title;
+  goToTab(0);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
