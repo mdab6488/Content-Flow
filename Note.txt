@@ -1,8 +1,1118 @@
-What are the exact content gaps in the top 50 ranking articles?
-What should my video script + production sheet look like?
+First of all analize my Keyword Detail page and then start work on Competitor YouTube Videos section this full page is not ready yet so think everything from scrach and do it
+
+Make this in very deep in analaysis for my purpose of work.
+
+===========================================
+First of all analize my Keyword Detail page and then start work on 
+Competitor Articles section 
+this full page is not ready yet so think everything from scrach and do it Make this in very deep in analaysis for my purpose of work. you give me explanation no need to code what can i able to add 
+=================================================
+Here is GLM-5.1 OpenCode Go suggest:
+=================================================
+Now I have a complete picture of both the YouTube section (which is quite mature with 5 videos, cross-video synthesis, beat rate, heatmap, blueprint, etc.) and the Competitor Articles section. Let me provide the deep analysis.
+Competitor Articles Section — Deep Diagnosis
+Current Inventory: What Exists for Article 01
+Sub-component	Status	Quality
+Article head (title + URL)	Exists	Basic
+Meta row (traffic, keywords, words, published, products, updated, freshness, gap)	Exists	Good
+H1 tag	Exists	One-liner
+H2/H3 structure	Exists	Flat list, no depth
+Modifier tags	Exists	Chip list
+Product list with pricing	Exists	5 product cards, mixed depth (3 detailed, 2 skeleton)
+Outbound link patterns	Exists	One-line summary
+Affiliate networks	Exists	Badge list
+Extracted questions (PAA)	Exists	5 questions with "+ Add to FAQ"
+Mapped video chapters	Exists	3 rows — nearly empty
+FAQ schema status	Exists	Badge + chip list
+Content DNA Analysis (6 sub-cards)	Exists	Best part — overview, structure, data extraction, SEO, audience psychology, monetization
+Full article content	Exists	Collapsible transcript
+Media links	Exists	Images, videos, infographics, embeds
+Content Gap Analysis	Exists	5 gap cards
+Pager (prev/next)	Exists	Basic
+Critical Problem: The YouTube Section Is 5× More Sophisticated
+The YouTube section now has: 5 populated video panels, Creator Authority Profile, Title DNA, Thumbnail/CTR Signals, Pacing Maps, Comment Intelligence per video, Cross-Video Synthesis, Beat Rate, Content Gap Heatmap, Revenue Projection, Algorithm Cheat Sheet, and a Video Blueprint. 
+The Articles section has none of this depth. It's a flat, surface-level scrape. The asymmetry makes the page feel unfinished.
+What You Should Add — Organized by Priority
+P0: STRUCTURAL FOUNDATION
+1. Multi-Article Comparison Table (before the article pills)
+Same concept as the YouTube comparison table. A horizontal grid showing all 10-30 articles side-by-side:
+Column	Why It Matters
+Article title	Pattern comparison across competitors
+Domain	Authority check
+DR / DA	Ranking power
+Monthly traffic	Validates the keyword's article potential
+Word count	Sets your content length target
+Products featured	Which products get the most coverage
+Affiliate network(s)	Monetization stack
+Published / Updated	Freshness signal
+Schema types	FAQ, Product, Review, HowTo
+Freshness score	Fresh / Stale / Decaying
+Article type	Listicle / Deep-dive / Comparison / Buyer's guide
+Strength	What this article does best
+Weakness	Where you can beat it
+Color-coded: green = you can beat, red = dominant. Click any row to deep-dive. This is the #1 missing piece — right now you can't compare ANY articles.
+2. Google SERP Snapshot Card (before comparison table)
+A minimalist recreation of the actual Google search results for this keyword. Shows:
+- Mini-favicon + title + URL for each result
+- Position number (1-10)
+- Meta description first 120 chars
+- Featured snippet indicator
+- "People Also Ask" box preview
+- Knowledge panel presence
+- Video carousel presence (and whether your keyword triggers it)
+- Image pack presence
+- Ad count above/below organic results
+This tells you the SERP landscape — what Google WANTS to show for this keyword. If 4/10 results are videos, you know Google considers this a video-intent keyword and your article strategy must include embedded video.
+3. Populate Articles 02-10+ (with same depth as 01)
+The pills (01 through 10+) are decorative. Each needs full data. At minimum, the top 10 articles need the same depth as Article 01. Articles 11-30 can have a lighter treatment (just the comparison table row + gap summary).
+4. Article Pill Switching Logic
+No click handlers exist on the article pills. Need JS to swap .comp-body content when clicking 01, 02, 03, etc. — same pattern as the YouTube section.
+P1: PER-ARTICLE DEEP ANALYSIS (match the YouTube section's depth)
+5. Domain Authority Profile (per article)
+The YouTube section has "Creator Authority Profile" for each video. The article equivalent:
+- Domain Rating (DR) / Domain Authority (DA)
+- Domain age
+- Total referring domains
+- Organic traffic trend (growing / stable / declining)
+- Topical authority: Is this a niche site or general publication? (A niche site's article on "under desk treadmills" is harder to beat than a general news site's article)
+- Content velocity: How often do they publish in this niche?
+- Historical update frequency: Do they update old articles or only publish new ones?
+- Beatability assessment: "DR 58 niche site, updated Jan 2025 — moderate difficulty. Beat with 4,000+ words + original testing data."
+6. Title & Meta Deconstruction (per article)
+YouTube has "Title DNA" — articles need the equivalent:
+- Title tag analysis: Character count, keyword position (front/middle/end), year presence, emotional trigger words, number pattern
+- Title formula classification: "Best X of Y" | "X vs Y" | "How to Choose X" | "X Review" | "Ultimate Guide to X"
+- Meta description analysis: Length, keyword inclusion, CTA presence, click-appeal language
+- SERP display preview: How it actually looks in Google results (truncation check)
+- Title performance hypothesis: Based on CTR patterns — does the format typically achieve above-average CTR?
+7. Content Structure Deep-Dive (per article)
+Currently you show H2/H3 as a flat list. This needs:
+- Heading tree with indentation showing full hierarchy (H1 → H2 → H3 → H4)
+- Content type per section: Is this section a product review? Comparison table? FAQ? How-to guide? Pros/cons list? Buyer's guide? Editorial opinion?
+- Word count per section: How many words for intro vs product reviews vs buyer's guide — reveals their emphasis pattern
+- CTA placement map: Where do affiliate links appear? First product mention after how many words? Inline CTA frequency?
+- Internal linking pattern: Which other articles does this page link to? (Reveals their topic cluster strategy)
+- Formatting inventory: Tables count, images count, videos embedded, lists, comparison widgets, schema blocks
+8. SEO Technical Breakdown (per article)
+Currently you show 5 badges (Keyword density, Semantic coverage, Featured snippet, Internal linking, E-E-A-T). This needs to be much more granular:
+- Title tag: Exact text, character count, keyword position, truncation risk
+- Meta description: Exact text, character count, keyword density, CTA language
+- URL structure: Slug analysis, keyword in URL?, length, readability
+- Schema markup types: FAQ? Product? Review? HowTo? Article? Breadcrumb? Rating?
+- Image optimization: Alt text coverage %, image count, WebP usage, lazy loading
+- Internal links: Count, anchor text patterns, linked-to pages
+- External links: Count, dofollow vs nofollow ratio, authority of linked domains
+- Core Web Vitals indicator: If available from PageSpeed Insights — LCP, FID, CLS
+- Mobile friendliness: Responsive? Mobile-specific issues?
+- Canonical tag: Self-referencing? Pointing elsewhere?
+- Open Graph / Twitter Card: Present? Optimized?
+- Heading hierarchy health: No skipped levels? Proper nesting?
+- Keyword density analysis: Primary KW, secondary KWs, LSI terms — frequency and distribution
+- Why this ranks: Synthesized explanation (like you have now, but data-backed)
+9. Product Coverage Matrix (per article)
+Currently you list products. You need:
+- Which products are featured vs just mentioned
+- Screen time / word count per product
+- Price listed vs current price (stale pricing flag)
+- Affiliate link type: Amazon? Direct? ShareASale? Impact?
+- Commission estimate per product
+- Product positioning: #1 pick? Budget pick? Runner-up? Just mentioned?
+- Comparison table: Does the article have a side-by-side spec table? Which specs are compared?
+- Missing products: Which top-selling products does this article NOT cover? (Your opportunity)
+10. Comment / User Signal Mining (per article, if comments exist)
+For blogs with comment sections:
+- Top 10 reader questions
+- Complaint patterns about the article itself ("prices are wrong", "missing X product", "biased")
+- Product sentiment in comments
+- Feature requests
+- Common misconceptions readers have
+- Sentiment ratio: positive / neutral / negative
+For articles without comments, pull user signals from:
+- Reddit threads about this keyword
+- Amazon Q&A for featured products
+- Quora questions on this topic
+P2: CROSS-ARTICLE INTELLIGENCE (the real weapon)
+11. Aggregated Article Intelligence Panel (at top, like YouTube's synthesis)
+Analyze patterns across ALL top articles:
+- Common heading patterns: What sections do 80%+ articles include? (Must-match table stakes)
+- Common products: Which products appear in 70%+ of articles? (Confirmed market consensus)
+- Common affiliate networks: Which networks dominate? (Tells you where to sign up)
+- Average word count: Sets your content length target
+- Average products featured: Sets your product coverage floor
+- Article format consensus: Do all articles use listicle format? Is there a format gap? (e.g., all listicles but no deep-dive comparison = your angle)
+- Freshness distribution: How many articles updated in last 6 months? How many stale?
+- Schema adoption rate: What % use FAQ schema? Product schema? (Schema gap = ranking opportunity)
+- The ONE angle nobody takes: Auto-generated from gap analysis
+12. Aggregated Content Gap Heatmap (like YouTube's)
+Cross-reference gaps across ALL articles:
+- Topics covered by 0/10 articles = Blue ocean (your unique differentiator)
+- Topics covered by 1-3/10 = Differentiation opportunity
+- Topics covered by 8-10/10 = Table stakes (must include)
+- Visualized as a heatmap: columns = articles, rows = topics, cells = covered/missing/placeholder
+- Gap priority: Impact × no-coverage = highest priority
+13. Cross-Article Product Comparison
+Aggregate all products across all articles:
+- Products ranked by: frequency of appearance × affiliate commission × search volume for that product name
+- "Must-feature" products: Appear in 7+ of 10 articles
+- "Opportunity" products: High search volume but appear in <3 articles
+- "First-mover" products: Launched recently, appear in 0 articles
+- Product pricing accuracy: Current price vs what competitors list
+14. SERP Feature Opportunity Map
+Based on what Google shows for this keyword:
+- Featured snippet opportunity: Who owns it? What format (paragraph, list, table)? Can you steal it?
+- "People Also Ask" extraction: Full question list from SERP, mapped to your article sections
+- Knowledge panel: Does this keyword trigger one? What data does it show?
+- Image pack: Does Google show images? Are they product photos or informational?
+- Video carousel: Does Google embed YouTube videos? Which ones? (Connect to your YouTube section)
+- Sitelinks: Does any competitor have sitelinks? (Indicates strong brand authority)
+- Ad landscape: How many ads? What's the commercial intent signal?
+15. Article Freshness & Decay Analysis
+Map each article's age and update pattern:
+- Freshness score: <3 months = fresh, 3-6 = aging, 6-12 = stale, 12+ = decaying
+- Update detection: Has the article been silently updated? (Check "updated" date vs publish date)
+- Pricing accuracy: Are the listed prices still current? Flag each stale price
+- Product availability: Are featured products still sold? Discontinued models?
+- Knowledge gaps: Topics that didn't exist when article was written (new models, new standards, new regulations)
+- Opportunity window: "Article X is 14 months stale and hasn't been updated since Mar 2024 — estimated 3-4 months before they refresh"
+P3: YOUR ARTICLE BLUEPRINT (synthesized output)
+16. Your Article Blueprint Generator
+Based on ALL article competitive intelligence, generate a recommended article structure:
+- 3 title variants: SEO-maximizing, click-maximizing, hybrid
+- Recommended word count: Based on top 10 average + gap coverage needed
+- Recommended heading structure: Complete H1-H3 hierarchy with what to cover in each
+- Must-include sections: Table stakes from competitor consensus
+- Differentiation sections: Gaps only you will fill
+- Product lineup: Ranked by affiliate potential × competitor coverage gap
+- Schema recommendations: Which schemas to implement (FAQ, Product, Review, HowTo)
+- Internal linking strategy: Which of your existing pages to link from/to
+- Estimated ranking timeline: "Based on DR gap, content gap, and freshness advantage — estimated 4-8 weeks to reach page 1, 3-5 months to reach top 3"
+- This should feed the "Write Full Script" modal's article mode
+17. Article vs Video Strategy Split
+A card that compares the article opportunity vs video opportunity side-by-side:
+- Article search volume vs YouTube search volume
+- Article competition (KD) vs YouTube competition (VidIQ score)
+- Article revenue potential vs YouTube revenue potential
+- Recommended: Article-first, video-first, or simultaneous?
+- Cross-promotion: Should the article embed the video? Should the video link to the article?
+P4: DEEP COMPETITIVE INTELLIGENCE
+18. Monetization Stack Analysis (per article + aggregated)
+Beyond just listing affiliate networks:
+- Affiliate link count and placement (how many links, where in the article)
+- Link format: naked URL, branded anchor, generic "click here", image link?
+- Commission structure analysis: Which products earn the most per sale?
+- Sponsored content indicators: Is this a paid placement? Any disclosure?
+- Email capture / newsletter signup presence
+- Display ad density (AdSense, Mediavine, Ezoic)
+- Course / ebook upsells
+- Tool/affiliate widget usage (Amazon product boxes, comparison tables)
+- Estimated total monthly revenue from this article alone
+19. Backlink Profile Snapshot (per article)
+- Referring domains count
+- Top referring domains (authority, relevance)
+- Link velocity (new links per month)
+- Anchor text distribution
+- Competitor linkable assets: What content in this article attracts links? (Data, infographics, tools, original research)
+- Your link-building opportunity: Can you create a better version of their linkable asset?
+20. Content Uniqueness & Depth Scoring
+- Information density: Unique facts per 1,000 words
+- Original content signals: Did they test products themselves? Or just aggregate other reviews?
+- Data usage: Do they cite studies? Include measurements? Show test results?
+- Expertise signals: Author bio, credentials, E-E-A-T indicators
+- Content freshness mechanism: Do they have a "last verified" date? Automated price updates?
+- Plagiarism surface: If 8/10 articles all say the same thing about a product, that's consensus — not original insight. Your original testing data = instant differentiation.
+21. Audience Intent Mapping
+Connect each article back to the actual human searching:
+- What problem does the searcher have? (e.g., "Will this fit under my standing desk?")
+- How does each competitor address (or fail to address) that problem?
+- Where does each article lose the reader's trust? (Stale pricing, no measurements, no methodology)
+- What's the ideal reader journey for YOUR article?
+- Search intent micro-classification: Commercial investigation? Comparison? Transactional? Each needs different content structure
+22. Content Ecosystem / Topic Cluster Map
+For each competitor domain:
+- Do they have a topic cluster around this keyword? (3+ related articles)
+- What supporting content do they have? (Buyer's guides, comparisons, unboxings, tutorials, vs articles)
+- How does their cluster interlink? (Hub-and-spoke? Flat?)
+- Traffic funnel: Do their related articles feed traffic into this main ranking article?
+- This tells you what supporting articles YOU need to build topical authority, not just one article
+23. Competitor Response Watch List
+- Which competitors consistently update their content? (High update frequency = harder to outrank long-term)
+- Which published once and never updated? (Easy to beat on freshness)
+- Predicted refresh dates: Estimate when each competitor will update based on their historical pattern
+- Alert thresholds: "Competitor X updates every 4 months and theirs is 3.5 months old — high alert"
+24. Article Revenue Projection
+- If you capture position #1 for this keyword:
+- CTR × traffic × affiliate conversion rate × commission
+- Best case / expected / conservative scenarios
+- Compare article revenue vs video revenue (which is worth more for this keyword?)
+- Payback period for content creation investment
+P5: ADVANCED & CONNECTED INTELLIGENCE
+25. Article-to-Video Bridge
+A card connecting the Articles section to the YouTube section:
+- Which competitor articles embed YouTube videos? (And which videos?)
+- Which YouTube competitor videos are mentioned in competitor articles?
+- Opportunity: Can your article embed YOUR video? (Double SERP presence — article + video carousel)
+- Cross-format gap: Topics covered in articles but missing from videos (and vice versa)
+26. Semantic Topic Map (per article)
+NLP-extracted analysis of the article's content:
+- Main topics extracted from the text
+- Sub-topics and their depth of coverage
+- Terminology used (technical vs casual)
+- Keyword frequency from full article text
+- Information density score: How much unique info per 1,000 words
+- Expertise signals: Does the article cite data? Show measurements? Or just give opinions?
+- Helps you understand what Google's algorithm "sees" in this content
+27. Article Format Innovation Opportunities
+Based on seeing all 10+ articles:
+- Format gap: Are all articles listicles? Is anyone doing a data-driven comparison? A tool-based review? A first-person experience?
+- Medium gap: Is anyone using interactive elements (calculators, comparison widgets, quizzes)?
+- Depth gap: Are all articles surface-level or does anyone go deep with testing?
+- Visual gap: Are all articles text-heavy? Anyone using infographics, videos, data tables?
+- Your format recommendation: Based on what's missing, what format should you use?
+28. FAQ Opportunity Extractor
+Pull and synthesize questions from ALL sources:
+- PAA from Google SERP (already have 5 — need complete extraction of all 8-12 questions Google shows)
+- Questions from competitor article FAQ sections
+- Questions from YouTube comments (connect to YouTube section)
+- Questions from Reddit/Quora
+- Questions from Amazon product Q&A
+- Map each question to: Which articles answer it? Which don't? = Your opportunity
+- Recommended: Top 15 questions YOUR article must answer, ranked by search volume
+Recommended Section Layout (Top to Bottom)
+1. Cross-Article Intelligence Summary         ← P0 (battlefield map)
+   - Aggregate stats bar
+   - Dominant patterns across all articles
+   - Format gap / The ONE angle
+   - Article vs Video strategy split
+2. Google SERP Snapshot                       ← P0 (what Google shows)
+   - Featured snippet owner
+   - SERP features present (video carousel, PAA, image pack, ads)
+   - SERP intent signal
+3. Multi-Article Comparison Table             ← P0 (side-by-side, all 10-30)
+   - Click any row to deep-dive
+4. Article pills (01-10+) with full data      ← P0 (each article deep-dive)
+   └─ Per article:
+      a. Article head + meta + freshness      ← existing (enhance)
+      b. Domain Authority Profile             ← P1
+      c. Title & Meta Deconstruction          ← P1
+      d. Content Structure Deep-Dive          ← P1
+      e. Product Coverage Matrix              ← P1
+      f. SEO Technical Breakdown              ← P1
+      g. Monetization Stack Analysis          ← P4
+      h. Backlink Profile Snapshot            ← P4
+      i. Comment / User Signal Mining         ← P1
+      j. Content DNA Analysis (existing 6 cards) ← existing
+      k. Full article content                 ← existing
+      l. Media links                          ← existing
+      m. Content gaps (per-article)           ← existing (enhance)
+      n. Your advantage (per-article)         ← NEW
+5. Aggregated Content Gap Heatmap             ← P2 (cross-article)
+6. Cross-Article Product Comparison           ← P2
+7. FAQ Opportunity Extractor                  ← P5
+8. Article-to-Video Bridge                    ← P5
+9. Your Article Blueprint                     ← P3 (synthesized output)
+10. Article Revenue Projection                ← P4
+11. Competitor Watch List                     ← P4
+12. Beat Rate / Winnability Score (articles)  ← P4
+Key Gap: Articles Section vs YouTube Section
+Feature	YouTube Section	Articles Section
+Items populated	5 videos (all deep)	1 article only
+Cross-item comparison	Yes (heatmap + synthesis)	No
+Per-item authority profile	Yes (Creator Authority)	No (Domain Authority missing)
+Title deconstruction	Yes (Title DNA)	No
+Visual/CTR analysis	Yes (Thumbnail/CTR)	No (Title/Meta)
+Pacing/structure map	Yes (Pacing Map)	No (Content Structure)
+Comment mining	Yes (per video)	No
+Beat rate / Winnability	Yes	No
+Revenue projection	Yes	No
+Blueprint output	Yes (Video Blueprint)	No (Article Blueprint missing)
+Algorithm cheat sheet	Yes	No (SEO cheat sheet missing)
+SERP snapshot	No	No
+The articles section is roughly where the YouTube section was 2 iterations ago. The same depth that transformed the YouTube section into a competitive weapon needs to be applied here. The P0 items (comparison table, SERP snapshot, populate articles 02+) are the structural backbone everything else plugs into.
+
+===========================================
+Here is Kimi K2.6 OpenCode Go suggest:
+===========================================
+I'll analyze your existing Competitor Articles section in depth, then provide a comprehensive strategic breakdown of what's missing and what you should add from scratch.
+PART 1: Current State Analysis — Competitor Articles Section
+What You Already Have (Line 2234–2745)
+Your current article section is surprisingly deep compared to the YouTube section. Here's the inventory:
+Structural Layer:
+- Article navigation pills (01–10+, with ellipsis) — but no evidence of content swapping logic
+- Article head: Title, URL, intent badges (Commercial, Research needed)
+- 8-point metadata grid: Traffic, Keywords, Words, Published, Products, Updated, Freshness score, Gap status
+Content Extraction Layer:
+- H1 tag display
+- Full H2/H3 hierarchy tree
+- Modifier tag chips (best, top, 2025, review, budget, premium, buying guide)
+- Product cards with pricing, tier badges (Premium/Mid/Budget), Editor's Choice stars, commission estimates, affiliate network indicators
+- Outbound link pattern summary (Amazon 7, Walmart 3, Dicks 2)
+- Affiliate network badges (Amazon Associates, ShareASale, Flexispot Direct)
+Audience & SEO Layer:
+- PAA (People Also Ask) extraction with interactive "+ Add to FAQ" buttons
+- Video chapter mapping
+- FAQ schema status with question-type chips (What, How, Can, Are, Do)
+Deep Intelligence Layer:
+- Content DNA Analysis — a nested accordion with 6 micro-panels:
+1. Article Overview (type, topic, primary KW, word count, traffic, DA)
+2. Structure Analysis (heading architecture, intro hook, CTA position, formatting, reading level)
+3. Data Extraction (product count, outbound links, affiliate networks)
+4. SEO Analysis (keyword density, semantic coverage, featured snippet, internal linking, E-E-A-T)
+5. Audience Psychology (FOMO, Social Proof, Specificity, Aspirational)
+6. Monetization (model, est. revenue, avg commission, top earner)
+Raw Content Layer:
+- Full article text viewer (collapsible) with HTML structure preserved
+- Media links panel: Images (8), Videos (2), Infographics/Tables (2), External embeds (3)
+Strategic Layer:
+- Content Gap Analysis card with 5 specific recommendations + impact badges (High/Medium/Quick win)
+- Pagination (01 / 30)
+Strengths of Current Implementation
+1. The Content DNA Analysis is genuinely sophisticated — most SEO tools don't expose heading architecture, reading level, and audience psychology in one view.
+2. Product-level monetization tracking with commission estimates per product is smart — it lets you prioritize which products to feature based on earnings potential, not just popularity.
+3. The PAA extraction with "Add to FAQ" creates a direct workflow bridge from research to content outline.
+4. Media links panel is practical — seeing what visual assets competitors embed helps you plan your own production needs.
+Critical Weaknesses
+1. Single Article Isolation
+- Like the YouTube section, you show Article 01 of 30, but there's no cross-article synthesis. 
+- You can't see: "Do all 30 articles mention LifeSpan?" / "What's the average word count?" / "Which affiliate network dominates this niche?"
+2. No SERP Context
+- You show the article exists, but not WHERE it ranks. Position #1 vs Position #8 is a completely different competitive challenge.
+- No ranking history: Is this article climbing or declining?
+3. No Backlink Intelligence
+- An article with DR 58 and 500 referring domains is very different from DR 58 and 50 referring domains. You show DA but not the backlink profile supporting it.
+4. Static "Freshness" Score Without Decay Analysis
+- You show "72 · Fresh" but no trajectory. Is 72 going up or down? When was the last update? What changed in that update?
+5. Missing the "Why This Ranks" Deep Dive
+- You have a brief "Why this ranks" bullet list (3 items), but no technical or off-page factors.
+6. No Content Update Strategy for YOUR Article
+- The gap analysis identifies what's missing from THEIR article, but doesn't synthesize a "Your Article Blueprint" the way you should.
+PART 2: Deep Strategic Additions for Competitor Articles
+Here's what you should add, organized by strategic value. I'm treating this as a content intelligence warfare system.
+TIER 0: FOUNDATION FIXES
+1. Functional Article Pills with Content Swapping
+- Currently pills 01–10 are decorative. Each needs to load its own full dataset.
+- Without this, "Article 01 of 30" is just one article masquerading as a database.
+2. SERP Position & Ranking Context Panel
+- Current rank for target keyword (where does this article sit in Google?)
+- Ranking trajectory: Has it moved in the last 3/6/12 months?
+- SERP features captured: Featured snippet? People Also Ask? Image pack? Video carousel? Shopping results?
+- Position stability: Has it held #1 for 2 years, or is it volatile?
+- Why this matters: An article at #1 for 18 months has strong authority signals. An article at #3 with declining trajectory is vulnerable.
+3. Cross-Article Competitive Intelligence Summary
+- Position: Top of the Articles section, before individual article pills.
+- Contents:
+- Aggregate stats: Total traffic across top 10 articles, average word count, average product count, average freshness score.
+- SERP concentration: Does 1 domain own multiple positions? (e.g., therunningadvisor.com has #1, #4, #7)
+- Content format consensus: Are all 30 listicles? Is there a format gap (e.g., no buyer's guides in top 10)?
+- Affiliate network dominance: "Amazon Associates appears in 28/30 articles. ShareASale in 4/30."
+- The dominant angle: "80% of articles use 'Best Overall / Best Value / Best Budget' framing. Nobody uses 'Best for Standing Desks' — that's your opening."
+- Recommended article specs: Target word count, product count, heading structure based on competitive analysis.
+TIER 1: CRITICAL FOR OUTRANKING (P0 Priority)
+4. Backlink & Authority Profile
+- Referring domains count (not just DR/DA — the raw number of unique domains linking)
+- Backlink quality distribution: How many from DR 70+ vs DR 20-?
+- Anchor text patterns: Are links using exact-match anchors? Branded? Generic?
+- Link velocity: Is the site still gaining links to this article, or has it plateaued?
+- Internal link support: How many internal links point TO this article from the same domain? (Internal links are massively underrated.)
+- Your strategic read: If the #1 article has 400 referring domains and you have a new site, this keyword may be too hard unless you find a long-tail variant.
+5. Content Depth & Quality Scoring
+- Beyond word count:
+- Information density: Unique facts/data points per 100 words. (A 3,000-word article repeating the same specs has low density.)
+- Original research signals: Does it cite studies? Use original photos? Include test data?
+- Expertise indicators: Author credentials shown? Medical reviewed? Byline with photo?
+- Citation count: How many external sources does it link to? (Zero = thin. 15+ = research-heavy.)
+- Comparison table presence: Does it have side-by-side spec tables?
+- Image originality: Stock photos vs. original product photography.
+6. E-E-A-T Signal Breakdown
+Google's E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) is increasingly critical. Break down:
+- Experience: Does the author claim hands-on testing? "I tested 12 treadmills over 3 months" vs. "We researched the best treadmills."
+- Expertise: Author bio visible? Medical/technical credentials? Niche-specific authority?
+- Authoritativeness: Brand/domain recognition in this niche? Awards? Citations from other authorities?
+- Trustworthiness: Disclosure statements? FTC compliance? Date stamps? Update logs? Correction policy?
+- Score each competitor on a 4-point scale per E-E-A-T pillar.
+- Your gap: If all competitors score "Weak" on Experience but "Strong" on Authority, your path is original testing + first-person narrative.
+7. SERP Feature Targeting Analysis
+- Featured snippet optimization: Does the article have a concise definition paragraph? Comparison table? Ordered list? FAQ block?
+- People Also Ask capture: How many of the 8 PAA questions does this article explicitly answer?
+- Image pack: Does it have original images with descriptive alt text and structured data?
+- Video carousel: Is there an embedded video? Does it rank in video search?
+- Local pack / Shopping: If applicable, are product rich results triggered?
+- Your opportunity: "Competitor captures 3/8 PAA questions. You should target all 8 + 4 additional questions they miss."
+8. Content Decay & Update Strategy
+- Publish date vs. last significant update: Many articles show "Updated Jan 2025" but only changed one line.
+- Update frequency: Does this site update this article quarterly? Annually? Never?
+- Traffic trajectory: Is organic traffic to this page growing, flat, or declining?
+- Content rot indicators: Broken affiliate links? Discontinued products mentioned? Outdated prices? Old model numbers?
+- Seasonal patterns: Does traffic spike in January (New Year fitness) or November (Black Friday)?
+- Your advantage: If the #1 article was last meaningfully updated 8 months ago and mentions a discontinued product, freshness alone could win you the spot.
+TIER 2: STRATEGIC INTELLIGENCE (P1 Priority)
+9. Semantic SEO & Topic Coverage Map
+- LSI keyword coverage: What related terms does the article use? ("under desk treadmill" → "walking pad," "treadmill desk," "standing desk walking," "sedentary work," "step count")
+- Topic breadth: Does it cover sub-topics like assembly, noise, durability, warranty, weight capacity, desk compatibility?
+- Semantic gap heatmap: A matrix showing which sub-topics are covered by which competitors.
+- Rows = sub-topics (Assembly, Noise, Warranty, Price, etc.)
+- Columns = top 10 articles
+- Cells = covered (green) / partially covered (yellow) / missing (red)
+- Why: Shows you which sub-topics are table stakes (covered by 8/10) vs. blue ocean (covered by 0/10).
+10. Internal Linking Architecture
+- How many internal links point TO this article? (Pages linking here)
+- How many internal links FROM this article to other site pages? (Linking out)
+- What anchor text is used for internal links?
+- Is this article in the main navigation? Footer links?
+- Strategic read: An article with 200 internal links has massive domain support. You'll need equivalent internal link strategy.
+11. Conversion Funnel & Monetization Depth
+- You have basic affiliate data. Go deeper:
+- Affiliate link placement map: Where do links appear? (Intro? After each product? In comparison table? Footer?)
+- Link format: Raw Amazon URLs? Pretty links? Buttons? Images?
+- CTA language: "Check price" vs. "Buy now" vs. "See latest deals"
+- Email capture: Does the article have a newsletter signup? Lead magnet?
+- Display ads: Does the site use Mediavine/AdThrive? (If yes, their RPM data suggests niche value.)
+- Monetization stack ranking: Pure affiliate? Affiliate + display? Affiliate + lead gen + sponsored?
+- Revenue estimation per article: Traffic × estimated CTR × conversion × commission.
+12. Reader Intent Progression Analysis
+- Map the article structure against the buyer journey:
+- Awareness: Does it explain the PROBLEM? ("Why sitting all day is harmful")
+- Consideration: Does it compare OPTIONS? (Product comparison tables)
+- Decision: Does it recommend a SPECIFIC choice? ("Best Overall: LifeSpan")
+- Intent mismatch detection: If the keyword is "best under desk treadmill" (commercial intent), but the article spends 40% of words on "health benefits of walking" (informational), there's a mismatch you can exploit by being more directly commercial.
+13. Content Format Pattern Recognition
+- What format dominates the top 10?
+- Listicle ("5 Best...")
+- Single-product review
+- Comparison ("X vs Y")
+- Buyer's guide
+- "Best for specific use case" (niche-specific)
+- Format gap opportunity: If 9/10 are listicles, a "Complete Buyer's Guide with Testing Methodology" could differentiate.
+TIER 3: TACTICAL ADVANTAGE (P2 Priority)
+14. Visual Content Strategy Analysis
+- You list media links, but don't analyze their STRATEGY:
+- Image count & type: Product photos (original vs. stock), infographics, comparison tables, lifestyle shots, screenshots.
+- Infographic strategy: Are they using custom graphics for social sharing?
+- Video embeds: Self-hosted? YouTube? Does the video have its own SEO value?
+- Interactive elements: Price comparison widgets? Amazon live feeds?
+- Schema markup for media: Image schema? Video schema?
+- Your production plan: "Top articles average 8 original images + 1 comparison table + 1 infographic. Budget for 12 images + 2 tables to exceed."
+15. Page Speed & Technical SEO Audit
+- Core Web Vitals: LCP, FID, CLS scores if available.
+- Mobile optimization: Is the comparison table scrollable on mobile?
+- Schema types used: Article? Review? Product? FAQ? BreadcrumbList? Organization?
+- URL structure: Is it /best-under-desk-treadmill or /blog/2025/03/best-under-desk-treadmill? (Shorter = better.)
+- Canonical signals: Any canonical issues?
+- Indexing status: Is the page indexed? Cached date?
+- Your advantage: If top competitors have poor mobile tables or slow LCP, technical superiority is a fast win.
+16. Social Proof & Engagement Signals
+- Comments section: Does the article have comments? How many? What's the sentiment?
+- Social shares: Estimated shares from OpenGraph data?
+- User-generated content: Does the site include reader submissions, testimonials, "reader favorite" badges?
+- Trust badges: "Medically reviewed," "Independently tested," "Updated monthly"
+- Review schema: Star ratings showing in SERP?
+17. Keyword Cannibalization Detection
+- Does the SAME domain have multiple articles targeting the same or similar keywords?
+- "best under desk treadmill" + "top under desk treadmills" + "under desk treadmill reviews" all on therunningadvisor.com?
+- If yes, this creates an opportunity: Google may be splitting authority across their pages. Your single, definitive article could consolidate that authority.
+18. Author & Publication Pattern
+- Author consistency: Is the byline always the same person, or ghostwritten/rotating?
+- Author authority: Do they have an author page with credentials? Social profiles? Other publications?
+- Publication frequency: How often does this site publish new articles? (High frequency = more competitive. Low frequency = sleepy giant.)
+- Content clusters: Does the site have a full "sleep/fitness" content cluster supporting this article? (Supporting articles on standing desks, walking shoes, office ergonomics?)
+TIER 4: SYNTHESIS & ACTION BRIDGE (P3 — Connects to Script/Content Creation)
+19. Your Article Blueprint Generator
+Based on ALL article competitive intelligence, auto-generate:
+- Recommended title variants (3 options):
+- SEO-focused: "Best Under Desk Treadmills of 2025 (Tested & Ranked)"
+- Click-focused: "I Tested 10 Under Desk Treadmills — Only 3 Are Worth Buying"
+- Hybrid: "The Only Under Desk Treadmill Guide You'll Need (2025 Test Results)"
+- Recommended word count: Based on top 10 average + your differentiation needs.
+- Heading structure: Suggested H1, H2s, and H3s that cover gaps.
+- Product inclusion list: Ranked by (commission potential × competitor coverage gap × relevance).
+- Must-include sections: Table stakes from competitive consensus.
+- Differentiation sections: Gaps only you will fill.
+- Internal linking strategy: How many internal links to include, suggested anchor text.
+20. Beat Rate / Outrankability Score for Articles
+A composite score specific to article SEO:
+- Article Beat Rate = (FreshnessDecay × 0.25) + (ContentGap × 0.25) + (BacklinkGap × 0.20) + (E-E-A-T_Gap × 0.15) + (TechnicalAdvantage × 0.15)
+- Display as a donut with confidence: "68% — Winnable with fresh testing + superior tables"
+- Include a "What it takes to beat #1" breakdown:
+- "To outrank therunningadvisor.com, you need: 300+ referring domains, 3,500+ words, original product photography, and a comparison table they don't have."
+21. Content Brief Auto-Generator
+- One-click generation of a production brief containing:
+- Target keyword + 10 semantic variations.
+- Recommended H1 + H2 outline.
+- Products to review with affiliate links.
+- Questions to answer (from PAA + comment mining).
+- Word count target.
+- Image requirements.
+- Internal link targets.
+- Schema markup to implement.
+- This directly feeds your "Production Brief" (S1) button.
+22. Competitive Moat Analysis
+- Why is this article hard to beat?
+- "Domain has 500K monthly visitors = topical authority"
+- "Article has 450 referring domains = strong backlink profile"
+- "Content is genuinely comprehensive = thin content won't outrank"
+- "Author is a certified personal trainer = expertise moat"
+- Your counter-strategy: "To overcome the backlink gap, target a long-tail variant first, then update to the main keyword after gaining traction."
+23. Update & Maintenance Plan
+- After you publish, what should you monitor?
+- "Check competitor #1 monthly for content updates."
+- "Track their backlink velocity — if they gain 50 new links/quarter, you need 75."
+- "Price check affiliate products weekly — competitor's #1 complaint is outdated pricing."
+PART 3: Structural Recommendations for Implementation
+A. Comparison Matrix for Articles
+Just like I recommended for YouTube, add a cross-article comparison table:
+- Rows: Top 10 articles
+- Columns: Traffic, Words, Products, Freshness, Backlinks, E-E-A-T Score, Featured Snippet?, Primary Angle
+- Color coding: Green = beatable dimension, Red = dominant dimension
+B. Data Source Transparency
+You already use source badges (Scraping, Ahrefs). Expand this:
+- src-ahrefs: Traffic, keywords, backlinks
+- src-semrush: Keyword positions, SERP features
+- src-scraping: Content structure, PAA, links
+- src-manual: E-E-A-T scoring, production quality
+- src-ai: Content gap analysis, beat rate, semantic mapping
+C. Collapsible Section Hierarchy
+With 23 new additions, organization is critical. Suggested default states:
+- Expanded by default: Competitive Intelligence Summary, Cross-Article Matrix, Your Article Blueprint
+- Collapsed by default: Full content viewer, Media links, Backlink profile, Technical audit, Author profile
+D. Integration Points
+- The Content Gap Analysis should feed the Script/Content Brief generator.
+- PAA questions with "Add to FAQ" should populate an FAQ outline that carries forward to the script modal.
+- Product cards with commission data should populate a recommended products list in the brief.
+- The Beat Rate score should appear in the hero section alongside your existing Opportunity Scores.
+PART 4: Priority Implementation Stack
+Priority	Feature	Strategic Impact
+P0	Functional article pills (01–30)	Without this, it's still just one article
+P0	SERP Position & Ranking Context	Can't compete without knowing where they rank
+P0	Cross-Article Intelligence Summary	Landscape context before detail
+P0	Backlink & Authority Profile	Determines if keyword is winnable
+P1	Semantic SEO & Topic Coverage Map	Shows exactly what topics to cover
+P1	Content Depth & Quality Scoring	Sets your minimum content bar
+P1	E-E-A-T Signal Breakdown	Google's #1 ranking factor going forward
+P1	SERP Feature Targeting	Structured data & snippet optimization
+P1	Content Decay Analysis	Freshness gap exploitation
+P1	Your Article Blueprint	Directly actionable output
+P2	Internal Linking Architecture	Often the hidden ranking factor
+P2	Conversion Funnel & Monetization Depth	Revenue optimization
+P2	Content Format Pattern Recognition	Format differentiation
+P2	Visual Content Strategy	Production planning
+P3	Page Speed & Technical SEO	Fast wins if competitors are slow
+P3	Author & Publication Pattern	Competitive moat assessment
+P3	Beat Rate / Outrankability Score	Go/no-go decision support
+P3	Content Brief Auto-Generator	Bridges research → production
+Final Assessment
+Your Competitor Articles section is already more advanced than 90% of SEO tools in terms of content extraction and structure analysis. The Content DNA Analysis with its 6 micro-panels is particularly strong.
+However, it suffers from the same structural flaw as your YouTube section: it's a deep view of ONE article, not a strategic view of the COMPETITIVE LANDSCAPE.
+The highest-value additions are:
+1. SERP context (where do they actually rank?)
+2. Backlink intelligence (can you realistically compete?)
+3. Cross-article synthesis (what does everyone do vs. what nobody does?)
+4. Semantic topic coverage map (what topics are table stakes vs. blue ocean?)
+5. Your Article Blueprint (turn all this intelligence into a production-ready brief)
+Fix the pills, add the summary panel, and build the cross-article matrix first. Those transform the section from "article viewer" into "competitive intelligence system."
+
+===========================================
+Here is MiMo V2.5 Pro OpenCode Go suggest:
+===========================================
+Now I have the complete picture. Here's my deep analysis:
+Deep Analysis: Competitor Articles Section
+What Currently Exists (Article 01 of 30)
+Your section has 16 sub-components:
+#	Component
+1	Article head (title, URL, badges)
+2	Article meta (traffic, keywords, words, published, products, updated, freshness, gap)
+3	Page H1 tag
+4	H2/H3 structure
+5	Modifier tags
+6	Product list with pricing (5 products, tier, commission)
+7	Outbound link patterns
+8	Affiliate networks detected
+9	PAA questions with "Add to FAQ"
+10	Mapped video chapters
+11	FAQ schema status
+12	Content DNA Analysis (6 sub-cards)
+13	Full article content (raw scraped)
+14	Media links (images, videos, infographics, embeds)
+15	Content Gap Analysis (5 ways to outperform)
+16	Pagination (01/30)
+What's Missing — 18 High-Impact Additions
+TIER 1: Critical for Content Strategy
+1. Cross-Article Comparison Matrix
+- A summary table comparing all 10–30 articles on key dimensions: traffic, word count, products covered, freshness score, affiliate networks, DR, content type (listicle vs guide vs review vs comparison)
+- Pattern detection: what do ALL top-ranking articles share? What does NONE of them do?
+- "Best of breed" per dimension: which article has the best structure, which has the best product selection, which has the best SEO
+- Why this matters: You're analyzing 30 articles individually but never seeing the forest. The matrix reveals the competitive consensus — the minimum bar you must meet — and the white space nobody fills.
+2. Content Quality Score (Scoring Rubric)
+- A 0–100 score per article based on weighted criteria: depth (20%), freshness (15%), product coverage (15%), SEO optimization (15%), E-E-A-T signals (10%), user experience (10%), monetization quality (10%), media richness (5%)
+- Score distribution chart: how many articles score 80+, 60-79, below 60
+- Your target score: what you need to beat to enter the top 5
+- Why this matters: Without a scoring system, you're comparing articles by gut feeling. A rublet gives you a concrete benchmark and reveals which dimension offers the biggest improvement opportunity.
+3. SERP Feature Mapping
+- Which SERP features are present for this keyword: Featured Snippet, PAA box, Image pack, Video carousel, Shopping results, Local pack, Knowledge panel, People also search for
+- Which competitor articles own which SERP features
+- Schema markup analysis per article: FAQ, HowTo, Product, Review, Article, BreadcrumbList
+- Why this matters: Ranking #1 means nothing if a featured snippet steals the click. You need to know exactly which SERP features to target and which schema to implement.
+4. Backlink Profile Intelligence
+- Referring domains count per article
+- Top 5 linking domains per article (authority indicators)
+- Link velocity: how fast are they acquiring links?
+- Anchor text distribution
+- Linkable asset identification: what in their content attracts links naturally? (data, tools, infographics, unique research)
+- Why this matters: Content quality alone doesn't rank articles. Understanding the backlink landscape tells you whether you can outrank with content alone or need a link-building strategy.
+TIER 2: Strategic Advantage
+5. Content Depth & Information Density Analysis
+- Information density score: unique facts, data points, and claims per 100 words
+- Data sources cited: does the article cite studies, original testing, manufacturer specs, or just other articles?
+- Original research indicators: did they do their own testing, surveys, measurements?
+- Expertise signals: author credentials, hands-on experience claims, first-person testing narratives
+- Why this matters: Google's Helpful Content system rewards depth and original experience. An article that cites 3 studies and does original testing will outrank one that just rewrites specs.
+6. Content Structure Blueprint (Template Extraction)
+- Extracted content template from top-performing article: intro pattern, section order, product review format, comparison table structure, buyer's guide format, conclusion pattern
+- Section-by-section word count allocation: how much space does the top article give to intro vs product reviews vs buyer's guide?
+- Heading formula analysis: what type of H2s do top articles use? (questions, comparisons, benefits, product names, "how to choose")
+- Why this matters: Instead of guessing your article structure, you can reverse-engineer the proven template that Google already rewards.
+7. Product Selection Intelligence
+- Cross-article product frequency: which products appear in 80%+ of articles? (must include) Which appear in less than 20%? (opportunity)
+- Price point distribution: what price range do top articles focus on?
+- Product tier strategy: how many premium vs mid vs budget products do top articles include?
+- Missing products: products with high Amazon reviews/search volume that NO competitor covers
+- Commission analysis: which products generate the highest affiliate revenue per article?
+- Why this matters: Product selection is the #1 monetization lever. If every competitor features the same 5 products but misses a rising bestseller, that's your opening.
+8. Content Freshness & Update Pattern Analysis
+- Last update date vs traffic trend: do articles that update quarterly get more traffic?
+- Update depth: do they just change the year in the title or actually update prices, products, and data?
+- Seasonal patterns: do certain keywords see article updates before holiday seasons?
+- Staleness indicators: outdated prices, discontinued products, old screenshots, expired links
+- Why this matters: Freshness is your easiest win. If 25 of 30 articles have outdated prices, you can leapfrog them with current data.
+9. Internal Linking Architecture
+- Internal links count per article
+- Link targets: what pages do they link to within their site? (other reviews, comparison pages, buyer's guides, category pages)
+- Hub-and-spoke detection: is this article part of a content cluster? What's the pillar page?
+- Anchor text patterns for internal links
+- Why this matters: Topical authority comes from content clusters, not standalone articles. Understanding their internal linking strategy reveals the full content ecosystem you need to build.
+10. User Experience & Page Quality Signals
+- Page speed indicators (image count, script count, ad density)
+- Above-the-fold content: what does the user see before scrolling? (comparison table, product pick, intro paragraph, ads)
+- Table of contents presence and quality
+- Jump links / anchor navigation
+- Mobile formatting quality
+- Ad-to-content ratio (aggressive monetization vs user-first)
+- Why this matters: Google measures user experience signals. An article with 15 ads, no table of contents, and slow images will lose rankings to a faster, cleaner page regardless of content quality.
+TIER 3: Monetization & Conversion
+11. Monetization Strategy Deep Dive
+- Affiliate link density: links per 100 words
+- CTA placement analysis: where do top articles place their primary CTA? (above fold, after each product, in comparison table, in conclusion)
+- Link types: text links, buttons, comparison tables, image links, callout boxes
+- Non-affiliate monetization: display ads, sponsored content, email capture, course/consulting upsell
+- Revenue estimation per article (traffic × CTR × conversion × commission)
+- Why this matters: Understanding how competitors monetize reveals both their revenue strategy and conversion tactics you should adopt or improve upon.
+12. Comparison Table & Visual Element Analysis
+- Comparison table presence and quality: do top articles use comparison tables?
+- Table structure: what columns do they include? (product name, price, rating, key specs, pros/cons)
+- Visual hierarchy: how do they format the table? (sticky headers, color coding, star ratings, "best for" labels)
+- Other visual elements: pros/cons boxes, verdict boxes, rating widgets, image galleries
+- Why this matters: Comparison tables are the highest-converting element in affiliate content. If your competitors have mediocre tables, a superior table design is a direct conversion advantage.
+13. Author & E-E-A-T Profile
+- Author name, bio, and credentials
+- Author page existence and quality
+- Other articles by the same author in this niche
+- Trust signals: About page, Contact page, Privacy policy, Editorial policy, Review methodology page
+- YMYL indicators: does this topic require medical/financial expertise signals?
+- Why this matters: Google's quality raters evaluate E-E-A-T heavily. If competitors have weak author profiles, you can outrank with stronger expertise signals even with similar content.
+TIER 4: Execution Intelligence
+14. Content Production Intelligence
+- Estimated production effort per article (based on word count, research depth, original media)
+- Content type classification: rewritten aggregation vs original review vs data-driven comparison vs expert guide
+- Outsourcing signals: generic stock photos, templated structure, no personal experience = likely outsourced
+- Quality consistency: does the site maintain quality across all their articles?
+- Why this matters: If top articles are low-effort rewritten content, you can dominate with original research. If they're expert-written, you need to match that depth.
+15. Featured Snippet & PAA Ownership Map
+- Which competitor owns the featured snippet for this keyword?
+- What format wins the snippet? (paragraph, list, table)
+- PAA questions the article answers vs PAA questions still unanswered
+- Snippet optimization gaps: what would it take to steal the snippet?
+- Why this matters: Featured snippets can drive 30%+ of clicks for a keyword. If nobody owns it well, that's a massive traffic opportunity.
+16. Content Distribution & Promotion Signals
+- Social shares per article (if detectable)
+- Backlink acquisition pattern: editorial links vs guest posts vs directory listings
+- Content repurposing: does the article have a companion video, social posts, email campaign?
+- Community mentions: Reddit, Quora, forums linking to this article
+- Why this matters: Even the best content needs promotion. Understanding how competitors distribute reveals channels you should target.
+17. Content Gap Aggregation (Cross-Article)
+- Instead of gap analysis per article, aggregate gaps across ALL 30 articles
+- Universal gaps: things NONE of the 30 articles cover (your unique angle)
+- Partial gaps: things only 1-2 articles cover (opportunity to do it better)
+- Depth gaps: things all articles mention but none explore deeply
+- Why this matters: Per-article gaps are tactical. Cross-article gaps are strategic — they reveal the content angle nobody in the entire SERP has taken.
+18. Your Article Blueprint Generator
+- Based on all 30 articles' analysis, auto-generate a recommended article blueprint:
+- Recommended title formula
+- Recommended word count
+- Recommended H2/H3 structure
+- Recommended product selection (top 5 by frequency + 1 gap product)
+- Recommended comparison table columns
+- Recommended FAQ questions (from PAA aggregation)
+- Recommended schema markup
+- Recommended content angle (the gap nobody fills)
+- Target scores to beat (freshness, depth, SEO, media)
+- Why this matters: This turns 30 articles of research into one actionable content brief. Without this, the research sits unused.
+Structural Recommendations
+Articles 02–30 are empty. Only Article 01 has data. You need:
+- A data template that populates all articles consistently
+- A way to mark which article is "strongest competitor" vs "easiest to beat"
+- A summary panel at the top that synthesizes insights across all articles
+Add a "Competitive Landscape Summary" panel at the top (before the article pills):
+- Aggregate stats: total traffic across top 10, average word count, freshness distribution, product frequency
+- Dominant patterns: what ALL top articles share (must match) vs what NONE do (your opening)
+- The ONE angle nobody is taking (your unique positioning)
+- Recommended article length, structure, and product selection based on competitive analysis
+- Content difficulty score: how hard will it be to crack the top 5?
+Connect to the Script/Content pipeline. The article analysis should feed into:
+- The "Production Brief" modal (article brief, not just video)
+- The script generation (for video scripts that reference article data)
+- The "Content Gap & Winning Angle" section that Note.txt says is missing from the main page
+Add article-level pagination navigation. Currently you have "01 / 30" with Prev/Next. Add:
+- Quick-jump to specific article number
+- Filter by: highest traffic, freshest, most products, best content quality
+- Sort options to quickly find the most relevant competitors
+Priority Stack for Implementation
+Priority	Addition
+P0	Cross-Article Comparison Matrix
+P0	Content Gap Aggregation (cross-article)
+P0	Product Selection Intelligence
+P0	Your Article Blueprint Generator
+P1	Content Quality Scoring Rubric
+P1	Content Structure Blueprint
+P1	SERP Feature Mapping
+P1	Featured Snippet Ownership Map
+P2	Content Depth & Information Density
+P2	Backlink Profile Intelligence
+P2	Comparison Table & Visual Analysis
+P2	Monetization Strategy Deep Dive
+P3	Author & E-E-A-T Profile
+P3	Internal Linking Architecture
+P3	Content Freshness Pattern Analysis
+P3	Content Production Intelligence
+P3	Content Distribution Signals
+P3	UX & Page Quality Signals
+The Critical Gap: Cross-Article Intelligence
+The biggest structural problem is that you analyze 30 articles in isolation. The real power comes from cross-article pattern detection:
+- What products appear in 80%+ of articles? (must include)
+- What H2 patterns do ALL top 5 articles share? (minimum bar)
+- What does NO article cover? (your unique angle)
+- What content type wins? (listicle vs guide vs comparison)
+- What word count range dominates the top 10?
+- What freshness threshold is needed to compete?
+Without this cross-article layer, you're doing 30 separate analyses instead of one strategic synthesis. The Comparison Matrix and Blueprint Generator are what turn research into action.
+▣  Build · MiMo V2.5 Pro · 1m 16s
+First of all analize my Keyword Detail page and then start work on 
+Competitor Articles section 
+this full page is not ready yet so think everything from scrach and do it Make this in very deep in analaysis for my purpose of work. you give me explanation no need to code what can i able to add 
++ Thought: 3.1s
+I already completed this deep analysis in my previous response. Here's a summary of what I found:
+Current State: Competitor Articles Section
+The section at Dashboard_V2_0.html:3320 has 16 sub-components for Article 01 of 30:
+ 1. Article head (title, URL, badges)
+ 2. Article meta (traffic, keywords, words, published, products, updated, freshness, gap)
+ 3. Page H1 tag
+ 4. H2/H3 structure
+ 5. Modifier tags
+ 6. Product list with pricing (5 products, tier, commission)
+ 7. Outbound link patterns
+ 8. Affiliate networks detected
+ 9. PAA questions with "Add to FAQ"
+10. Mapped video chapters
+11. FAQ schema status
+12. Content DNA Analysis (6 sub-cards)
+13. Full article content (raw scraped text)
+14. Media links (images, videos, infographics, embeds)
+15. Content Gap Analysis (5 ways to outperform)
+16. Pagination (01/30)
+18 Missing Additions I Identified
+P0 (Critical):
+- Cross-Article Comparison Matrix
+- Content Gap Aggregation (cross-article)
+- Product Selection Intelligence
+- Your Article Blueprint Generator
+P1 (High Impact):
+- Content Quality Scoring Rubric
+- Content Structure Blueprint
+- SERP Feature Mapping
+- Featured Snippet Ownership Map
+P2 (Medium):
+- Content Depth & Information Density
+- Backlink Profile Intelligence
+- Comparison Table & Visual Analysis
+- Monetization Strategy Deep Dive
+P3 (Lower):
+- Author & E-E-A-T Profile
+- Internal Linking Architecture
+- Content Freshness Pattern Analysis
+- Content Production Intelligence
+- Content Distribution Signals
+- UX & Page Quality Signals
+The most critical gap is that Articles 02–30 are empty, and there's no cross-article pattern detection (what ALL top articles share, what NONE cover, product frequency across articles).
+Would you like me to go deeper on any specific addition, or move on to actually building something?
+
+===========================================
+Here is Qwen 3.6 Plus OpenCode Go suggest:
+===========================================
+Based on my deep analysis of your Keyword Detail page, here's what I found in the Competitor Articles section and what you could add:
+Current Structure Analysis
+The Competitor Articles section (lines 3320-3831) currently includes:
+Already Built:
+- Article header with title, URL, intent badges
+- Meta stats (traffic, keywords, word count, products, freshness)
+- H1 tag extraction
+- H2/H3 structure mapping
+- Modifier tags
+- Product list with pricing & commission data
+- Outbound link patterns
+- Affiliate network identification
+- PAA questions extraction
+- Mapped video chapters
+- FAQ schema status
+- Content DNA Analysis (expandable): Article overview, structure, data extraction, SEO, audience psychology, monetization
+- Full article content (raw scraped text)
+- Media links (images, videos, infographics, embeds)
+- Gap & opportunity analysis (5 ways to outperform)
+- Pagination (01/30 articles)
+What You Should Add (Deep Recommendations)
+1. Article Authority & Backlink Profile
+- Domain Rating (DR) / Authority Score
+- Backlink count to this specific article
+- Referring domains
+- Top anchor texts pointing to it
+- Internal linking strength (how many internal links point here)
+2. Content Freshness Timeline
+- Original publish date
+- Last updated date
+- Update frequency pattern
+- Version history (how many times updated)
+- Competitor's update velocity (do they update quarterly? annually?)
+3. SERP Feature Analysis
+- Does this article own any featured snippets?
+- Which PAA boxes does it appear in?
+- Does it have "People Also Search For" presence?
+- Image pack inclusion
+- Video carousel presence
+- Shopping results integration
+4. Content Depth Metrics
+- Reading time
+- Flesch-Kincaid grade level
+- Paragraph length average
+- Image-to-text ratio
+- Table count
+- List count
+- External citations/sources count
+- Expert quotes or attribution
+5. Monetization Intelligence
+- Affiliate link placement map (above fold, inline, end)
+- CTA button count & positions
+- Comparison table presence
+- "Best for" badge usage
+- Price update frequency
+- Amazon widget usage
+- Email capture presence
+- Ad density (how many ads compete with affiliate links)
+6. Keyword Coverage Map
+- Primary keyword position
+- Secondary keywords ranked (top 10)
+- Long-tail keywords captured
+- Semantic keyword coverage
+- Keyword cannibalization risk (does this site have competing articles?)
+7. User Engagement Signals
+- Estimated time on page
+- Bounce rate estimate
+- Social shares (Facebook, Twitter, Pinterest)
+- Comment count
+- Scroll depth estimate (based on content structure)
+8. Content Format Breakdown
+- Article type classification (listicle, comparison, single review, guide)
+- Product count featured
+- Comparison table presence
+- Pros/cons format usage
+- Star rating system
+- Video embeds count
+- Interactive elements (quizzes, calculators)
+9. Competitive Advantage Matrix
+- Side-by-side comparison with your planned article
+- Word count gap (yours vs theirs)
+- Product coverage gap
+- Feature coverage heatmap
+- E-E-A-T signal comparison
+- Content freshness advantage
+10. Actionable Intelligence Panel
+- "Steal This" section (what works well to copy)
+- "Beat This" section (where they're weak)
+- Content angle recommendations
+- Recommended word count target
+- Suggested product inclusion/exclusion
+- Optimal CTA placement strategy
+- Schema markup opportunities missed
+11. Cross-Article Pattern Detection
+- When analyzing multiple articles: common structure patterns
+- Shared products across all competitor articles
+- Universal content gaps (like you did for YouTube)
+- Pricing accuracy across articles
+- Shared affiliate networks
+- Common modifier tags used
+12. AI Script Integration Hooks
+- "Use this article's structure" button
+- "Extract product data for script" button
+- "Generate better outline" button
+- "Compare with my draft" functionality
+- Auto-generate FAQ from PAA + gaps
+The YouTube section is incredibly detailed (with cross-video synthesis, beat rates, heatmaps, algorithm cheat sheets). Your Competitor Articles section should mirror that depth with cross-article synthesis, article beat rates, content gap heatmaps, and SEO optimization cheat sheets specific to written content.
+
+===========================================
+Here is MiniMax M2.7 OpenCode Go suggest:
+===========================================
+Now I have a thorough understanding of your Keyword Detail page. Let me give you a comprehensive analysis:
+Keyword Detail Page — Deep Analysis
+What You Have Currently
+Already Built:
+1. Hero Section — Keyword name, all key metrics pills (search volume, traffic value, VidIQ score, AnswerThePublic, Ahrefs, etc.), trend data, strategic action buttons (Production Brief, Write Full Script)
+2. Strategic Summary — Intent classification, buyer intent, difficulty, earnings potential, donut charts for Affiliate/YouTube/Trend/Overall scores
+3. Competitor YouTube Intelligence — SERP snapshot, aggregate stats bar, comparison table, tabbed video panels (5 videos), deep analysis per video including: Vitals, Authority Profile, Title DNA, Thumbnail/CTR, Hook Analysis, Chapter Structure, Pacing Map, SEO Signals, Products Featured, Comment Intelligence, Content Gaps, Winning Angle
+Competitor Articles Section — What You Can Build
+Based on your existing design language and data flow, here's what makes sense:
+1. Competitor Article Cards (the main building block)
+Each competing article should be a card showing:
+- Article URL & Domain — Who published it, how old
+- Article Title — H1/headline with title DNA analysis
+- Article metadata row — Published date, word count, reading time, author, DA/DR of the site
+- Traffic signals — Estimated monthly traffic (from Ahrefs/Semrush), ranking keywords it ranks for, top position
+- Content signals — Word count tier, image count, heading structure (H2s used), does it have FAQ schema, does it mention the products in your affiliate map?
+- SERP performance — What position for target keyword, what other keywords it ranks for
+2. Article Intelligence Deep-Dive (per article)
+- Content freshness score — Is it 2023 content? 2024? 2025? Show age and "stale" warning
+- Title formula breakdown — Same "DNA" style you use in YouTube section (superlative + category + year + number + proof words)
+- Content angle — What angle does it take? (e.g., "Best X for Y", "X Review", "X vs Y", "Complete Guide to X")
+- Section structure analysis — What H2s does it use? What topics does it cover? What does it miss?
+- Product mentions — Which products does it promote? What commission potential?
+- Monetization method — Affiliate links? Display ads? Lead gen? Are the affiliate links in first 3 paragraphs or buried?
+- Backlink profile snapshot — DR/DA, number of referring domains, any notable links
+- "Beatability" score — Is this a strong competitor or a weak one you can outrank?
+3. Competitive Gap Analysis (within the articles section)
+- Content length comparison — Chart comparing word counts of all competing articles vs. your suggested length
+- Topic coverage heatmap — Table showing which topics each competitor covers (so you can see gaps)
+- Freshness matrix — Which articles are newest, which are stale
+- Missing angles — Topics no competitor covers that you could own
+- Featured snippet opportunities — Does any competitor have a featured snippet you could steal?
+- Internal linking patterns — Do they link to money pages or resource pages?
+4. Data Sources You Can Show
+Based on your existing badge system:
+- src-ahrefs — Traffic, keyword data, backlink counts
+- src-semrush — Keyword difficulty, CPC, intent classification
+- src-scraping — Actual content analysis (from Firecrawl/Browse AI on the articles)
+- src-ai — AI-calculated scores (beatability, content quality score, gap analysis)
+5. Article Comparison Table (quick view)
+A table view for rapid comparison:
+Domain	Title	Published	Word Count
+TechGadgetReviews.com	"Best Under Desk Treadmills 2024"	Dec 2023	2,400
+WalkingDaily.com	"Under Desk Treadmill Guide"	Mar 2024	3,100
+...	...	...	...
+6. Content Brief Generator (action you can take)
+"Write Article Brief" button that would generate:
+- Recommended word count
+- Target H2s/section structure (based on gap analysis)
+- Which competitor angles to borrow
+- Which gaps to exploit
+- Recommended products to feature
+- Target keyword placements
+7. Key Metrics to Display for Each Article
+From Scraping (Firecrawl/Browse AI):
+- Actual headline, meta description
+- Word count, image count, video embeds
+- H2 structure (list of all section titles)
+- Product mentions with prices
+- Affiliate link positions
+From Ahrefs/Semrush:
+- Estimated traffic from target keyword
+- Other ranking keywords
+- Backlink count, DR/DA
+- Traffic value
+From AI Analysis:
+- Content freshness score
+- Topic coverage rating
+- Missing topics
+- Beatability score
+8. Visual Elements to Match Your Design
+Following your existing patterns:
+- src-badge system for data sources
+- .csec (content section) blocks inside each article panel
+- .comp-pills tab navigation (same as YouTube videos)
+- .comp-card wrapper
+- .badge system for freshness, content type, intent
+Workflow Recommendation
+1. Upload competitor article URLs (via scraping — Firecrawl/Browse AI)
+2. Pull traffic/metric data (via Ahrefs API or CSV upload)
+3. AI analyzes each article for content structure, gaps, angles
+4. Display in tabbed competitor article cards
+5. Gap analysis highlights opportunities
+6. Generate content brief based on gaps
+Would you like me to build this section with full implementation, or do you want to refine any of these elements first?
+
+=================================================
+Here is DeepSeek V4 Pro OpenCode Go suggest:
+=================================================
+Great — I've done a deep read of the entire Competitor Articles section (Article 01 of 30, paginated). Here's my analysis of what's there and what's missing.
+What's Already Good
+The current section has solid bones:
+- Meta bar (traffic, keywords, words, freshness) — great
+- Content DNA (6 sub-sections: overview, structure, data extraction, SEO, psychology, monetization) — comprehensive
+- Product cards with pricing, tiers, commissions — excellent for affiliate analysis
+- PAA extraction with FAQ builder — useful
+What's Missing / Could Be Deeper
+1. Competitive Positioning (Missing entirely)
+You have 1 article in isolation but no view of where it stands relative to the other 29. Add:
+- SERP share — what % of total traffic do the top 5 articles own?
+- Authority comparison — DR, backlinks, topical authority score per article (so you know who's beatable)
+- Keyword overlap matrix — which articles compete for the same terms vs target different modifiers
+- Content type distribution — how many are listicles vs single-product reviews vs buyer's guides vs comparison tables
+2. Backlink & Authority Profile (Missing)
+- Total referring domains — how many sites link to this article
+- Link velocity — when did links accumulate (launch spike vs steady drip)
+- Top linking domains — are they from roundups, resource pages, or forums
+- Link gap — sites that link to competitors but NOT to this article (your outreach list)
+3. SERP Feature Occupancy (Missing)
+- Does this article hold a featured snippet? For which query?
+- Does it appear in "People Also Ask" boxes?
+- Does it have image pack or video presence?
+- Rich result status — review schema, FAQ schema, product schema — which ones work
+4. Content Quality Score (Could go deeper)
+Current DNA has SEO and readability, but add:
+- Readability score (Flesch-Kincaid grade level) — benchmarks across articles
+- Word count benchmark — is 3,240 words above/below average for top 10?
+- Media density — images per 500 words, video embeds, tables
+- Update frequency — how often does the article get refreshed (monthly/quarterly/never)
+- Factual accuracy risk — outdated pricing, discontinued products, broken links
+5. Monetization Deep-Dive (Enhance what's there)
+- Affiliate link placement map — where in the article links appear (above fold, in-product, in-buyers-guide, in tables)
+- Click-through rate estimates — which link positions generate most clicks
+- Cookie duration impact — 24h vs 7-day vs 30-day — which networks they use per product
+- Price history — when prices changed (detects stale content)
+6. Audience Psychology (Expand)
+Current DNA has 4 triggers. Add:
+- Pain point coverage — which reader questions does this article answer vs ignore (cross-reference with PAA, Reddit, Quora)
+- Objection handling — does it address "too expensive", "too noisy", "won't fit my desk"?
+- Trust signals used — expert quotes, author bio, comment count, review count, real photos vs stock
+- Emotional arc — does it move from pain → research → confidence → purchase?
+7. Cross-Article Synthesis (Missing entirely)
+Like the YouTube section has a Cross-Video Synthesis, the articles need one:
+- Universal gaps — what ALL 30 articles miss (not just Article 01)
+- Best-in-class per dimension — which article has the best product table, best FAQ, best video embed
+- Blueprint — synthesize the winning elements from all 30 into YOUR optimal article structure
+8. Execution Layer (Missing)
+- Content brief generator — extract all gaps and auto-generate a writing brief
+- Competitor beat sheet — for each competitor, the 1-2 specific things your article will do better
+- Internal linking opportunity — which of your own articles should link to this one
+My Recommended Priority Order
+1. Cross-Article Synthesis (makes all 30 articles useful at once, not 1 at a time)
+2. SERP Feature Occupancy (directly affects your ability to rank)
+3. Backlink Gap (actionable — tells you who to pitch)
+4. Fix the Generic Content Gap text (low effort, high impact — currently broken)
+5. Monetization Deep-Dive (directly affects your revenue)
+6. Audience Psychology (improves your content quality)
+Want me to start implementing any of these?
 
 
-
-================
-User Journey:
-================

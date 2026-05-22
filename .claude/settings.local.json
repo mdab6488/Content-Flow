@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-Content \"c:\\\\00_MDAB\\\\Content Flow\\\\Dashboard_V2_0.html\")",
+      "Bash(Measure-Object -Line)",
+      "PowerShell(\\(Get-Content \"c:\\\\00_MDAB\\\\Content Flow\\\\Dashboard_V2_0.html\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(& \"c:\\\\00_MDAB\\\\Content Flow\\\\yt_insert.ps1\")"
+    ]
+  }
+}

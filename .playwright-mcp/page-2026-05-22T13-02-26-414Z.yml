@@ -1,0 +1,578 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e9]:
+        - text: ResearchPro
+        - generic [ref=e10]: Content intelligence
+    - navigation [ref=e11]:
+      - generic [ref=e12]: Workflow
+      - generic [ref=e13] [cursor=pointer]:
+        - generic [ref=e14]: "0"
+        - generic [ref=e15]: Upload Tool Data
+      - generic [ref=e16] [cursor=pointer]:
+        - img [ref=e17]
+        - text: Competitor Analysis
+      - generic [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: "2"
+        - generic [ref=e21]: Keyword Detail
+      - generic [ref=e22]: Library
+      - generic [ref=e23] [cursor=pointer]:
+        - img [ref=e25]
+        - generic [ref=e27]: Content Ops
+      - generic [ref=e28] [cursor=pointer]:
+        - img [ref=e30]
+        - generic [ref=e31]: Analytics
+      - generic [ref=e32] [cursor=pointer]:
+        - img [ref=e34]
+        - generic [ref=e36]: Saved keywords
+      - generic [ref=e37] [cursor=pointer]:
+        - img [ref=e39]
+        - generic [ref=e42]: Video briefs
+      - generic [ref=e43] [cursor=pointer]:
+        - img [ref=e45]
+        - generic [ref=e48]: Scripts
+      - generic [ref=e49] [cursor=pointer]:
+        - img [ref=e51]
+        - generic [ref=e54]: Settings
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]: Workflow
+        - generic [ref=e59]: /
+        - generic [ref=e60]: Competitor Analysis
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - img [ref=e63]
+          - textbox "Search keywords, competitors..." [ref=e66]
+        - generic [ref=e69]: Step 1 of 3
+        - button "Notifications" [ref=e70] [cursor=pointer]:
+          - img [ref=e71]
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - heading "Under Desk Treadmill" [level=1] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - strong [ref=e82]: 14.8K
+              - text: searches/mo
+            - generic [ref=e83]:
+              - strong [ref=e84]: 14.8K
+              - text: YT search/mo
+            - generic [ref=e85]:
+              - strong [ref=e86]: $2.40
+              - text: CPC
+            - generic [ref=e87]:
+              - strong [ref=e88]: "45"
+              - text: YT comp
+            - generic [ref=e89]:
+              - strong [ref=e90]: $1.50K
+              - text: traffic value
+            - generic [ref=e91]:
+              - strong [ref=e92]: 72/100
+              - text: VidIQ · 4.2M views
+            - generic [ref=e93]:
+              - strong [ref=e94]: 2,600
+              - text: AnswerThePublic
+            - generic [ref=e95]:
+              - strong [ref=e96]: 186K
+              - text: SimilarWeb
+            - generic [ref=e97]:
+              - strong [ref=e98]: Very high
+              - text: AnswerSocrates
+            - generic [ref=e99]:
+              - strong [ref=e100]: 38K
+              - text: Ahrefs volume
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - generic [ref=e103]: Projected affiliate earnings
+              - generic [ref=e104]: $3,200/mo
+            - generic [ref=e106]:
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - generic [ref=e109]: Trend
+                  - generic [ref=e110]: ↗ +284%
+                - generic [ref=e111]: Exploding
+              - generic [ref=e112]:
+                - generic [ref=e113]:
+                  - generic [ref=e114]: Trend
+                  - generic [ref=e115]: ↗ +284%
+                - generic [ref=e116]: Exploding
+              - generic [ref=e117]:
+                - generic [ref=e118]:
+                  - generic [ref=e119]:
+                    - img [ref=e120]
+                    - text: Google Trends
+                  - generic [ref=e123]: ↗ 91
+                - generic [ref=e124]: 12-month growth
+        - generic [ref=e125]:
+          - button "S1 Production Brief" [ref=e126] [cursor=pointer]:
+            - generic [ref=e127]: S1
+            - generic [ref=e128]: Production Brief
+          - img [ref=e129]
+          - button "S2 ✦ Write Full Script" [ref=e131] [cursor=pointer]:
+            - generic [ref=e132]: S2
+            - generic [ref=e133]: ✦ Write Full Script
+          - button "Reuse" [ref=e135] [cursor=pointer]
+          - button "Export JSON" [ref=e136] [cursor=pointer]
+          - button "Save" [ref=e137] [cursor=pointer]
+      - generic [ref=e138]:
+        - generic [ref=e139]:
+          - img [ref=e141]
+          - generic [ref=e145]:
+            - generic [ref=e146]: Strategic Summary
+            - generic [ref=e147]: Quick keyword overview · Opportunity scores · Research signals from Ahrefs, VidIQ, Trends
+        - generic [ref=e148]:
+          - generic [ref=e149]:
+            - strong [ref=e150]: "{{KEYWORD_TITLE}}"
+            - text: is a
+            - strong [ref=e151]: "{{INTENT}}"
+            - text: keyword with
+            - strong [ref=e152]: SEARCH_VOLUME
+            - text: monthly searches and a
+            - strong [ref=e153]: "{{TREND_DIRECTION}}"
+            - text: trend (TREND_DATA). With a CPC of
+            - strong [ref=e154]: $CPC_VALUE
+            - text: ","
+            - strong [ref=e155]: "{{COMPETITION_LEVEL}}"
+            - text: competition (COMPETITION_SCORE), and projected affiliate earnings of
+            - strong [ref=e156]: $EARNINGS/mo
+            - text: ", this keyword represents a"
+            - strong [ref=e157]: "{{OPPORTUNITY_LEVEL}}"
+            - text: "content opportunity. Top-ranking articles are primarily {{CONTENT_TYPE}} with {{GAP_SUMMARY}} — gaps you can exploit with fresh, methodology-driven content."
+          - generic [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: Top videos over 2yr
+              - generic [ref=e161]: 1 of 5
+              - generic [ref=e162]: Partial freshness gap
+            - generic [ref=e163]:
+              - generic [ref=e164]: Opportunity score
+              - generic [ref=e165]: B+
+              - generic [ref=e166]: Worth pursuing
+          - generic [ref=e168]:
+            - generic [ref=e169]:
+              - heading "Opportunity Scores" [level=3] [ref=e170]
+              - generic [ref=e171]: Ahrefs
+              - generic [ref=e172]: Semrush
+              - generic [ref=e173]: AI calc
+            - generic [ref=e174]:
+              - generic [ref=e175]:
+                - img [ref=e176]:
+                  - generic [ref=e179]: "88"
+                - generic [ref=e180]: Affiliate
+              - generic [ref=e181]:
+                - img [ref=e182]:
+                  - generic [ref=e185]: "76"
+                - generic [ref=e186]: YouTube
+              - generic [ref=e187]:
+                - img [ref=e188]:
+                  - generic [ref=e191]: "92"
+                - generic [ref=e192]: Trend
+              - generic [ref=e193]:
+                - img [ref=e194]:
+                  - generic [ref=e197]: "85"
+                - generic [ref=e198]: Overall
+      - generic [ref=e199]:
+        - generic [ref=e200]:
+          - heading "Competitor YouTube Videos VidIQ Manual" [level=3] [ref=e201]:
+            - img [ref=e202]
+            - text: Competitor YouTube Videos
+            - generic [ref=e205]: VidIQ
+            - generic [ref=e206]: Manual
+          - generic [ref=e207]: Video 01 of 5 — videos for this keyword
+        - generic [ref=e208]:
+          - generic [ref=e209] [cursor=pointer]: "01"
+          - generic [ref=e210] [cursor=pointer]: "02"
+          - generic [ref=e211] [cursor=pointer]: "03"
+          - generic [ref=e212] [cursor=pointer]: "04"
+          - generic [ref=e213] [cursor=pointer]: "05"
+        - generic [ref=e214]:
+          - generic [ref=e215]:
+            - generic [ref=e216]: "\"Best Under Desk Treadmills 2024 — I Tested 5 Popular Models!\""
+            - generic [ref=e217]:
+              - img [ref=e218]
+              - text: TechGadgetReviews
+            - generic [ref=e221]: Freshness gap
+            - generic [ref=e222]: 3.2M views
+            - generic [ref=e223]: Dec 2023
+          - generic [ref=e224]:
+            - generic [ref=e225]:
+              - strong [ref=e226]: Views
+              - text: 3,200,000
+            - generic [ref=e227]:
+              - strong [ref=e228]: Likes
+              - text: ~18,400
+            - generic [ref=e229]:
+              - strong [ref=e230]: Comments
+              - text: ~840
+            - generic [ref=e231]:
+              - strong [ref=e232]: Published
+              - text: Dec 14, 2023
+            - generic [ref=e233]:
+              - strong [ref=e234]: Duration
+              - text: 14 min 22 sec
+            - generic [ref=e235]:
+              - strong [ref=e236]: Channel subs
+              - text: ~280K
+            - generic [ref=e237]:
+              - strong [ref=e238]: VidIQ score
+              - text: 88/100
+          - generic [ref=e239]:
+            - generic [ref=e240]: Opening hook
+            - generic [ref=e241]:
+              - paragraph [ref=e242]: "\"If you've been sitting at your desk for 8 hours a day, you are slowly destroying your body — and I have the data to prove it.\""
+              - paragraph [ref=e243]: Opens with health urgency angle. No product shown until 0:45. Strong pattern-interrupt — hooks non-buyers who feel the pain before they know they want a solution.
+          - generic [ref=e244]:
+            - generic [ref=e245]: Chapter structure (timestamps)
+            - generic [ref=e247]:
+              - generic [ref=e248]:
+                - generic [ref=e249]: 0:00
+                - text: The Under Desk Treadmill Trap — why most people buy wrong
+              - generic [ref=e250]:
+                - generic [ref=e251]: 0:45
+                - text: "Testing criteria: noise, desk clearance, app, durability"
+              - generic [ref=e252]:
+                - generic [ref=e253]: 2:10
+                - text: "#5 — GoPlus 2-in-1 (Budget pick, $200)"
+              - generic [ref=e254]:
+                - generic [ref=e255]: 4:30
+                - text: "#4 — Urevo Strol (Compact, $280)"
+              - generic [ref=e256]:
+                - generic [ref=e257]: 6:50
+                - text: "#3 — WalkingPad C2 (Foldable, $350)"
+              - generic [ref=e258]:
+                - generic [ref=e259]: 9:20
+                - text: "#2 — Urevo 2 (Best mid-range, $420)"
+              - generic [ref=e260]:
+                - generic [ref=e261]: 11:30
+                - text: "#1 — Lifespan TR1200-DT3 (Best overall, $599)"
+              - generic [ref=e262]:
+                - generic [ref=e263]: 13:40
+                - text: Final verdict + affiliate links
+          - generic [ref=e264]:
+            - generic [ref=e265]: Tags used
+            - generic [ref=e267]:
+              - generic [ref=e268]: best under desk treadmill
+              - generic [ref=e269]: under desk treadmill 2024
+              - generic [ref=e270]: walking pad review
+              - generic [ref=e271]: urevo vs lifespan
+              - generic [ref=e272]: treadmill desk
+              - generic [ref=e273]: walking while working
+              - generic [ref=e274]: under desk treadmill review
+              - generic [ref=e275]: goplus walking pad
+              - generic [ref=e276]: lifespan tr1200
+              - generic [ref=e277]: home office fitness
+          - generic [ref=e278]:
+            - generic [ref=e279]: Products featured + affiliate data
+            - generic [ref=e281]:
+              - generic [ref=e282]:
+                - generic [ref=e283]: Lifespan TR1200-DT3
+                - generic [ref=e284]: $599
+                - generic [ref=e285]: impact.link/lifespan
+                - generic [ref=e287]: Best Overall
+                - generic [ref=e288]: "Main CTA · pinned link · affiliate #1"
+              - generic [ref=e289]:
+                - generic [ref=e290]: GoPlus 2-in-1
+                - generic [ref=e291]: $199
+                - generic [ref=e292]: amzn.to/goplus
+                - generic [ref=e294]: Budget Pick
+                - generic [ref=e295]: Secondary CTA · description line 2
+              - generic [ref=e296]:
+                - generic [ref=e297]: Urevo Strol 2024
+                - generic [ref=e298]: $280
+                - generic [ref=e299]: amzn.to/urevo2024
+                - generic [ref=e301]: Compact Pick
+                - generic [ref=e302]: Pinned comment mention
+          - generic [ref=e303]:
+            - generic [ref=e304]: Description + pinned comment
+            - generic [ref=e306]:
+              - generic [ref=e307]:
+                - generic [ref=e308]: Description (first 3 lines)
+                - generic [ref=e309]:
+                  - text: Looking for the best under desk treadmill? I tested 5 models over 6 weeks.
+                  - text: "🏆 Best Overall: impact.link/lifespan"
+                  - text: "💸 Best Budget: amzn.to/goplus"
+              - generic [ref=e310]:
+                - generic [ref=e311]: Pinned comment
+                - generic [ref=e312]:
+                  - text: "👇 Quick links to the winners:"
+                  - text: "🥇 Best Overall (Lifespan): impact.link/lifespan"
+                  - text: "💸 Best Under $200 (GoPlus): amzn.to/goplus"
+                  - text: "🚀 Best 2024 Upgrade (Urevo): amzn.to/urevo2024"
+                  - emphasis [ref=e313]: Let me know which one you're picking up!
+          - generic [ref=e314]:
+            - generic [ref=e315]: Content gaps — what this video misses
+            - list [ref=e317]:
+              - listitem [ref=e318]:
+                - strong [ref=e319]: Published Dec 2023
+                - text: — 1.5 years old, no 2025 models reviewed, Urevo pricing has changed significantly
+              - listitem [ref=e320]:
+                - strong [ref=e321]: No standardized noise test
+                - text: — noise levels described as "pretty quiet" with no dB measurements
+              - listitem [ref=e322]:
+                - strong [ref=e323]: No desk clearance check
+                - text: — never measures actual under-desk fit (height, depth), huge buyer pain point
+              - listitem [ref=e324]:
+                - strong [ref=e325]: No long-term durability data
+                - text: — 6-week test is too short; motor wear, belt wear not addressed
+              - listitem [ref=e326]:
+                - strong [ref=e327]: Assembly experience ignored
+                - text: — no unboxing time, difficulty score, or setup guide shown
+          - generic [ref=e328]:
+            - generic [ref=e329]: Your advantage — how to beat this video
+            - generic [ref=e330]:
+              - paragraph [ref=e331]: "\"I tested 10 under desk treadmills for 30 days — noise (dB meter), desk fit (actual measurements), 3-month durability. Here are the only 3 worth buying in 2025.\""
+              - generic [ref=e332]:
+                - generic [ref=e333]: Freshness — updated for 2025 models
+                - generic [ref=e334]: Noise test with dB meter
+                - generic [ref=e335]: Real desk fit measurements
+                - generic [ref=e336]: 30-day long-term test
+                - generic [ref=e337]: More models (10 vs 5)
+          - group [ref=e338]:
+            - generic "Full video transcript (paste transcript — helps AI understand content deeply)" [ref=e339] [cursor=pointer]:
+              - img [ref=e340]
+              - text: Full video transcript
+              - generic [ref=e342]: (paste transcript — helps AI understand content deeply)
+              - img [ref=e343]
+      - generic [ref=e345]:
+        - generic [ref=e346]:
+          - heading "Competitor articles Web Scraping Ahrefs" [level=3] [ref=e347]:
+            - img [ref=e348]
+            - text: Competitor articles
+            - generic [ref=e351]: Web Scraping
+            - generic [ref=e352]: Ahrefs
+          - generic [ref=e353]: Article 01 of 30 — articles for this keyword
+        - generic [ref=e354]:
+          - generic [ref=e355] [cursor=pointer]: "01"
+          - generic [ref=e356] [cursor=pointer]: "02"
+          - generic [ref=e357] [cursor=pointer]: "03"
+          - generic [ref=e358] [cursor=pointer]: "04"
+          - generic [ref=e359] [cursor=pointer]: "05"
+          - generic [ref=e360] [cursor=pointer]: "06"
+          - generic [ref=e361] [cursor=pointer]: "07"
+          - generic [ref=e362] [cursor=pointer]: "08"
+          - generic [ref=e363] [cursor=pointer]: "09"
+          - generic [ref=e364] [cursor=pointer]: "10"
+          - generic [ref=e365]: ⋯
+        - generic [ref=e366]:
+          - generic [ref=e367]:
+            - generic [ref=e368]:
+              - generic [ref=e369]: The 5 best under desk treadmills of 2025
+              - generic [ref=e370]: therunningadvisor.com/best-under-desk-treadmills
+            - generic [ref=e371]:
+              - generic [ref=e372]: Commercial
+              - generic [ref=e373]: Research needed
+          - generic [ref=e374]:
+            - generic [ref=e375]:
+              - generic [ref=e376]: Traffic
+              - generic [ref=e377]: 24,500
+            - generic [ref=e378]:
+              - generic [ref=e379]: Keywords
+              - generic [ref=e380]: "847"
+            - generic [ref=e381]:
+              - generic [ref=e382]: Words
+              - generic [ref=e383]: 3,240
+            - generic [ref=e384]:
+              - generic [ref=e385]: Published
+              - generic [ref=e386]: Mar '24
+            - generic [ref=e387]:
+              - generic [ref=e388]: Products
+              - generic [ref=e389]: "12"
+            - generic [ref=e390]:
+              - generic [ref=e391]: Updated
+              - generic [ref=e392]: Jan '25
+            - generic [ref=e393]:
+              - generic [ref=e394]: Freshness
+              - generic [ref=e395]: 72 · Fresh
+            - generic [ref=e396]:
+              - generic [ref=e397]: Gap
+              - generic [ref=e398]: Research
+          - generic [ref=e399]:
+            - generic [ref=e400]: Page H1 tag
+            - generic [ref=e401]: "\"5 Best Under Desk Treadmills for Walking While Working (2025)\""
+          - generic [ref=e402]:
+            - generic [ref=e403]: H2 / H3 structure
+            - generic [ref=e404]:
+              - generic [ref=e405]:
+                - strong [ref=e406]: H2
+                - text: · Why use an under desk treadmill?
+              - generic [ref=e407]:
+                - strong [ref=e408]: H3
+                - text: · Health benefits
+              - generic [ref=e409]:
+                - strong [ref=e410]: H3
+                - text: · Productivity boost
+              - generic [ref=e411]:
+                - strong [ref=e412]: H2
+                - text: · Top 5 under desk treadmills
+              - generic [ref=e413]:
+                - strong [ref=e414]: H3
+                - text: · 1. LifeSpan TR1200-DT3
+              - generic [ref=e415]:
+                - strong [ref=e416]: H3
+                - text: · 2. Walkingpad A1 Pro
+              - generic [ref=e417]:
+                - strong [ref=e418]: H2
+                - text: · Buyer's guide
+          - generic [ref=e419]:
+            - generic [ref=e420]: Modifier tags
+            - generic [ref=e421]:
+              - generic [ref=e422]: best
+              - generic [ref=e423]: top
+              - generic [ref=e424]: "2025"
+              - generic [ref=e425]: review
+              - generic [ref=e426]: budget
+              - generic [ref=e427]: premium
+              - generic [ref=e428]: buying guide
+          - generic [ref=e429]:
+            - generic [ref=e430]: Product list with pricing
+            - generic [ref=e431]:
+              - generic [ref=e432]:
+                - generic [ref=e433]:
+                  - generic [ref=e434]:
+                    - generic [ref=e435]: LifeSpan TR1200-DT3
+                    - generic [ref=e436]: Premium
+                    - generic [ref=e437]:
+                      - img [ref=e438]
+                      - text: Editor's choice
+                  - generic [ref=e440]: $799
+                - generic [ref=e441]: Est. $42/sale · Amazon · $14–$28 commission
+                - generic [ref=e442]: Best overall build quality, highest commission ceiling, strong brand recognition.
+              - generic [ref=e443]:
+                - generic [ref=e444]:
+                  - generic [ref=e445]:
+                    - generic [ref=e446]: Walkingpad A1 Pro
+                    - generic [ref=e447]: Mid
+                    - generic [ref=e448]: ★ Best value
+                  - generic [ref=e449]: $599
+                - generic [ref=e450]: Est. $30/sale · Flexispot · $20–$40 commission
+                - generic [ref=e451]: Perfect for standing desk setups, slim profile, under-desk fit guarantee.
+              - generic [ref=e452]:
+                - generic [ref=e453]:
+                  - generic [ref=e454]:
+                    - generic [ref=e455]: Urevo Foldi Mini
+                    - generic [ref=e456]: Budget
+                  - generic [ref=e457]: $299
+                - generic [ref=e458]: Est. $7.50/sale · Amazon · $5–$10 commission
+                - generic [ref=e459]: Entry-level price captures budget-conscious buyers, strong conversion rate.
+              - generic [ref=e461]:
+                - generic [ref=e462]: Goplus 2-in-1
+                - generic [ref=e463]: $349
+              - generic [ref=e465]:
+                - generic [ref=e466]: Sunny Health & Fitness
+                - generic [ref=e467]: $429
+          - generic [ref=e468]:
+            - generic [ref=e469]: Outbound link patterns
+            - generic [ref=e470]: Amazon (7) · Walmart (3) · Dicks (2)
+          - generic [ref=e471]:
+            - generic [ref=e472]: Identified affiliate networks
+            - generic [ref=e473]:
+              - generic [ref=e474]: Amazon Associates
+              - generic [ref=e475]: ShareASale
+              - generic [ref=e476]: Flexispot Direct
+          - generic [ref=e477]:
+            - generic [ref=e478]: Extracted questions (PAA)
+            - list [ref=e479]:
+              - listitem [ref=e480]:
+                - generic [ref=e481]: "?"
+                - generic [ref=e482]: Are under desk treadmills worth it?
+                - generic [ref=e483] [cursor=pointer]: + Add to FAQ
+              - listitem [ref=e484]:
+                - generic [ref=e485]: "?"
+                - generic [ref=e486]: How much should I spend on an under desk treadmill?
+                - generic [ref=e487] [cursor=pointer]: + Add to FAQ
+              - listitem [ref=e488]:
+                - generic [ref=e489]: "?"
+                - generic [ref=e490]: Can you walk on a treadmill while working?
+                - generic [ref=e491] [cursor=pointer]: + Add to FAQ
+              - listitem [ref=e492]:
+                - generic [ref=e493]: "?"
+                - generic [ref=e494]: What is the quietest under desk treadmill?
+                - generic [ref=e495] [cursor=pointer]: + Add to FAQ
+              - listitem [ref=e496]:
+                - generic [ref=e497]: "?"
+                - generic [ref=e498]: Do under desk treadmills have a weight limit?
+                - generic [ref=e499] [cursor=pointer]: + Add to FAQ
+          - generic [ref=e500]:
+            - generic [ref=e501]: Mapped video chapters
+            - generic [ref=e502]:
+              - generic [ref=e503]:
+                - generic [ref=e504]: Time
+                - generic [ref=e505]: Section
+              - generic [ref=e506]:
+                - generic [ref=e507]: 0:00
+                - generic [ref=e508]: Intro
+              - generic [ref=e509]:
+                - generic [ref=e510]: 2:15
+                - generic [ref=e511]: Top picks overview
+              - generic [ref=e512]:
+                - generic [ref=e513]: 5:30
+                - generic [ref=e514]: Budget vs premium
+          - generic [ref=e515]:
+            - generic [ref=e516]: FAQ schema status
+            - generic [ref=e517]:
+              - generic [ref=e518]: ✓ Ready
+              - generic [ref=e519]: What
+              - generic [ref=e520]: How
+              - generic [ref=e521]: Can
+              - generic [ref=e522]: Are
+              - generic [ref=e523]: Do
+          - group [ref=e524]:
+            - generic "Content DNA Analysis — Article structure · Data extraction · SEO · Audience · Monetization" [ref=e525] [cursor=pointer]:
+              - img [ref=e526]
+              - text: Content DNA Analysis — Article structure · Data extraction · SEO · Audience · Monetization
+              - img [ref=e529]
+          - group [ref=e531]:
+            - generic "Full article content (raw scraped text — helps AI understand depth, tone & structure)" [ref=e532] [cursor=pointer]:
+              - img [ref=e533]
+              - text: Full article content
+              - generic [ref=e536]: (raw scraped text — helps AI understand depth, tone & structure)
+              - img [ref=e537]
+          - group [ref=e539]:
+            - generic "Media links (images, videos, infographics embedded in article)" [ref=e540] [cursor=pointer]:
+              - img [ref=e541]
+              - text: Media links
+              - generic [ref=e545]: (images, videos, infographics embedded in article)
+              - img [ref=e546]
+          - generic [ref=e548]:
+            - generic [ref=e549]:
+              - generic [ref=e550]: 🔭
+              - generic [ref=e551]: Content Gap Analysis — 5 Ways to Outperform This Article
+            - generic [ref=e552]:
+              - strong [ref=e553]: "Critical missing information:"
+              - text: No real output samples, no pricing accuracy verification, zero use-case specificity, no API/integration coverage, missing team/agency tier, no testing methodology, no ChatGPT + plugins comparison.
+            - generic [ref=e554]:
+              - generic [ref=e555]:
+                - generic [ref=e556]:
+                  - generic [ref=e557]: "01"
+                  - generic [ref=e558]: Real output testing
+                - generic [ref=e559]: "Generate identical prompts in every tool, publish raw outputs side-by-side. This is the #1 thing readers want."
+                - generic [ref=e560]: High impact
+              - generic [ref=e561]:
+                - generic [ref=e562]:
+                  - generic [ref=e563]: "02"
+                  - generic [ref=e564]: Niche-specific versions
+                - generic [ref=e565]: "\"Best AI Writing Tools for [Niche]\" — bloggers, Shopify, YouTube scripts. Captures long-tail keywords."
+                - generic [ref=e566]: High impact
+              - generic [ref=e567]:
+                - generic [ref=e568]:
+                  - generic [ref=e569]: "03"
+                  - generic [ref=e570]: Live pricing widget
+                - generic [ref=e571]: "Integrate live pricing via APIs. #1 complaint on competitor articles is \"pricing is wrong.\""
+                - generic [ref=e572]: Medium impact
+              - generic [ref=e573]:
+                - generic [ref=e574]:
+                  - generic [ref=e575]: "04"
+                  - generic [ref=e576]: Transparent methodology
+                - generic [ref=e577]: Publish scoring rubric with weights, test prompts, results. Google E-E-A-T rewards this.
+                - generic [ref=e578]: Medium impact
+              - generic [ref=e579]:
+                - generic [ref=e580]:
+                  - generic [ref=e581]: "05"
+                  - generic [ref=e582]: "\"vs ChatGPT\" angle"
+                - generic [ref=e583]: "Dedicated section: \"Can ChatGPT replace these tools?\" Captures massive search volume and addresses reader's #1 unspoken objection."
+                - generic [ref=e584]: Quick win
+          - generic [ref=e585]:
+            - button "← Prev" [disabled] [ref=e586]
+            - generic [ref=e587]: 01 / 30
+            - button "Next →" [ref=e588] [cursor=pointer]

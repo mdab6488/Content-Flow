@@ -1233,6 +1233,10 @@
         <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
         <span>Content Ops</span>
       </div>
+      <div class="nav-item" data-page="performance-analytics" onclick="switchPage('performance-analytics')">
+        <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></span>
+        <span>Analytics</span>
+      </div>
 
       <div class="nav-item">
         <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
@@ -1759,6 +1763,72 @@
         </details>
 
         <!-- Article Overview -->
+
+        <!-- ═══ SECTION: SINGLE KEYWORD METRICS ═══ -->
+        <div style="display:flex;align-items:center;gap:10px;margin:20px 0 18px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <span style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);">Single Keyword Metrics</span>
+          <div style="flex:1;height:1px;background:var(--divider);"></div>
+          <span class="badge badge-accent">6 analyses</span>
+        </div>
+
+        <!-- A. Opportunity Scores + Research Signals — summary pinned to top -->
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px;margin-bottom:16px;">
+          <div class="card" style="margin:0; padding:22px">
+            <h3 style="font-size:13px;font-weight:600;color:var(--text-secondary);letter-spacing:.02em;text-transform:uppercase;margin-bottom:18px;">Opportunity scores</h3>
+            <div class="score-row">
+              <div class="score-cell">
+                <svg width="72" height="72" viewBox="0 0 72 72">
+                  <circle cx="36" cy="36" r="28" fill="none" stroke="var(--surface-3)" stroke-width="6"/>
+                  <circle cx="36" cy="36" r="28" fill="none" stroke="var(--kw-accent)" stroke-width="6" stroke-dasharray="176" stroke-dashoffset="22" stroke-linecap="round" transform="rotate(-90 36 36)"/>
+                  <text x="36" y="36" text-anchor="middle" dy="6" font-size="18" font-weight="700" fill="var(--text)" font-family="Inter">88</text>
+                </svg>
+                <div class="lbl">Affiliate</div>
+              </div>
+              <div class="score-cell">
+                <svg width="72" height="72" viewBox="0 0 72 72">
+                  <circle cx="36" cy="36" r="28" fill="none" stroke="var(--surface-3)" stroke-width="6"/>
+                  <circle cx="36" cy="36" r="28" fill="none" stroke="var(--kw-gold)" stroke-width="6" stroke-dasharray="176" stroke-dashoffset="42" stroke-linecap="round" transform="rotate(-90 36 36)"/>
+                  <text x="36" y="36" text-anchor="middle" dy="6" font-size="18" font-weight="700" fill="var(--text)" font-family="Inter">76</text>
+                </svg>
+                <div class="lbl">YouTube</div>
+              </div>
+              <div class="score-cell">
+                <svg width="72" height="72" viewBox="0 0 72 72">
+                  <circle cx="36" cy="36" r="28" fill="none" stroke="var(--surface-3)" stroke-width="6"/>
+                  <circle cx="36" cy="36" r="28" fill="none" stroke="var(--kw-olive)" stroke-width="6" stroke-dasharray="176" stroke-dashoffset="14" stroke-linecap="round" transform="rotate(-90 36 36)"/>
+                  <text x="36" y="36" text-anchor="middle" dy="6" font-size="18" font-weight="700" fill="var(--text)" font-family="Inter">92</text>
+                </svg>
+                <div class="lbl">Trend</div>
+              </div>
+              <div class="score-cell">
+                <svg width="72" height="72" viewBox="0 0 72 72">
+                  <circle cx="36" cy="36" r="28" fill="none" stroke="var(--surface-3)" stroke-width="6"/>
+                  <circle cx="36" cy="36" r="28" fill="none" stroke="var(--accent)" stroke-width="6" stroke-dasharray="176" stroke-dashoffset="26" stroke-linecap="round" transform="rotate(-90 36 36)"/>
+                  <text x="36" y="36" text-anchor="middle" dy="6" font-size="18" font-weight="700" fill="var(--text)" font-family="Inter">85</text>
+                </svg>
+                <div class="lbl">Overall</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin:0; padding:22px">
+            <h3 style="font-size:13px;font-weight:600;color:var(--text-secondary);letter-spacing:.02em;text-transform:uppercase;margin-bottom:14px;">Research tool signals</h3>
+            <div class="signal-grid">
+              <div class="signal gold"><div class="sn">VidIQ</div><div class="sv">72<span style="font-size:12px;font-weight:500;color:var(--text-muted)">/100</span></div><div class="sub">4.2M monthly views</div></div>
+              <div class="signal olive"><div class="sn">Exploding Topics</div><div class="sv olive">+284%</div><div class="sub"><span class="pulse-dot"></span>Exploding</div></div>
+              <div class="signal terra"><div class="sn">AnswerThePublic</div><div class="sv">2,600</div><div class="sub" style="font-style:italic">"Are they worth it?"</div></div>
+              <div class="signal gold"><div class="sn">SimilarWeb</div><div class="sv">186K</div><div class="sub">4.8 min avg session</div></div>
+              <div class="signal olive"><div class="sn">AnswerSocrates</div><div class="sv" style="font-size:14px"><span class="badge badge-success">Very high</span></div><div class="sub">Top buyer question</div></div>
+              <div class="signal terra"><div class="sn">Ahrefs volume</div><div class="sv">38K</div><div class="sub">Monthly searches</div></div>
+              <div class="signal gold"><div class="sn">Ahrefs CPC</div><div class="sv">$2.40</div><div class="sub">Cost per click</div></div>
+              <div class="signal olive"><div class="sn">Google Trends</div><div class="sv olive">↗ 91</div><div class="sub">12-mo growth</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- B. Article Overview — full width -->
+        <!-- Article Overview -->
         <div class="card" style="margin-bottom:16px; padding:24px;">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
             <span style="font-size:20px;">📄</span>
@@ -1830,8 +1900,10 @@
           </div>
         </div>
 
-        <!-- Structure Analysis -->
-        <div class="card" style="margin-bottom:16px; padding:24px;">
+        <!-- C. Structure Analysis + Data Extraction — 2 columns -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;align-items:start;">
+          <!-- Structure Analysis -->
+        <div class="card" style="margin:0; padding:24px;">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
             <span style="font-size:20px;">🏗️</span>
             <h3 style="font-size:15px;font-weight:700;color:var(--text);letter-spacing:-0.01em;">Structure Analysis</h3>
@@ -1903,9 +1975,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Data Extraction -->
-        <div class="card" style="margin-bottom:16px; padding:24px;">
+          <!-- Data Extraction -->
+        <div class="card" style="margin:0; padding:24px;">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
             <span style="font-size:20px;">💾</span>
             <h3 style="font-size:15px;font-weight:700;color:var(--text);letter-spacing:-0.01em;">Data Extraction</h3>
@@ -1954,7 +2025,9 @@
             </div>
           </div>
         </div>
+        </div>
 
+        <!-- D. SEO Analysis — full width -->
         <!-- SEO Analysis -->
         <div class="card" style="margin-bottom:16px; padding:24px;">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
@@ -2045,8 +2118,10 @@
           </div>
         </div>
 
-        <!-- Audience Psychology -->
-        <div class="card" style="margin-bottom:16px; padding:24px;">
+        <!-- E. Audience Psychology + Monetization — 2 columns -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;align-items:start;">
+          <!-- Audience Psychology -->
+        <div class="card" style="margin:0; padding:24px;">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
             <span style="font-size:20px;">🧠</span>
             <h3 style="font-size:15px;font-weight:700;color:var(--text);letter-spacing:-0.01em;">Audience Psychology</h3>
@@ -2116,7 +2191,7 @@
             </div>
           </div>
         </div>
-        <div style="display:grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; margin-bottom: 22px;" id="signalsRow">
+        <div style="display:grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; margin-bottom: 22px;">
           <div class="card" style="margin:0; padding:22px">
             <h3 style="font-size:13px;font-weight:600;color:var(--text-secondary);letter-spacing:.02em;text-transform:uppercase;margin-bottom:18px;">Opportunity scores</h3>
             <div class="score-row">
@@ -2169,9 +2244,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Monetization Analysis -->
-        <div class="card" style="margin-bottom:16px; padding:24px;">
+          <!-- Monetization Analysis -->
+        <div class="card" style="margin:0; padding:24px;">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
             <span style="font-size:20px;">💰</span>
             <h3 style="font-size:15px;font-weight:700;color:var(--text);letter-spacing:-0.01em;">Monetization Analysis</h3>
@@ -2226,8 +2300,17 @@
           </div>
         </div>
 
-        <div class="section-title">Competitor deep-dive</div>
+        </div>
 
+        <!-- ═══ SECTION: COMPETITOR DEEP-DIVE ═══ -->
+        <div style="display:flex;align-items:center;gap:10px;margin:4px 0 18px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--kw-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);">Competitor Deep-Dive</span>
+          <div style="flex:1;height:1px;background:var(--divider);"></div>
+          <span class="badge badge-gray">23 articles</span>
+        </div>
+
+        <!-- Competitor article -->
         <!-- Competitor article -->
         <div class="comp-card">
           <div style="padding:16px 24px 8px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--divider)">
@@ -3181,6 +3264,143 @@
 
       </div><!-- /page-content-ops -->
 
+      <!-- ═══════════════ PAGE: PERFORMANCE ANALYTICS ═══════════════ -->
+      <div id="page-performance-analytics" class="page">
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+          <div>
+            <h2 style="font-size:18px;font-weight:700;color:var(--text);letter-spacing:-.02em;margin:0 0 2px;">Performance Analytics</h2>
+            <p style="font-size:12.5px;color:var(--text-secondary);margin:0;">Channel health · niche breakdown · content velocity</p>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-ghost" style="font-size:12px">Last 30 days</button>
+            <button class="btn btn-primary" onclick="showToast('Analytics refreshed','success')" style="font-size:12px">Refresh</button>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px;">
+          <div class="card" style="padding:18px;text-align:center;">
+            <div style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;">Videos published</div>
+            <div style="font-size:28px;font-weight:700;color:var(--text);">12</div>
+            <div style="font-size:11px;color:var(--success);margin-top:2px;">+3 vs prev period</div>
+          </div>
+          <div class="card" style="padding:18px;text-align:center;">
+            <div style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;">Total views</div>
+            <div style="font-size:28px;font-weight:700;color:var(--text);">847K</div>
+            <div style="font-size:11px;color:var(--success);margin-top:2px;">+22% vs prev period</div>
+          </div>
+          <div class="card" style="padding:18px;text-align:center;">
+            <div style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;">Avg engagement</div>
+            <div style="font-size:28px;font-weight:700;color:var(--text);">14.2%</div>
+            <div style="font-size:11px;color:var(--success);margin-top:2px;">+2.1% vs prev period</div>
+          </div>
+          <div class="card" style="padding:18px;text-align:center;">
+            <div style="font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;">Est. revenue</div>
+            <div style="font-size:28px;font-weight:700;color:var(--success);">$3,240</div>
+            <div style="font-size:11px;color:var(--success);margin-top:2px;">+18% vs prev period</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">
+          <div class="card" style="padding:20px;">
+            <div class="section-title" style="margin:0 0 14px">Top performing niches</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;">
+                  <span style="font-weight:600;color:var(--text);">Health &amp; Wellness</span>
+                  <span style="font-weight:600;color:var(--success);">42%</span>
+                </div>
+                <div style="height:8px;background:var(--surface-3);border-radius:4px;overflow:hidden;">
+                  <div style="height:100%;width:42%;background:var(--accent);border-radius:4px;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;">
+                  <span style="font-weight:600;color:var(--text);">Real Estate</span>
+                  <span style="font-weight:600;color:var(--success);">28%</span>
+                </div>
+                <div style="height:8px;background:var(--surface-3);border-radius:4px;overflow:hidden;">
+                  <div style="height:100%;width:28%;background:var(--accent);border-radius:4px;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;">
+                  <span style="font-weight:600;color:var(--text);">Finance</span>
+                  <span style="font-weight:600;color:var(--success);">19%</span>
+                </div>
+                <div style="height:8px;background:var(--surface-3);border-radius:4px;overflow:hidden;">
+                  <div style="height:100%;width:19%;background:var(--accent);border-radius:4px;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;">
+                  <span style="font-weight:600;color:var(--text-muted);">Technology</span>
+                  <span style="font-weight:600;color:var(--text-muted);">7%</span>
+                </div>
+                <div style="height:8px;background:var(--surface-3);border-radius:4px;overflow:hidden;">
+                  <div style="height:100%;width:7%;background:var(--border-strong);border-radius:4px;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;">
+                  <span style="font-weight:600;color:var(--text-muted);">Other</span>
+                  <span style="font-weight:600;color:var(--text-muted);">4%</span>
+                </div>
+                <div style="height:8px;background:var(--surface-3);border-radius:4px;overflow:hidden;">
+                  <div style="height:100%;width:4%;background:var(--border-strong);border-radius:4px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="padding:20px;">
+            <div class="section-title" style="margin:0 0 14px">Content velocity</div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div class="stat" style="padding:12px;"><div class="lbl">Videos this month</div><div class="val" style="font-size:16px">12</div><div class="delta" style="color:var(--success)">On track for 15</div></div>
+              <div class="stat" style="padding:12px;"><div class="lbl">Avg production time</div><div class="val" style="font-size:16px">4.2 days</div><div class="delta" style="color:var(--warning)">Target: 3.5 days</div></div>
+              <div class="stat" style="padding:12px;"><div class="lbl">Best upload day</div><div class="val" style="font-size:16px">Tuesday</div><div class="delta">2.3x avg views</div></div>
+              <div class="stat" style="padding:12px;"><div class="lbl">Completion rate</div><div class="val" style="font-size:16px;color:var(--success)">68%</div><div class="delta">Above benchmark (55%)</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:0;padding:20px;">
+          <div class="section-title" style="margin:0 0 14px">Traffic sources</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
+            <div class="stat" style="padding:14px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:4px;">🔍</div>
+              <div class="lbl">YouTube Search</div>
+              <div class="val" style="font-size:16px">38%</div>
+              <div class="delta">Primary source</div>
+            </div>
+            <div class="stat" style="padding:14px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:4px;">🏠</div>
+              <div class="lbl">Browse features</div>
+              <div class="val" style="font-size:16px">24%</div>
+              <div class="delta">Suggestions + explore</div>
+            </div>
+            <div class="stat" style="padding:14px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:4px;">🔗</div>
+              <div class="lbl">External</div>
+              <div class="val" style="font-size:16px">18%</div>
+              <div class="delta">Embedded + shared</div>
+            </div>
+            <div class="stat" style="padding:14px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:4px;">🔔</div>
+              <div class="lbl">Subscribers</div>
+              <div class="val" style="font-size:16px">12%</div>
+              <div class="delta">Direct traffic</div>
+            </div>
+            <div class="stat" style="padding:14px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:4px;">📱</div>
+              <div class="lbl">Other</div>
+              <div class="val" style="font-size:16px">8%</div>
+              <div class="delta">Shorts, playlists</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /page-performance-analytics -->
+
     </div><!-- /content -->
 
   </div><!-- /main -->
@@ -3549,7 +3769,8 @@
       'upload-tool-data': { title: 'Upload Tool Data', step: 'Step 0 of 3' },
       'competitor-analysis': { title: 'Competitor Analysis', step: 'Step 1 of 3' },
       'keyword-detail': { title: 'Keyword Detail', step: 'Step 2 of 3' },
-      'content-ops': { title: 'Content Operations', step: '' }
+      'content-ops': { title: 'Content Operations', step: '' },
+      'performance-analytics': { title: 'Performance Analytics', step: '' }
     };
     const t = titles[pageId] || { title: pageId, step: '' };
     document.getElementById('pageTitle').textContent = t.title;
