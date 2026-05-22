@@ -144,6 +144,38 @@
     .grid-4, .grid-3, .grid-auto { grid-template-columns: 1fr; }
     .topbar .page-title { font-size: 15px; }
   }
+
+  /* ── UPLOAD TOOL DATA ── */
+  .sec-h2 { font-size: 17px; font-weight: 700; margin: 24px 0 12px; }
+  .step-hero { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+  .step-hero-text p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+  .bc-tool-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  .bc-ahrefs { background: #1b75d0; color: #fff; }
+  .bc-semrush { background: #ff642d; color: #fff; }
+  .bc-vidiq { background: #00b2ff; color: #fff; }
+  .bc-filter { background: #fef9c3; border: 1px solid #fde047; border-radius: 4px; padding: 3px 9px; font-size: 12px; font-weight: 700; color: #854d0e; }
+  .bc-filter.export { background: #dcfce7; border-color: #86efac; color: #166534; }
+  .bc-filter.note { background: #ede9fe; border-color: #c4b5fd; color: #6d28d9; }
+  .upload-row { display: flex; gap: 16px; margin-bottom: 24px; }
+  .upload-box { flex: 1; border-radius: 12px; overflow: hidden; border: 2px dashed #cbd5e1; transition: border-color .2s; background: #fafafa; }
+  .upload-box.drag-over { border-color: var(--cyan); background: #eff6ff; }
+  .upload-box.loaded-ahrefs { border-color: #1b75d0; border-style: solid; background: #eaf2fa; }
+  .upload-box.loaded-semrush { border-color: #ff642d; border-style: solid; background: #fff3ed; }
+  .upload-box.loaded-vidiq { border-color: #00b2ff; border-style: solid; background: #eaf8ff; }
+  .upload-box.loaded-seoptimer { border-color: #059669; border-style: solid; background: #ecfdf5; }
+  .upload-box.loaded-answerthepublic { border-color: #d97706; border-style: solid; background: #fffbeb; }
+  .upload-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+  .upload-dropzone { padding: 32px 20px; text-align: center; cursor: pointer; transition: background .2s; min-height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+  .upload-dropzone:hover { background: #f1f5f9; }
+  .upload-dropzone .upload-icon { font-size: 32px; }
+  .upload-dropzone .upload-text { font-size: 14px; color: var(--text-secondary); font-weight: 600; }
+  .upload-dropzone .upload-hint { font-size: 12px; color: var(--slate-400); }
+  .upload-status { padding: 10px 16px; font-size: 13px; font-weight: 600; display: none; align-items: center; gap: 8px; border-top: 1px solid var(--border); }
+  .upload-status.show { display: flex; }
+  .upload-status.ok { color: #166534; background: #f0fdf4; }
+  .upload-status.err { color: var(--red); background: var(--red-bg); }
+  .upload-status.loading { color: #075985; background: #e0f2fe; }
+  @media (max-width: 700px) { .upload-row { flex-direction: column; } }
 </style>
 </head>
 <body>
@@ -157,6 +189,7 @@
     </div>
     <nav class="sidebar-nav">
       <div class="nav-section">Workflow</div>
+      <div class="nav-item" onclick="switchPage('upload-tool-data')"><span>📥</span> <span>0. Upload Tool Data</span></div>
       <div class="nav-item active" onclick="switchPage('competitor-analysis')"><span>📊</span> <span>1. Competitor Analysis</span></div>
       <div class="nav-item" onclick="switchPage('keyword-detail')"><span>🔑</span> <span>2. Keyword Detail</span></div>
     </nav>
@@ -651,6 +684,512 @@
 
       </div><!-- /page-keyword-detail -->
 
+      <!-- ═══════ PAGE: UPLOAD TOOL DATA ═══════ -->
+      <div id="page-upload-tool-data" class="page">
+
+        <div class="card">
+          <div class="step-hero">
+            <div class="step-hero-text">
+              <h1 style="font-size:22px;font-weight:800;margin-bottom:8px;">Upload Tool Data</h1>
+              <p style="max-width:100%;">Paste exports from your SEO tools below. The AI analyzes everything together, ranks the best affiliate article opportunities, extracts the products, validates YouTube viability, and builds your video briefs — automatically.</p>
+            </div>
+          </div>
+
+          <h2 class="sec-h2" style="margin-top:24px;">1. 📥 Upload Competitor CSV</h2>
+
+          <div class="upload-row" style="margin-bottom:20px;">
+            <div class="upload-box" id="engine-ahrefs-box">
+              <div class="upload-header">
+                <span class="bc-tool-badge bc-ahrefs">Ahrefs</span>
+                <span style="font-size:11px;color:#475569;font-weight:600;">📍 Ahrefs Site Explorer → Competing Domains</span>
+              </div>
+              <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+                <span style="font-weight:600;">Paste competitor domain → Search</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Left menu: "Competing Domains"</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+                <span class="bc-filter">Sort by: Common Keywords (High → Low)</span>
+                <span class="bc-filter export">Export: CSV — up to 1,000 rows</span>
+                <span class="bc-filter note">Use "Organic Traffic" filter to remove low-value sites</span>
+              </div>
+              <div class="upload-dropzone" id="engine-ahrefs-dropzone">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Drop Ahrefs competing domains CSV here or click to browse</div>
+                <div class="upload-hint">Expects: Domain, Common Keywords, Traffic, DR, Overlap %</div>
+                <input type="file" accept=".csv" id="engine-ahrefs-csv" style="display:none">
+              </div>
+              <div class="upload-status show ok" id="engine-ahrefs-status">✅ 4 competitors loaded from Ahrefs</div>
+            </div>
+
+            <div class="upload-box" id="engine-semrush-box">
+              <div class="upload-header">
+                <span class="bc-tool-badge bc-semrush">Semrush</span>
+                <span style="font-size:11px;color:#475569;font-weight:600;">📍 Semrush Domain Overview → Competitors</span>
+              </div>
+              <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+                <span style="font-weight:600;">Paste domain → Search</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Click "Competitors" tab</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+                <span class="bc-filter">Filter: Competition Level ≥ 0.4</span>
+                <span class="bc-filter">Sort: Common Keywords descending</span>
+                <span class="bc-filter export">Export: "Export to CSV"</span>
+              </div>
+              <div class="upload-dropzone" id="engine-semrush-dropzone">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Drop Semrush competitors CSV here or click to browse</div>
+                <div class="upload-hint">Expects: Domain, Common Keywords, Traffic, Competition, Overlap</div>
+                <input type="file" accept=".csv" id="engine-semrush-csv" style="display:none">
+              </div>
+              <div class="upload-status show ok" id="engine-semrush-status">✅ 4 competitors loaded from Semrush</div>
+            </div>
+          </div>
+
+          <h2 class="sec-h2" style="margin-top:24px;">2. Upload Competitor Niche Categories CSV</h2>
+
+          <div class="upload-row" style="margin-bottom:20px;">
+            <div class="upload-box" id="engine-niche-ahrefs-box">
+              <div class="upload-header">
+                <span class="bc-tool-badge bc-ahrefs">Ahrefs</span>
+                <span style="font-size:11px;color:#475569;font-weight:600;">Best for this specific view</span>
+              </div>
+              <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+                <span style="font-weight:600;">Site Explorer</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Enter Competitor Domain</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Search</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Left Menu: Site structure</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+                <span class="bc-filter">No filters needed for top level</span>
+                <span class="bc-filter export">Sort by: Traffic (High → Low)</span>
+                <span class="bc-filter note">Exports: Subfolder, Traffic, Traffic Share %</span>
+              </div>
+              <div class="upload-dropzone" id="engine-niche-ahrefs-dropzone">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Drop Ahrefs niche CSV here or click to browse</div>
+                <div class="upload-hint">Expects: Subfolder, Traffic, Traffic Share</div>
+                <input type="file" accept=".csv" id="engine-niche-ahrefs-csv" style="display:none">
+              </div>
+              <div class="upload-status" id="engine-niche-ahrefs-status"></div>
+            </div>
+
+            <div class="upload-box" id="engine-niche-semrush-box">
+              <div class="upload-header">
+                <span class="bc-tool-badge bc-semrush">Semrush</span>
+                <span style="font-size:11px;color:#475569;font-weight:600;">Dedicated Subfolders tab</span>
+              </div>
+              <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+                <span style="font-weight:600;">Domain Overview</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Enter Competitor Domain</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Search</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Organic Research</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Subfolders tab</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+                <span class="bc-filter">No filters needed</span>
+                <span class="bc-filter export">Sort by: Traffic Share or Traffic (Descending)</span>
+                <span class="bc-filter note">Exports: Subfolder, Traffic Share, Traffic, Keywords</span>
+              </div>
+              <div class="upload-dropzone" id="engine-niche-semrush-dropzone">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Drop Semrush niche CSV here or click to browse</div>
+                <div class="upload-hint">Expects: Subfolder, Traffic Share, Traffic, Keywords</div>
+                <input type="file" accept=".csv" id="engine-niche-semrush-csv" style="display:none">
+              </div>
+              <div class="upload-status" id="engine-niche-semrush-status"></div>
+            </div>
+          </div>
+
+          <h2 class="sec-h2" style="margin-top:24px;">3. Keyword Gap &amp; YouTube Topic Validator CSV</h2>
+
+          <div class="upload-row" style="margin-bottom:20px;">
+            <div class="upload-box" id="engine-ahrefs-kwg-box">
+              <div class="upload-header">
+                <span class="bc-tool-badge bc-ahrefs">Ahrefs</span>
+                <span style="font-size:11px;color:#475569;font-weight:600;">Alternative — Keyword Gap via Ahrefs</span>
+              </div>
+              <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+                <span style="font-weight:600;">Ahrefs Home</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Keyword Gap</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Enter your domain + up to 3 competitors</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Filter: Intersection view</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Export → CSV</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+                <span class="bc-filter">Filter: KD ≤ 60</span>
+                <span class="bc-filter">Filter: Volume ≥ 1,000</span>
+                <span class="bc-filter export">Sort by: Traffic Value descending</span>
+                <span class="bc-filter note">Pro: Focus on keywords with traffic value $500+</span>
+              </div>
+              <div class="upload-dropzone" id="engine-ahrefs-kwg-dropzone">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Drop Ahrefs keyword gap CSV here or click to browse</div>
+                <div class="upload-hint">Expects: Keyword, Volume, KD, Traffic Value, Competitors</div>
+                <input type="file" accept=".csv" id="engine-ahrefs-kwg-csv" style="display:none">
+              </div>
+              <div class="upload-status" id="engine-ahrefs-kwg-status"></div>
+            </div>
+
+            <div class="upload-box" id="engine-semrush-kwg-box">
+              <div class="upload-header">
+                <span class="bc-tool-badge bc-semrush">Semrush</span>
+                <span style="font-size:11px;color:#475569;font-weight:600;">Keyword Gap — Shared Keywords</span>
+              </div>
+              <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+                <span style="font-weight:600;">Semrush Home</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Keyword Gap</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Enter your domain + up to 3 competitors</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Select: "Common"</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Filter: Intent C + I, Value ≥ $500</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Export → CSV</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+                <span class="bc-filter">Intent: C and I only</span>
+                <span class="bc-filter">Filter: Traffic Value ≥ $500</span>
+                <span class="bc-filter export">Export up to 10K keywords</span>
+                <span class="bc-filter note">Sort by Traffic Value descending</span>
+              </div>
+              <div class="upload-dropzone" id="engine-semrush-kwg-dropzone">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Drop Semrush keyword gap CSV here or click to browse</div>
+                <div class="upload-hint">Expects: Keyword, Volume, KD %, CPC, Traffic Value, Competitors</div>
+                <input type="file" accept=".csv" id="engine-semrush-kwg-csv" style="display:none">
+              </div>
+              <div class="upload-status" id="engine-semrush-kwg-status"></div>
+            </div>
+          </div>
+
+          <div class="upload-row" style="margin-bottom:20px;">
+            <div class="upload-box" id="engine-vidiq-kwg-box">
+              <div class="upload-header">
+                <span class="bc-tool-badge bc-vidiq">VidIQ</span>
+                <span style="font-size:11px;color:#475569;font-weight:600;">Check YouTube search volume, competition score &amp; top video metrics</span>
+              </div>
+              <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+                <span style="font-weight:600;">VidIQ Dashboard</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Keyword Research</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Enter your keyword</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">See Competition Score + Search Volume</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Click into keyword → Top Videos tab → note views</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+                <span class="bc-filter">Score under 50 = Low competition 🟢</span>
+                <span class="bc-filter">Score 50–70 = Medium 🟡</span>
+                <span class="bc-filter">Score above 70 = Hard 🔴</span>
+                <span class="bc-filter note">PRO: Focus on Low comp + &gt;1K YT search volume</span>
+              </div>
+              <div class="upload-dropzone" id="engine-vidiq-kwg-dropzone">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Drop VidIQ keyword analysis CSV here or click to browse</div>
+                <div class="upload-hint">Expects: Keyword, YT Search Volume, Competition Score, Top Video Views</div>
+                <input type="file" accept=".csv" id="engine-vidiq-kwg-csv" style="display:none">
+              </div>
+              <div class="upload-status" id="engine-vidiq-kwg-status"></div>
+            </div>
+
+            <div class="upload-box" id="engine-semrush-trend-box" style="flex:1;">
+              <div class="upload-header">
+                <span class="bc-tool-badge bc-semrush">Semrush</span>
+                <span style="font-size:11px;color:#475569;font-weight:600;">Get keyword trend direction</span>
+              </div>
+              <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+                <span style="font-weight:600;">Semrush Home</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Keyword Overview</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Enter your keywords</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">See "Trend" chart (12-month view)</span>
+                <span style="color:#94a3b8;"> → </span>
+                <span style="font-weight:600;">Note: ↗ Rising / → Stable / ↘ Falling</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+                <span class="bc-filter note">Rising = growing demand, get in early</span>
+                <span class="bc-filter note">Stable = steady predictable traffic</span>
+                <span class="bc-filter" style="background:#fee2e2;border-color:#fca5a5;color:#991b1b;">Falling = avoid — demand declining</span>
+              </div>
+              <div class="upload-dropzone" id="engine-semrush-trend-dropzone">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Drop Semrush trend CSV here or click to browse</div>
+                <div class="upload-hint">Expects: Keyword, Volume, Trend Direction, 12-Month Avg</div>
+                <input type="file" accept=".csv" id="engine-semrush-trend-csv" style="display:none">
+              </div>
+              <div class="upload-status" id="engine-semrush-trend-status"></div>
+            </div>
+          </div>
+
+          <div style="text-align:center;padding:24px 0 8px;">
+            <button onclick="alert('Analysis started! This will process all uploaded CSV data and generate insights.')" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border:none;padding:14px 36px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(99,102,241,0.35);transition:transform 0.15s,box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(99,102,241,0.45)';" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 16px rgba(99,102,241,0.35)';">⚡ Analyze with AI</button>
+          </div>
+        </div>
+
+        <h2 class="sec-h2" style="margin-top:24px;">4. Extract Content from Keyword</h2>
+        <p style="margin:0 0 16px 0;font-size:13px;color:#475569;">Use these tools to extract heading structures, page metadata, and content signals from competitor articles.</p>
+
+        <div class="upload-row" style="margin-bottom:20px;">
+          <div class="upload-box" id="engine-serp-ahrefs-box">
+            <div class="upload-header">
+              <span class="bc-tool-badge bc-ahrefs">Ahrefs</span>
+              <span style="font-size:11px;color:#475569;font-weight:600;">SERP Overview from Keywords Explorer</span>
+            </div>
+            <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+              <span style="font-weight:600;">📍 Ahrefs Home</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Keywords Explorer</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Search "best running shoes"</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Scroll to SERP Overview</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+              <span class="bc-filter">Extract top-ranking URLs</span>
+              <span class="bc-filter export">Focus on high-traffic pages</span>
+              <span class="bc-filter note">Note: Domain Rating, Backlinks, Traffic</span>
+            </div>
+            <div class="upload-dropzone" id="engine-serp-ahrefs-dropzone">
+              <div class="upload-icon">📄</div>
+              <div class="upload-text">Drop Ahrefs SERP overview CSV here or click to browse</div>
+              <div class="upload-hint">Expects: URL, Domain Rating, Backlinks, Traffic, Keyword</div>
+              <input type="file" accept=".csv" id="engine-serp-ahrefs-csv" style="display:none">
+            </div>
+            <div class="upload-status" id="engine-serp-ahrefs-status"></div>
+          </div>
+
+          <div class="upload-box" id="engine-serp-semrush-box">
+            <div class="upload-header">
+              <span class="bc-tool-badge bc-semrush">Semrush</span>
+              <span style="font-size:11px;color:#475569;font-weight:600;">SERP Analysis from Keyword Overview</span>
+            </div>
+            <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+              <span style="font-weight:600;">📍 Semrush Home</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">SEO (Left Sidebar)</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Keyword Overview</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Search "best running shoes"</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Scroll to SERP Analysis</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+              <span class="bc-filter">Extract top 10 results</span>
+              <span class="bc-filter export">Note: Intent, Traffic, URL</span>
+              <span class="bc-filter note">Focus on Commercial &amp; Transactional intent</span>
+            </div>
+            <div class="upload-dropzone" id="engine-serp-semrush-dropzone">
+              <div class="upload-icon">📄</div>
+              <div class="upload-text">Drop Semrush SERP analysis CSV here or click to browse</div>
+              <div class="upload-hint">Expects: URL, Intent, Traffic, Keyword, Position</div>
+              <input type="file" accept=".csv" id="engine-serp-semrush-csv" style="display:none">
+            </div>
+            <div class="upload-status" id="engine-serp-semrush-status"></div>
+          </div>
+        </div>
+
+        <div class="upload-row" style="margin-bottom:20px;">
+          <div class="upload-box" id="engine-content-ahrefs-box">
+            <div class="upload-header">
+              <span class="bc-tool-badge bc-ahrefs">Ahrefs</span>
+              <span style="font-size:11px;color:#475569;font-weight:600;">Content Explorer — In title search</span>
+            </div>
+            <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+              <span style="font-weight:600;">📍 Ahrefs Home</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Content Explorer</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Type "best running shoes"</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Change drop-down to "In title"</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Search</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+              <span class="bc-filter">Filter: Traffic ≥ 1,000</span>
+              <span class="bc-filter export">Sort by: Traffic (Descending)</span>
+              <span class="bc-filter note">PRO: Focus on pages with low DR but high traffic</span>
+            </div>
+            <div class="upload-dropzone" id="engine-content-ahrefs-dropzone">
+              <div class="upload-icon">📄</div>
+              <div class="upload-text">Drop Ahrefs Content Explorer CSV here or click to browse</div>
+              <div class="upload-hint">Expects: URL, Title, Traffic, DR, Backlinks, Social</div>
+              <input type="file" accept=".csv" id="engine-content-ahrefs-csv" style="display:none">
+            </div>
+            <div class="upload-status" id="engine-content-ahrefs-status"></div>
+          </div>
+
+          <div class="upload-box">
+            <div class="upload-header">
+              <span class="bc-tool-badge" style="background:#059669;color:#fff;">SEOptimer</span>
+              <span style="font-size:11px;color:#475569;font-weight:600;">🔍 Extract heading structure &amp; page metadata</span>
+            </div>
+            <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+              <span style="font-weight:600;">Enter competitor URL</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Run Audit</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Scroll to "Heading Structure"</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Copy H1, H2, H3 hierarchy</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+              <span class="bc-filter">Look for: number of H2 product sections</span>
+              <span class="bc-filter note">Look for: "Best Budget" / "Best Overall" H2s</span>
+              <span class="bc-filter export">Manual: Check "Last Updated" date in article</span>
+            </div>
+            <div class="upload-dropzone" id="engine-seoptimer-dropzone">
+              <div class="upload-icon">📄</div>
+              <div class="upload-text">Drop SEOptimer heading structure CSV here or click to browse</div>
+              <div class="upload-hint">Expects: URL, H1, H2, H3, Metadata</div>
+              <input type="file" accept=".csv" id="engine-seoptimer-csv" style="display:none">
+            </div>
+            <div class="upload-status" id="engine-seoptimer-status"></div>
+          </div>
+
+          <div class="upload-box">
+            <div class="upload-header">
+              <span class="bc-tool-badge bc-semrush">Semrush</span>
+              <span style="font-size:11px;color:#475569;font-weight:600;">📊 See heading structure of any competitor article</span>
+            </div>
+            <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+              <span style="font-weight:600;">Semrush Home</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">On Page &amp; Tech SEO</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">On Page SEO Checker</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Paste article URL</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Headings tab (H1, H2, H3)</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+              <span class="bc-filter">Look for: number of H2 product sections</span>
+              <span class="bc-filter note">Look for: "Best Budget" / "Best Overall" H2s</span>
+            </div>
+            <div class="upload-dropzone" id="engine-semrush-headings-dropzone">
+              <div class="upload-icon">📄</div>
+              <div class="upload-text">Drop Semrush heading structure CSV here or click to browse</div>
+              <div class="upload-hint">Expects: URL, H1, H2, H3, Structure</div>
+              <input type="file" accept=".csv" id="engine-semrush-headings-csv" style="display:none">
+            </div>
+            <div class="upload-status" id="engine-semrush-headings-status"></div>
+          </div>
+        </div>
+
+        <div class="upload-row" style="margin-bottom:20px;">
+          <div class="upload-box" id="engine-semrush-affiliate-box" style="flex:1;">
+            <div class="upload-header">
+              <span class="bc-tool-badge bc-semrush">Semrush</span>
+              <span style="font-size:11px;color:#475569;font-weight:600;">Check what affiliate program they use</span>
+            </div>
+            <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+              <span style="font-weight:600;">Semrush Home</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Domain Overview</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Paste the competitor domain</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">See "Outbound Links" section</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+              <span class="bc-filter">amazon.com/dp/ links = Amazon Associates</span>
+              <span class="bc-filter note">shareasale.com = ShareASale network</span>
+              <span class="bc-filter export">impact.com = Impact network</span>
+              <span class="bc-filter" style="background:#fef9c3;border-color:#fcd34d;color:#854d0e;">Check: direct affiliate links vs. branded redirects</span>
+            </div>
+            <div class="upload-dropzone" id="engine-semrush-affiliate-dropzone">
+              <div class="upload-icon">📄</div>
+              <div class="upload-text">Drop Semrush outbound links CSV here or click to browse</div>
+              <div class="upload-hint">Expects: URL, Outbound Links, Affiliate Domains</div>
+              <input type="file" accept=".csv" id="engine-semrush-affiliate-csv" style="display:none">
+            </div>
+            <div class="upload-status" id="engine-semrush-affiliate-status"></div>
+          </div>
+        </div>
+
+        <div class="upload-row" style="margin-bottom:20px;">
+          <div class="upload-box" id="engine-semrush-paa-box" style="flex:1;">
+            <div class="upload-header">
+              <span class="bc-tool-badge bc-semrush">Semrush</span>
+              <span style="font-size:11px;color:#475569;font-weight:600;">People Also Ask — get questions for any keyword</span>
+            </div>
+            <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+              <span style="font-weight:600;">📍 Semrush Home</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Keyword Overview</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Enter your target keyword</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Scroll to "People Also Ask" section</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Copy all questions → paste into merged CSV</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+              <span class="bc-filter">Focus on: questions with search volume ≥ 1,000</span>
+              <span class="bc-filter export">PRO: Sort by volume descending — high-volume questions = best chapter topics</span>
+            </div>
+            <div class="upload-dropzone" id="engine-semrush-paa-dropzone">
+              <div class="upload-icon">📄</div>
+              <div class="upload-text">Drop Semrush PAA questions CSV here or click to browse</div>
+              <div class="upload-hint">Expects: Question, Volume, CPC, Intent</div>
+              <input type="file" accept=".csv" id="engine-semrush-paa-csv" style="display:none">
+            </div>
+            <div class="upload-status" id="engine-semrush-paa-status"></div>
+          </div>
+
+          <div class="upload-box" id="engine-atp-box" style="flex:1;">
+            <div class="upload-header">
+              <span class="bc-tool-badge" style="background:#8b5cf6;color:#fff;">AnswerThePublic</span>
+              <span style="font-size:11px;color:#475569;font-weight:600;">Discover question-based keyword variations</span>
+            </div>
+            <div style="padding:6px 16px 0;font-size:11px;color:#64748b;">
+              <span style="font-weight:600;">📍 AnswerThePublic</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Enter your target keyword</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">View "Questions" section</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Copy questions from What/Why/How/Can categories</span>
+              <span style="color:#94a3b8;"> → </span>
+              <span style="font-weight:600;">Paste into merged CSV with source label</span>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px;padding:6px 16px 8px;">
+              <span class="bc-filter">Focus on: How, Why, What questions (best for video chapters)</span>
+              <span class="bc-filter export">PRO: Cross-reference with Semrush — if both tools show the same question, it's high-priority</span>
+            </div>
+            <div class="upload-dropzone" id="engine-atp-dropzone">
+              <div class="upload-icon">📄</div>
+              <div class="upload-text">Drop AnswerThePublic questions CSV here or click to browse</div>
+              <div class="upload-hint">Expects: Question, Category, Frequency, Source</div>
+              <input type="file" accept=".csv" id="engine-atp-csv" style="display:none">
+            </div>
+            <div class="upload-status" id="engine-atp-status"></div>
+          </div>
+        </div>
+
+      </div><!-- /page-upload-tool-data -->
+
     </div><!-- /content -->
   </div><!-- /main -->
 </div><!-- /app -->
@@ -668,6 +1207,49 @@
     setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 2500);
   }
 
+  function setupEngineUpload(dropzoneId, boxId, statusId, tool) {
+    const dropzone = document.getElementById(dropzoneId);
+    if (!dropzone) return;
+    const fileInput = dropzone.querySelector('input[type="file"]');
+    const box = document.getElementById(boxId);
+    const status = document.getElementById(statusId);
+    dropzone.addEventListener('click', () => fileInput.click());
+    dropzone.addEventListener('dragover', (e) => { e.preventDefault(); if (box) box.classList.add('drag-over'); });
+    dropzone.addEventListener('dragleave', () => { if (box) box.classList.remove('drag-over'); });
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault(); if (box) box.classList.remove('drag-over');
+      const file = e.dataTransfer.files[0];
+      if (!file) return;
+      if (!file.name.endsWith('.csv')) { status.textContent = 'Please upload a .csv file'; status.className = 'upload-status show err'; return; }
+      status.textContent = '✅ ' + file.name + ' loaded'; status.className = 'upload-status show ok';
+      if (box) box.className = 'upload-box loaded-' + tool;
+    });
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+      if (!file.name.endsWith('.csv')) { status.textContent = 'Please upload a .csv file'; status.className = 'upload-status show err'; return; }
+      status.textContent = '✅ ' + file.name + ' loaded'; status.className = 'upload-status show ok';
+      if (box) box.className = 'upload-box loaded-' + tool;
+    });
+  }
+
+  setupEngineUpload('engine-ahrefs-dropzone', 'engine-ahrefs-box', 'engine-ahrefs-status', 'ahrefs');
+  setupEngineUpload('engine-semrush-dropzone', 'engine-semrush-box', 'engine-semrush-status', 'semrush');
+  setupEngineUpload('engine-niche-ahrefs-dropzone', 'engine-niche-ahrefs-box', 'engine-niche-ahrefs-status', 'ahrefs');
+  setupEngineUpload('engine-niche-semrush-dropzone', 'engine-niche-semrush-box', 'engine-niche-semrush-status', 'semrush');
+  setupEngineUpload('engine-ahrefs-kwg-dropzone', 'engine-ahrefs-kwg-box', 'engine-ahrefs-kwg-status', 'ahrefs');
+  setupEngineUpload('engine-semrush-kwg-dropzone', 'engine-semrush-kwg-box', 'engine-semrush-kwg-status', 'semrush');
+  setupEngineUpload('engine-vidiq-kwg-dropzone', 'engine-vidiq-kwg-box', 'engine-vidiq-kwg-status', 'vidiq');
+  setupEngineUpload('engine-semrush-trend-dropzone', 'engine-semrush-trend-box', 'engine-semrush-trend-status', 'semrush');
+  setupEngineUpload('engine-serp-ahrefs-dropzone', 'engine-serp-ahrefs-box', 'engine-serp-ahrefs-status', 'ahrefs');
+  setupEngineUpload('engine-serp-semrush-dropzone', 'engine-serp-semrush-box', 'engine-serp-semrush-status', 'semrush');
+  setupEngineUpload('engine-content-ahrefs-dropzone', 'engine-content-ahrefs-box', 'engine-content-ahrefs-status', 'ahrefs');
+  setupEngineUpload('engine-seoptimer-dropzone', null, 'engine-seoptimer-status', 'seoptimer');
+  setupEngineUpload('engine-semrush-headings-dropzone', null, 'engine-semrush-headings-status', 'semrush');
+  setupEngineUpload('engine-semrush-affiliate-dropzone', 'engine-semrush-affiliate-box', 'engine-semrush-affiliate-status', 'semrush');
+  setupEngineUpload('engine-semrush-paa-dropzone', 'engine-semrush-paa-box', 'engine-semrush-paa-status', 'semrush');
+  setupEngineUpload('engine-atp-dropzone', 'engine-atp-box', 'engine-atp-status', 'answerthepublic');
+
   function switchPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -676,7 +1258,7 @@
     const navItem = document.querySelector('.nav-item[onclick*="' + pageId + '"]');
     if (navItem) navItem.classList.add('active');
 
-    const titles = { 'competitor-analysis': '1. Competitor Analysis', 'keyword-detail': '2. Keyword Detail' };
+    const titles = { 'upload-tool-data': '0. Upload Tool Data', 'competitor-analysis': '1. Competitor Analysis', 'keyword-detail': '2. Keyword Detail' };
     document.getElementById('pageTitle').textContent = titles[pageId] || pageId;
   }
 </script>

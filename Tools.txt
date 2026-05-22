@@ -1,0 +1,9 @@
+Apify: For heavy web scraping.
+Firecrawl: Converts any website to clean markdown for LLMs.
+Browse AI: No-code scraping solution.
+
+
+n8n: Highly recommended for visual AI workflows.
+
+ElevenLabs API
+HeyGen
