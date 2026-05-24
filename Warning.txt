@@ -1,4 +1,0 @@
-Keys to Scaling Successfully
-Avoid Plagiarism Penalties: Do not just ask the AI to "rewrite this." Ask it to extract facts and structure, then generate a completely new script in a specific persona. YouTube and Google are highly aggressive against purely spun content.
-Quality Control (Human-in-the-Loop): The AI will make mistakes. Set up your workflow to pause in a Slack channel or Google Sheet. Let the agent generate the script and plan, and you simply click "Approve" before it gets sent to the renderer.
-Batch Processing: Instead of running the workflow one by one, scrape 50 articles over the weekend, dump them into your database, and let the agent process the scripts overnight.
